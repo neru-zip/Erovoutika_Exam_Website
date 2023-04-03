@@ -22,7 +22,7 @@ include_once 'src/includes/header.php';
 			  <div class="home1">
           <img src="src/images/login.png" id="logo2" style="position:absolute";>
               <br><br>
-              <h4 class="info1" id="info1">&nbsp;&nbsp;&nbsp;One-Stop-ShopSHGOSPSHOSP <br>Innovative Solutions</h3>
+              <h4 class="info1" id="info1">One-Stop-ShopSHGOSPSHOSP <br>Innovative Solutions</h3>
               <br>
               <h5 class="info2" id="info2">We are team of Engineers and IT making <br> Solutions for Robotics, Automation, <br> Electronics and ICT.</h4>
               <br><br>
@@ -105,7 +105,7 @@ include_once 'src/includes/header.php';
             <img src="src/images/client-5.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </div>
           <div class="slide">
-            <img src="src/images/client-6.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="src/images/client-6.png" alt="" style="height: 100px; width: 180px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </div>
           <div class="slide">
             <img src="src/images/client-1.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -205,7 +205,7 @@ include_once 'src/includes/header.php';
                   <div class="our-services speedup">
                       <div class="icon"> <img src="https://i.imgur.com/KMbnpFF.png"> </div>
                       <h4>Automation Solutions</h4>
-                      <p>Automated Solutions develops and sells PLC driver and industrial communications software products for industrial communications software products for industrial and process automation.</p><br><br><br>
+                      <p>Automated Solutions develops and sells PLC driver and industrial communications software products for industrial communications software products for industrial and process automation.</p><br><br><br><br>
                   </div>
               </div>
           </div>
@@ -214,7 +214,7 @@ include_once 'src/includes/header.php';
                   <div class="our-services privacy">
                       <div class="icon"> <img src="https://i.imgur.com/AgyneKA.png"> </div>
                       <h4>Robotics</h4>
-                      <p>Robotics is the intersection of science, engineering and technology that produces machines, called robots, that replicate or substitute for human actions.</p><br><br><br><br>
+                      <p>Robotics is the intersection of science, engineering and technology that produces machines, called robots, that replicate or substitute for human actions.</p><br><br><br><br><br>
                   </div>
               </div>
           </div>
@@ -234,7 +234,7 @@ include_once 'src/includes/header.php';
                   <div class="our-services ssl">
                       <div class="icon"> <img src="https://i.imgur.com/v6OnUqu.png"> </div>
                       <h4>Cybersecurity</h4>
-                      <p>Cybersecurity is the application of technologies, processes, and controls to protect systems, networks, programs, devices, and data from cyberattacks.</p><br><br><br><br>
+                      <p>Cybersecurity is the application of technologies, processes, and controls to protect systems, networks, programs, devices, and data from cyberattacks.</p><br><br><br><br><br>
                   </div>
               </div>
           </div>
