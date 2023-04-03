@@ -1200,4 +1200,42 @@ hr{
   
 }
 
+/* For mobile responsiveness */
+
+@media (orientation: portrait) and (max-width: 480px){
+
+  #home{
+    position: relative;
+    width: 100%;
+    padding: 30px 40px 0px 40px ;
+  }
+
+
+	#logo2{
+		align-items: center;
+		margin-top:50px;
+		width:420px;
+		height:auto;
+	}
+
+	#info1{
+		font-size: 1.1em;
+		justify-content: center;
+		line-height: 25px;	
+	}
+
+  #info2 {
+    font-size: 1.1em;
+		justify-content: center;
+		line-height: 25px;	
+  }
+
+	.about-section{
+		justify-content: center;
+		position: relative;
+		width: 100%;
+	}
+
+}
+
 
