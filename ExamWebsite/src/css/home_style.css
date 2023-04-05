@@ -7,6 +7,12 @@
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
 }
+
+*::selection{
+  background:#0F3695;
+  color:#fff;
+}
+
 body{
   min-height: 100vh;
 }
@@ -21,6 +27,7 @@ body{
   align-items: center;
   padding: 20px 100px;
 }
+
 header{
   position: fixed;
   top: 0;
@@ -185,17 +192,21 @@ header .btn{
     margin-left: 20px;
 }
 #logo2 {
+  margin-top: -50px;
   width: 550px;
   height: 500px;
 }
 #info1 {
-  margin-left: 730px;
+  margin-top: 50px;
+  margin-left: 600px;
+  font-size: 2.0em;
   justify-content: center;
   line-height: 40px;
 }
-#info2 {
-  margin-left: 730px;
-  line-height: 40px;
+.info2 {
+  margin-top: 30px;
+  margin-left: 600px;
+  line-height: 30px;
 }
 @media (max-width: 950px) {
   #home{
@@ -1200,7 +1211,7 @@ hr{
   
 }
 
-/* For mobile responsiveness */
+/* Media queries */
 
 @media (orientation: portrait) and (max-width: 480px){
 
@@ -1225,7 +1236,7 @@ hr{
 	}
 
   #info2 {
-    font-size: 1.1em;
+    font-size: 0em;
 		justify-content: center;
 		line-height: 25px;	
   }
