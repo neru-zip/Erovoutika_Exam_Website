@@ -1,10 +1,10 @@
 <?php 
-include_once $_SERVER['DOCUMENT_ROOT'].'/Erovoutika_Exam_Website/ExamWebsite/src/includes/connectdb.php';
-if($_SESSION['client_sid'] == null){
-    echo "<script>";
-    echo "window.location = '../src/login.php';";
-    echo "</script>";
-}
+include_once $_SERVER['DOCUMENT_ROOT'].'/src/includes/connectdb.php';
+// if($_SESSION['client_sid'] == null){
+//     echo "<script>";
+//     echo "window.location = '../src/login.php';";
+//     echo "</script>";
+// }
 $searchInput = "";
 ?>
 <!DOCTYPE html>
@@ -459,7 +459,7 @@ $searchInput = "";
         var payMethod = document.getElementById("payMethod");
         var payPlanVal = payPlan.value;
         var payMethodVal = payMethod.value;
-        window.location.href="/Erovoutika_Exam_Website/ExamWebsite/src/payment.php?id="+id+"&plan="+payPlanVal+"&method="+payMethodVal+"";
+        window.location.href="payment.php?id="+id+"&plan="+payPlanVal+"&method="+payMethodVal+"";
     }
     function examSearch(){
 
