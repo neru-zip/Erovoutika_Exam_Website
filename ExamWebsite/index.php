@@ -18,14 +18,15 @@ include_once 'src/includes/header.php';
   <body>
     <!-- Home -->
     <section class="section-main" id="home">
-      <div class="d-flex justify-content-start">
-			  <div class="home1">
-          <img src="src/images/test.png" id="logo2" style="position:absolute";>
-              <br><br>
-              <h4 class="info1" id="info1">One-Stop-Shop <br>Innovative Solutions</h4>
-              <h5 class="info2" id="info2">We are team of Engineers and IT making Solutions for Robotics, Automation, Electronics and ICT.</h5>
-              <br><br>
+
+
+			  <div class="image">
+          <img src="src/images/test.png" id="logo2" alt="">
         </div>
+        <div class="content">
+              <h3>One-Stop-Shop Innovative Solutions</h3>
+              <span>We are team of Engineers and IT making Solutions for Robotics, Automation, Electronics and ICT.</span>
+
       </div>
     </section> 
 

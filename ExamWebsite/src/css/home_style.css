@@ -13,20 +13,21 @@
   color:#fff;
 }
 
-body{
-  min-height: 100vh;
-  background-color: #f4f5f7;
+html{
+  overflow-x: hidden;
+  scroll-padding-top: 6.5rem;
+  scroll-behavior: smooth;
 }
+
+body{
+  background: #f4f5f7;
+}
+
 .section-main{
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  background-size: cover;
-  background-position: center;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 20px 100px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 header{
@@ -180,39 +181,36 @@ header .btn{
 }
 
 /* Home */
-.home1 {
-  background-image: url(src\images\BackG.png);
+
+.section-main .image{
+  flex:1 1 40rem;
+  padding-top: 7rem;
+  text-align: center;
 }
-#home{
-    position: relative;
-    width: auto;
-    min-height: 100vh;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    background-image: url(src\images\background.jpg) no-repeat left;
-    background-size: cover;
-    margin-left: 20px;
+
+.section-main .image img{
+		width:80%;
+    padding: auto;
+    text-align: right;
+
 }
-#logo2 {
-  margin-top: -50px;
-  width: 550px;
-  height: 500px;
+
+.section-main .content{
+  flex:1 1 40rem;
 }
-#info1 {
-  margin-top: 50px;
-  margin-left: 600px;
-  font-size: 2.0em;
-  justify-content: center;
-  line-height: 40px;
+
+.section-main .content h3{
+  font-size: 2rem;
 }
-.info2 {
-  margin-top: 30px;
-  margin-left: 600px;
-  line-height: 30px;
+
+.section-main .content span{
+  font-size: 1rem;
+  color:#666;
 }
+
+
 @media (max-width: 950px) {
-  #home{
+  .home{
     position: relative;
     width: 90%;
     padding: 30px 40px 40px 35px ;
@@ -922,7 +920,7 @@ header .btn{
 .contact{
   min-height: 100vh;
   width: 100%;
-  background: #ffffff;
+  background: #f4f5f7;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -930,7 +928,7 @@ header .btn{
 }
 .contact-container{
   width: 85%;
-  background: linear-gradient(to bottom, #66ccff 0%, #ffffff 100%);
+  background: linear-gradient(to bottom, #66ccff 0%, #f4f5f7 100%);
   border-radius: 6px;
   padding: 20px 60px 30px 40px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
