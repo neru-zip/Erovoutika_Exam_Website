@@ -15,6 +15,7 @@
 
 body{
   min-height: 100vh;
+  background-color: #f4f5f7;
 }
 .section-main{
   position: relative;
@@ -34,10 +35,12 @@ header{
   left: 0;
   width: 100%;
   display: flex;
+  background-color: white;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 100px;
+  padding: 15px 100px;
   z-index: 999;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
   transition: 0.6s;
 }
 header.sticky{
@@ -46,7 +49,7 @@ header.sticky{
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
 }
 img#logo {
-  height: 80px;
+  height: 70px;
   transition: 0.6s;
   transition-property: height;
 }
@@ -62,7 +65,7 @@ header .menu a{
   text-decoration: none;
   color: #170a7d;
   margin: 0 30px;
-  padding: 5px 15px;
+  padding: 5px 10px;
   text-transform: uppercase;
   border-radius: 15px;
   transition: 0.3s;
@@ -409,7 +412,7 @@ header .btn{
 
 /* Partnership */
 .logo-slider {
-	background: white;
+	background: #f4f5f7;
 	-webkit-box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0.125);
 	box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0.125);
 	margin: auto;
@@ -419,8 +422,8 @@ header .btn{
 }
 
 .logo-slider::before, .logo-slider::after {
-	background: -webkit-gradient(linear, left top, right top, from(white), to(rgba(255, 255, 255, 0)));
-	background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+	background: -webkit-gradient(linear, left top, right top, from(#f4f5f7), to(rgba(255, 255, 255, 0)));
+	background: linear-gradient(to right, #f4f5f7 0%, rgba(255, 255, 255, 0) 100%);
 	content: "";
 	height: 175px;
 	position: absolute;
@@ -577,7 +580,7 @@ header .btn{
     z-index: -1;
   }
   .honeycomb-cell::before {
-    background: #fff;
+    background: #f4f5f7;
     transform: scale(1.055);
   }
   .honeycomb-cell::after {
@@ -1229,16 +1232,16 @@ hr{
 		height:auto;
 	}
 
-	#info1{
+	#info1.info1{
 		font-size: 1.1em;
 		justify-content: center;
 		line-height: 25px;	
 	}
 
-  #info2 {
-    font-size: 0em;
-		justify-content: center;
-		line-height: 25px;	
+  .info2 {
+    margin-top: 0px;
+    margin-left: 0px;
+    line-height: 30px;
   }
 
 	.about-section{
