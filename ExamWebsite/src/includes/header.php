@@ -38,16 +38,17 @@ if (!in_array($_SERVER['REQUEST_URI'], $index)) {
           </div>
           <div class="userNav">
           <?php if (empty($_SESSION["admin_sid"]) && empty($_SESSION["client_sid"])):?>
-          <a href="/src/login.php">Login</a>
-          <a href="/src/signup.php">
-            <button id="signupbtn">
-              Signup
-            </button>
-          </a>
+            <a href="/src/login.php">Login</a>
+            <a href="/src/signup.php">
+              <button id="signupbtn">
+                Signup
+              </button>
+            </a>
           <?php else: ?>
-          <a class="dropdown-item" href="/src/includes/logout.php">
-            <button id="signupbtn">Logout</button>
-          </a>
+            <a href="#">User</a>
+            <a href="/src/includes/logout.php">
+              <button id="signupbtn">Logout</button>
+            </a>
           <?php endif; ?>
           
           </div>
