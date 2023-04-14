@@ -24,7 +24,7 @@ include_once 'src/includes/header.php';
           <img src="src/images/test.png" id="logo2" alt="">
         </div>
         <div class="content">
-              <h3>One-Stop-Shop Innovative Solutions</h3>
+              <h3>One-Stop-Shop Innovative Solutions</h3><br>
               <span>We are team of Engineers and IT making Solutions for Robotics, Automation, Electronics and ICT.</span>
 
       </div>
@@ -39,10 +39,11 @@ include_once 'src/includes/header.php';
                 <div class="inner-column">
                   <div class="sec-title">
                     <div class="title">About Us</div>
-                    <h2>Who We Are</h2>
+                    <h2>Erouvoutika</h2>
+                    <div class="text">A respected and experienced Automation and Robotics Company. Our highly professional teams, with in-depth knowledge of each jurisdiction, has been successfully deliver customer needs</div>
                   </div>
                     
-                  <div class="text">Erovoutika is a respected and experienced Automation and Robotics Company. Our highly professional teams, with in-depth knowledge of each jurisdiction, has been successfully deliver customer needs</div>
+                  
                   <h5>Our Aim</h5>
                   <div class="text">is to assist our clients in getting their needs and requirements in the easiest and fastest possible time in a most professional manner. We provide the highest quality service at the most reasonable cost.</div>
                     <a href="#" class="theme-btn btn-style-three">Read More</a>
@@ -53,7 +54,7 @@ include_once 'src/includes/header.php';
               <div class="image-column col-md-6 col-sm-12 col-xs-12">
                 <div class="inner-column " data-wow-delay="0ms" data-wow-duration="1500ms">
                   <div class="image">
-                    <img src="src/images/web.gif" id="about-img" alt="">
+                    <img src="src/images/" id="about-img" alt="">
                       <div class="overlay-box">
                         <div class="year-box"><span class="number">3</span>Years <br> Experience <br> Working</div>
                       </div>
@@ -72,62 +73,64 @@ include_once 'src/includes/header.php';
             <h2><span>Partnership Industries</span></h2>   
             </div>
         </div>
-      <div class="logo-slider">
-        <div class="logo-slide-track">
-          <div class="slide">
-            <img src="src/images/client-1.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-2.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-3.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-4.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-6.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-1.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-2.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-3.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-4.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-5.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-6.png" alt="" style="height: 100px; width: 180px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-1.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-2.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-3.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-4.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-5.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-6.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-        </div>
-      </div>
     </section>
+    <div class="wrapper">
+	<div class="slider">
+		<div class="slide-track">
+		
+			<div class="slide">
+				<img src="src/images/client-1.png" />
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-2.png" />
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-3.png" />
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-4.png" />
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-5.png" />
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-6.png" />
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-1.png" />
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-2.png" />
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-3.png" />
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-4.png" />
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-5.png" />
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-6.png" />
+			</div>
+			
+			<!-- Img Code End -->
+			
+		</div>
+	</div>
+</div>
     <br><br><br><br><br><br><br><br>
 
     <!-- Expertise -->
@@ -362,7 +365,7 @@ include_once 'src/includes/header.php';
           <div class="col-md-12">
               <div class="site-heading text-center">
                   <h2><span>Contact Us</span></h2>
-                  <h4>Get In Touch With Us!</h4>
+                  <h4>Get In Touch</h4>
               </div>
           </div>
       </div>
