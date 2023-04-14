@@ -102,9 +102,8 @@ h1 > img {
     resize: vertical;
 	font-size:16px;
 	border:solid 1px #7595BF;
-    
     margin: 0 auto;
-    top:20px;
+    
 	
 
 	
@@ -171,16 +170,15 @@ html-code{
 	margin-left:480px;
 	padding: 0 10px 0 0;
     margin: 0 auto;
-    position: absolute;
+ position: absolute;
     left:480px;
 }
 
 .button {
   border: none;
   color: white;
-  padding: 10px 20px;
+  padding: 5px 20px;
   text-align: center;
-  text-decoration: bold;
   display: inline-block;
   font-size: 15px;
   font-family:  sans-serif;
@@ -195,10 +193,9 @@ html-code{
   border: 2px solid white;
   position: absolute;
   margin: 0 auto;
-  left:1030px;
-  bottom:15px;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  bottom: 0px;
+  left:1010px;
+ 
 
 }
 
@@ -207,51 +204,82 @@ html-code{
   color: white;
 }
 
-@media screen and (max-width: 450px) {
+
+
+/** SCREENS */
+
+/** Iphone */
+
+@media only screen and (max-width: 375px) {
    
   #bck{
-    margin-left:-470px;
+    margin-left:-480px;
     position: relative;
   }
  
-  .html-code{
-    top: 20px;
+
+  .code textarea {
+    padding: 0;
   }
+
+
   .button1{
-  left:545px;
-  bottom:15px;
-  }
-}
-/** Iphone */
-@media screen and (max-width: 380px) {
-    .html-code{
-        margin-top: -35px;
-    }
-
-    .html-code{
-        margin-top: -35px;
-    }
-    .css-code{
-        margin-top: -35px;
-    }
-
-    .button1{
-  left:525px;
-  bottom:15px;  ;
+   margin-left: -910px;
+   margin-bottom: 45px;
+   position: absolute;
   }
 
-  h1{
-    font-size: 1rem;
-  }
-
+  .html-code{
+        margin-top: -30px;
+    }
 }
 
-@media screen and (max-height: 900px) {
+@media only screen and (min-width: 384px) and (max-height: 854px)  {
+   
+    #bck{
+     margin-left:-480px;
+     position: relative;
+   }
+
+   .button1{
+   margin-left: -905px;
+   margin-bottom: 215px;
+   position: absolute;
+   }
+   
+    
+ }
+ 
+ @media only screen and (min-width: 412px) and (max-height: 732px) {
+   
+   #bck{
+     margin-left:-480px;
+     position: relative;
+   }
+  
+ 
+   .code textarea {
+     padding: 0;
+   }
+ 
+ 
+   .button1{
+    margin-left: -895px;
+   margin-bottom: 110px;
+   }
+ }
+
+@media only screen and (min-width: 1920px) and (max-height: 1080px) {
     .button1{
-    margin-left:-460px;
-    margin-top: 40px;
+    margin-left:-160px;
+    margin-top: 10px;
     position: relative;
   }
+
+  #bck{
+     margin-left:320px;
+     position: absolute;
+   }
 
   h1{
     font-size: 1rem;
@@ -314,6 +342,10 @@ function run() {
     result.contentWindow.eval(localStorage.js_code);
 }
 
+// Checking if user is typing anything in input field
+html_code.onkeyup = () => run();
+css_code.onkeyup = () => run();
+js_code.onkeyup = () => run();
 
 
 // Accessing data stored in Local Storage. To make it more advanced you could check if there is any data stored in Local Storage.
