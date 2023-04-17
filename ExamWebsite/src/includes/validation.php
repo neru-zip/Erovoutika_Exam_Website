@@ -36,6 +36,7 @@ if($success == true){
         $success = true;
         $clUrID = $row['clUrID'];
         $clUrFirstname = $row['clUrFirstname'];
+        $clUrUsername = $row['clUrUsername'];
         $clUrLevel= $row['clUrLevel'];
         }
         if($success == true)
@@ -43,6 +44,7 @@ if($success == true){
             $_SESSION['client_sid']=session_id();
             $_SESSION['clUrID'] = $clUrID;
             $_SESSION['clUrLevel'] = $clUrLevel;	
+            $_SESSION['clUrUsername'] = $clUrUsername;
             session_start();	
 
             //------- Update latest login date
