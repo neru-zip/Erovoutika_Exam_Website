@@ -139,11 +139,7 @@ function Top(){
 								</ul>
 							</blockquote>
 							</p>
-						<form method = "get" action = "code_editor.php">
-							<input type= "hidden" name = "learn_html" value = "0">
-							<button class="button is-link read-more">View Example</button>
-							<!--<a href = "code_editor.php?id=0"><button class="button is-link read-more">View Example</button></a>-->
-						</form>
+						<a class="button is-link read-more">View Example</a>
 				</article>
 			</div>
 		</div>
@@ -160,12 +156,9 @@ function Top(){
 						<strong>Description:</strong> The href attribute is the main attribute of < a > anchor tag. This attribute gives the link address which is specified in that link. <strong>The href attribute provides the hyperlink, and if it is blank, then it will remain in same page.</strong><br><br>
 						<strong>The src Attribute</strong><br>
 						The <strong>src</strong> attribute is one of the important and required attribute of <code>< img ></code> element. It is source for the image which is required to display on browser. This attribute can contain image in same directory or another directory. The image name or source should be correct else browser will not display image.
-						</blockquote>
-						<br>
-						<form method = "get" action = "code_editor.php">
-							<input type= "hidden" name = "learn_html" value = "1">
-							<button class="button is-link read-more">View Example</button>
-						</form>
+</blockquote>
+<br>
+						<a class="button is-link read-more">View Example</a>
 					</article>
 			</div>
 		
@@ -196,10 +189,7 @@ function Top(){
 								<li><strong>Larger Text</strong> - If you want to put your font size larger than the rest of the text then put the content within <code>< big > . . . < /big ></code>. It increase one font size larger than the previous one.</li>
 								<li><strong>Smaller Text</strong> - If you want to put your font size smaller than the rest of the text then put the content within <code>< small > . . . < /small ></code>. It increase one font size smaller than the previous one.</li>
 							</ol></blockquote>
-							<form method = "get" action = "code_editor.php">
-								<input type= "hidden" name = "learn_html" value = "2">
-								<button class="button is-link read-more">View Example</button>
-							</form>
+							<a class="button is-link read-more">View Example</a>
 					</article>
 
 			</div>
@@ -209,7 +199,7 @@ function Top(){
 			<article class="tile is-child content task">
 					<p><a href="" class="tag is-dark">2 min read</a></p>
 						<h2 class="title" id="element">HTML Element</h2>
-						<p class="description">An HTML file is made of elements. These elements are responsible for creating web pages and define content in that webpage. AM element in HTML usually consist of a start tag  <code>< tagname ></code>, close tag <code>< /tagname > </code>and content inserted between them. <strong>Technically, an element is a collection of start tag, attributes, end tag, content between them.</strong>
+						<p class="description">An HTML file is made of elements. THese elements are responsible for creating web pages and define content in that webpage. AM element in HTML usually consist of a start tag  <code>< tagname ></code>, close tag <code>< /tagname > </code>and content inserted between them. <strong>Technically, an element is a collection of start tag, attributes, end tag, content between them.</strong>
 						<blockquote>
 							<strong>Block-level element:</strong><br>
 							<br>
@@ -234,10 +224,8 @@ function Top(){
 						<p class="description">A HTML heading or Html h tag can be defined as a title or a subtitle which you want to display on the webpage. When you place the text within the heading tags <code>< h1 > . . . < /h1 ></code>, it is displayed on the browser in the bold format and size of the text depends on the number of heading. <br><br>
 						There are six different HTML headings which defined with the <code>< h1 ></code> to <code>< h6 ></code>, from highest level h1 (main heading) to the least level h6 (least important heading). <br><br>
 						h1 is the largest heading tag and h6 is the smallest one. So h1 is used for most important heading and h6 is used for least important.</p>
-					<form method = "get" action = "code_editor.php">
-						<input type= "hidden" name = "learn_html" value = "3">
-						<button class="button is-link read-more">View Example</button>
-					</form>
+
+						<a class="button is-link read-more">View Example</a>
 					</article>
 			<article class="tile is-child content task">
 						<p><a href="" class="tag is-dark">form</a> <a href="" class="tag is-dark">textarea</a></p>
@@ -245,11 +233,7 @@ function Top(){
 						<p class="description"><strong>Description:</strong> A simple form with four inputs and one textarea. Custom close button is made with CSS pseudo-elements.</p>
 						<p class="notes"><strong>Notes:</strong> The challenge of this task was to make a form container to shrink, when a user stretches the textarea field. The solution was not to set <code>height</code> for the form tab.
 						</p>
-						<form method = "get" action = "code_editor.php">
-							<input type= "hidden" name = "learn_html" value = "4">
-							<button class="button is-link read-more">View Code</button>
-						</form>
-						<!-- former link: https://github.com/ni4yja/frontloops/tree/master/task-12-->
+						<a href="https://github.com/ni4yja/frontloops/tree/master/task-12" class="button is-link read-more">View Code</a>
 					</article>
 			</div>
 		</div>
@@ -266,7 +250,7 @@ function Top(){
 							</blockquote>
 							<blockquote>
 								<strong>How to Use <code> < br ></code> and <code>< hr ></code> tag with paragraph ?</strong><br><br>
-								An HTML <code>< br ></code> tag is used for line break and it can be used with paragraph elements. <br><br>
+								An HTML <code>< bt ></code> tag is used for line break and it can be used with paragraph elements. <br><br>
 								An HTML <code>< hr ></code> tag is used to apply a horizontal line between two statements or two paragraphs.
 							</blockquote><br>
 							<strong>HTML Display</strong><br>
@@ -274,10 +258,7 @@ function Top(){
 							Large or small screens, and resized windows will create different results.
 							With HTML, you cannot change the display by adding extra spaces or extra lines in your HTML code.
 							The browser will automatically remove any extra spaces and lines when the page is displayed</p>
-							<form method = "get" action = "code_editor.php">
-								<input type= "hidden" name = "learn_html" value = "5">
-								<button class="button is-link read-more">View Example</button>
-							</form>
+							<a class="button is-link read-more">View Example</a>
 						</div>
 					</article>
 					<div class="tile is-parent is-7">
@@ -299,7 +280,7 @@ function Top(){
 								<li><strong>Definition tag</strong><br>
 								When you use the <code>< dfn ></code> and <code>< /dfn></code> tags, it allow to specify the keyword of the content.</li>
 								<li><strong>Quoting text</strong><br>
-								The HTML <code>< blockquote ></code> elemet shows that the enclosed content is quoted from another source.</li>
+								The HTML <code>< blockquote ></code> elemet shows that the enclosed xontent is quoted from another source.</li>
 								<li><strong>Short Quotations</strong><br>
 								An HTML <code>< q ></code> . . . <code>< /q ></code> element defines a short quotation, it will enclose the text in double quotes.</li>
 								<li><strong>Code tags</strong><br>
@@ -310,10 +291,7 @@ function Top(){
 								An HTML <code>< address > </code>tag defines the contact information about the author of the content and it displayed in italic font.</li>
 							</ol>
 						</blockquote>
-						<form method = "get" action = "code_editor.php">
-							<input type= "hidden" name = "learn_html" value = "6">
-							<button class="button is-link read-more">View Example</button>
-						</form>
+						<a class="button is-link read-more">View Example</a>
 				</div>
 			</div>
 		</div>
@@ -329,12 +307,7 @@ function Top(){
 						<code>< a href = " . . . . . . . . . "> Link</code></blockquote>
 						<blockquote><strong>Specify a location for Link using target attribute</strong><br>
 						If we want to open that link to another page then we can use target attribute of <code>< a ></code> tag. With the help of this link will be open in next page.</blockquote>
-						
-						<form method = "get" action = "code_editor.php">
-							<input type= "hidden" name = "learn_html" value = "7">
-							<button class="button is-link read-more">View Code</button>
-						</form>
-						<!-- former link: https://github.com/ni4yja/frontloops/tree/master/task-11-->
+						<a href="https://github.com/ni4yja/frontloops/tree/master/task-11" class="button is-link read-more">View Code</a>
 					</article>
 			</div>
 			<div class="tile is-parent ">
@@ -343,12 +316,7 @@ function Top(){
 						<h2 class="title" id="list">Lists</h2>
 						<p class="description"><strong>Description:</strong> A list of photos opens on arrow button click. A nice background is made with <a href="https://cssgradient.io/">css gradient generator</a>.</p>
 						<p class="notes"><strong>Notes:</strong> Vue provides a variety of ways to apply transition effects when items are inserted, updated, or removed from the DOM. A <code>transition</code> wrapper component allows you to add entering/leaving transitions for any element or component.</p>
-						
-						<!-- CSS SAMPLE -->
-						<form method = "get" action = "code_editor.php">
-							<input type= "hidden" name = "learn_css" value = "0">
-							<button class="button is-link read-more">View Code</button>
-						</form>
+							<a href="https://github.com/ni4yja/frontloops/tree/master/task-13" class="button is-link read-more">View Code</a>
 		
 			</div>
 		</div>
@@ -364,11 +332,7 @@ function Top(){
 							<p class="notes">Finally, I created a <code>div</code> with id for events to show tab's content with a following attribute: <code>:class="{ 'active show': isActive('events') }"</code>. And - again - repeated the same for finance, cafes, gifts and pets.</p>
 							<p class="notes">One last thing about styling the tab link. I added this line of code <code>transition: transform .6s;</code> to my <code>.tab-link</code>element, which enables transition between inactive and active link. Then I make <code>.tab-link.active</code> grow by adding <code>transform: scale(1.3);</code>. To ensure the animation looks nicely I set <code>z-index</code> for an active link to <code>10</code> (now it is positioned over inactive links with <code>z-index: 1</code>).  </p>
 							<p class="notes">That is basically all. Enjoy!</p>
-
-							<form method = "get" action = "code_editor.php">
-								<input type= "hidden" name = "learn_css" value = "1">
-								<button class="button is-link read-more">View Code</button>
-							</form>
+							<a href="https://github.com/ni4yja/frontloops/tree/master/task-14" class="button is-link read-more">View Code</a>
 			</article>				
 			</div>
 		</div>
