@@ -28,7 +28,7 @@ include_once 'src/includes/header.php';
               <span>We are team of Engineers and IT making Solutions for Robotics, Automation, Electronics and ICT.</span>
 
       </div>
-    </section> 
+    </section>
 
     <!-- About Us -->
     <section class="about-section" id="about-section">
@@ -65,25 +65,54 @@ include_once 'src/includes/header.php';
       </div>
     </section>
 
+        
     <!-- Partnership -->
-    <section class="partnership"id="partnership">
-      <div class="row">
-        <div class="col-md-12">
-            <div class="site-heading text-center">
-            <h2><span>Partnership Industries</span></h2>   
+
+    <div class="row" style="margin-bottom: -50px; margin-top: 10%">
+            <div class="col-md-12">
+                <div class="site-heading text-center">
+                    <h2><span>Partnership Industries</span></h2>
+                    <h4>Work in Progress</h4>
+                </div>
             </div>
-        </div>
-    </section>
+            </div>
+
     <div class="wrapper">
+  
 	<div class="slider">
 		<div class="slide-track">
+
 		
 			<div class="slide">
-				<img src="src/images/client-1.png" />
+				<img src="src/images/client-1.png" style="height:110px; width: 170px; transform: translate(20%, 35%);"/>
 			</div>
 			
 			<div class="slide">
-				<img src="src/images/client-2.png" />
+				<img src="src/images/client-2.png" style="height:90px; width: 200px; transform: translate(10%, 55%);"/>
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-3.png"/>
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-4.png" style="width: 200px; height: 100px; transform: translate(10%, 50%);"/>
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-5.png" style="height:160px; width: 160px; transform: translate(25%, 10%);"/>
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-6.png" style="width: 200px; height: 90px; transform: translate(10%, 50%);"/>
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-1.png" style="height:110px; width: 170px; transform: translate(20%, 35%);"/>
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-2.png" style="height:90px; width: 200px; transform: translate(10%, 55%);"/>
 			</div>
 			
 			<div class="slide">
@@ -91,23 +120,23 @@ include_once 'src/includes/header.php';
 			</div>
 			
 			<div class="slide">
-				<img src="src/images/client-4.png" />
+				<img src="src/images/client-4.png" style="width: 200px; height: 100px; transform: translate(10%, 50%);"/>
 			</div>
 			
 			<div class="slide">
-				<img src="src/images/client-5.png" />
+				<img src="src/images/client-5.png" style="height:160px; width: 160px; transform: translate(25%, 10%);"/>
 			</div>
 			
 			<div class="slide">
-				<img src="src/images/client-6.png" />
+				<img src="src/images/client-6.png" style="width: 200px; height: 90px; transform: translate(10%, 50%);"/>
+			</div>
+
+      <div class="slide">
+				<img src="src/images/client-1.png" style="height:110px; width: 170px; transform: translate(20%, 35%);"/>
 			</div>
 			
 			<div class="slide">
-				<img src="src/images/client-1.png" />
-			</div>
-			
-			<div class="slide">
-				<img src="src/images/client-2.png" />
+				<img src="src/images/client-2.png" style="height:90px; width: 200px; transform: translate(10%, 55%);"/>
 			</div>
 			
 			<div class="slide">
@@ -115,23 +144,20 @@ include_once 'src/includes/header.php';
 			</div>
 			
 			<div class="slide">
-				<img src="src/images/client-4.png" />
+				<img src="src/images/client-4.png" style="width: 200px; height: 100px; transform: translate(10%, 50%);"/>
 			</div>
 			
 			<div class="slide">
-				<img src="src/images/client-5.png" />
+				<img src="src/images/client-5.png" style="height:160px; width: 160px; transform: translate(25%, 10%);"/>
 			</div>
 			
 			<div class="slide">
-				<img src="src/images/client-6.png" />
+				<img src="src/images/client-6.png" style="width: 200px; height: 90px; transform: translate(10%, 50%);"/>
 			</div>
-			
-			<!-- Img Code End -->
 			
 		</div>
 	</div>
 </div>
-    <br><br><br><br><br><br><br><br>
 
     <!-- Expertise -->
     <section class="expertise">
@@ -198,8 +224,8 @@ include_once 'src/includes/header.php';
               <div class="box">
                   <div class="our-services settings">
                       <div class="icon"> <img src="https://i.imgur.com/6NKPrhO.png"> </div>
-                      <h4>Training and Certifications</h4>
-                      <p>Training to develop new skills and advance their SESSIONeers There is specialized certification for training, learning and development professionals who are seeking ways to increase business performance through innovative and collaborative training methods</p><br>
+                      <h4>Training and Certifications</h4><br>
+                      <p>Training to develop new skills and advance their SESSIONeers There is specialized certification for training, learning and development professionals who are seeking ways to increase business performance through innovative and collaborative training methods</p>
                   </div>
               </div>
           </div>
@@ -207,8 +233,8 @@ include_once 'src/includes/header.php';
               <div class="box">
                   <div class="our-services speedup">
                       <div class="icon"> <img src="https://i.imgur.com/KMbnpFF.png"> </div>
-                      <h4>Automation Solutions</h4>
-                      <p>Automated Solutions develops and sells PLC driver and industrial communications software products for industrial communications software products for industrial and process automation.</p><br><br><br><br>
+                      <h4>Automation Solutions</h4><br>
+                      <p>Automated Solutions develops and sells PLC driver and industrial communications software products for industrial communications software products for industrial and process automation.</p>
                   </div>
               </div>
           </div>
@@ -216,8 +242,8 @@ include_once 'src/includes/header.php';
               <div class="box">
                   <div class="our-services privacy">
                       <div class="icon"> <img src="https://i.imgur.com/AgyneKA.png"> </div>
-                      <h4>Robotics</h4>
-                      <p>Robotics is the intersection of science, engineering and technology that produces machines, called robots, that replicate or substitute for human actions.</p><br><br><br><br><br>
+                      <h4>Robotics</h4><br>
+                      <p>Robotics is the intersection of science, engineering and technology that produces machines, called robots, that replicate or substitute for human actions.</p>
                   </div>
               </div>
           </div>
@@ -227,8 +253,8 @@ include_once 'src/includes/header.php';
               <div class="box">
                   <div class="our-services backups">
                       <div class="icon"> <img src="https://i.imgur.com/vdH9LKi.png"> </div>
-                      <h4>Research and Development</h4>
-                      <p>Research and development include activities that companies undertake to innovate and introduce new products and services. It is often the first stage in the development process.</p><br><br><br>
+                      <h4>Research and Development</h4><br>
+                      <p>Research and development include activities that companies undertake to innovate and introduce new products and services. It is often the first stage in the development process.</p>
                   </div>
               </div>
           </div>
@@ -236,8 +262,8 @@ include_once 'src/includes/header.php';
               <div class="box">
                   <div class="our-services ssl">
                       <div class="icon"> <img src="https://i.imgur.com/v6OnUqu.png"> </div>
-                      <h4>Cybersecurity</h4>
-                      <p>Cybersecurity is the application of technologies, processes, and controls to protect systems, networks, programs, devices, and data from cyberattacks.</p><br><br><br><br><br>
+                      <h4>Cybersecurity</h4><br><br>
+                      <p>Cybersecurity is the application of technologies, processes, and controls to protect systems, networks, programs, devices, and data from cyberattacks.</p>
                   </div>
               </div>
           </div>
@@ -245,8 +271,8 @@ include_once 'src/includes/header.php';
               <div class="box">
                   <div class="our-services database">
                       <div class="icon"> <img src="https://i.imgur.com/VzjZw9M.png"> </div>
-                      <h4>Blockchain</h4>
-                      <p>Blockchains are best known for their crucial role in cryptocurrency systems, such as Bitcoin, for maintaining a secure and decentralized record of transactions.</p><br><br><br><br>
+                      <h4>Blockchain</h4><br><br>
+                      <p>Blockchains are best known for their crucial role in cryptocurrency systems, such as Bitcoin, for maintaining a secure and decentralized record of transactions.</p>
                   </div>
               </div>
           </div>

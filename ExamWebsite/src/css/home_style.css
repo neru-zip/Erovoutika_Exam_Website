@@ -238,7 +238,9 @@ header .btn{
 
 .about-section{
 	position:relative;
-	padding:60px 0px;
+  margin-top: 50px;
+  background-color: white;
+	padding:20px 0px;
 }
 
 .about-section .content-column{
@@ -411,18 +413,50 @@ header .btn{
 
 /* Partnership */
 
+.ph2{
+  text-align: center;
+  margin-top: 10%;
+  margin-bottom: 50px ;
+  font-weight: 700;
+  color: #2600ff;
+  text-transform: uppercase;
+  
+  
+}
+
+.ph2::before{
+  background: #2600ff none repeat scroll 0 0;
+  content: "";
+  height: 2px;
+  left: 50%;
+  margin-top: 4%;
+  margin-left: -25px;
+  position: absolute;
+  width: 50px;
+}
+
+
+.partnership{
+  background-color: #002770;
+}
+
 .wrapper {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	height: 30vh;
+  margin-bottom: 15%;
+
 }
 
 .slider {
-	height: 530px;
-  margin: auto;
+	height: auto;
 	overflow: hidden;
 	position: relative;
+  margin: auto;
+  margin-right: 10%;
+  padding-top: 50px;
+  padding-bottom: 50px;
 	width: 80%;
 }
 
@@ -430,7 +464,7 @@ header .btn{
 	-webkit-animation: scroll 30s linear infinite;
 	animation: scroll 30s linear infinite;
 	display: flex;
-	width: calc(250px * 14);
+	width: calc(250px * 21);
 }
 
 .slider .slide {
@@ -440,15 +474,19 @@ header .btn{
 	border: 2px solid #2600ff;
   box-shadow: 0 0 25px 0 rgba(20,27,202,.17);
   margin-right: 50px;
-	width: 80%;
+	width: 100%;
 }
 
 .slider .slide img {
   width: 60%;
-  
-  transform: translate(30%, 20%);
+  transform: translate(35%, 20%);
 	height: 130px;
 	
+}
+
+.slider .slide:hover{
+  transform:scale(1.2);
+  filter: contrast(140%);
 }
 
 @-webkit-keyframes scroll {
@@ -476,6 +514,7 @@ header .btn{
   margin-bottom: 10px;
   text-transform: uppercase;
 }
+
 
 .site-heading h2 span {
   color: #2600ff;
@@ -628,20 +667,24 @@ header .btn{
  .box {
   position: relative;
   width: 100%;
-  padding-right: 15px;
   padding-left: 15px;
+  padding-right: 15px;
 }
  .our-services {
   margin-top: 75px;
   padding-bottom: 30px;
-  padding: 0 60px;
-  min-height: 198px;
+  padding: 0 50px;
   text-align: center;
   border-radius: 10px;
   background-color: #fff;
   transition: all .4s ease-in-out;
   box-shadow: 0 0 25px 0 rgba(20,27,202,.17)
 }
+
+.our-services p{
+  height:250px;
+}
+
 .our-services .icon {
   margin-bottom: -21px;
   transform: translateY(-50%);
@@ -1248,6 +1291,7 @@ hr{
 	.about-section{
 		justify-content: center;
 		position: relative;
+    background-color: #002770;
 		width: 100%;
 	}
 
