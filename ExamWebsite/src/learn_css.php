@@ -41,8 +41,8 @@ function Top(){
     </nav>
 <div class = "wrapper">
 	<div class="d-flex justify-content-center align-items-center">
-	<img src = "images/js_logo.png" alt ="HTML" class ="img-fluid">
-	 <h1 style="font-weight: bold;">JAVASCRIPT Tutorial </h1>
+	<img src = "images/css_logo.png" alt ="HTML" class ="img-fluid">
+	 <h1 style="font-weight: bold;">CSS Tutorial </h1>
 </div>
 <br>
 </div>
@@ -56,115 +56,168 @@ function Top(){
 						</div>
 							<div class ="lits is-responsive text-center">
 								<ul class="lits is-hoverable">
-								<li><a href ="#Javascript_definition" >What is JAVASCRIPT?</a></li>
-								<li><a href ="#change_elements_using_javascript"> Changing HMTL Elements </a></li>
-								<li><a href ="#change_attributes_using_javascript">Changing HTML Attributes</a></li>
-								<li><a href ="#hiding_and_showing_elements_using_js">Hiding Elements and Showing Elements</a></li>
-								<li><a href ="#how_to_use_js"> How to use Javascript? </a></li>
-								<li><a href ="#external_javascript">External Javascript</a></li>
-								<li><a href ="#data_output_js">Outputting Data</a></li>
-								<li><a href ="#js_values">Javascript Values</a></li>
-								<li><a href ="#js_comments">Javascript Comments</a></li>
-								<li><a href ="#js_text_case">Javascript Text Cases</a></li>
-								<li><a href ="#js_functions_and_events">Javascript Functions and Events</a></li>
-								<li><a href ="#js_operators">Javascript Operators</a></li>
-								<li><a href ="#js_names">Javascript Names</a></li>
-								<li><a href ="#js_functions">Javascript Functions </a></li>
-								<li><a href ="#access_objects">Acessing Objects</a></li>
-								<li><a href ="#access_object_methods">Acessing Object Methods</a></li>
-								<li><a href ="#js_objects">Javascript Objects</a></li>
-								<li><a href ="#object_methods">Object Methods</a></li>
-								<li><a href ="#js_conditional_statements">Conditional Statements</a></li>
-								<li><a href ="#js_if_statement">If Statement </a></li>
-								<li><a href ="#js_else_statement">Else Statement</a></li>
-								<li><a href ="#js_else_if_statement">Else If Statement</a></li>
+								<li><a href ="#CSS_Tutorial">CSS Tutorial</a></li>
+								<li><a href ="#CSS_definition"> What is CSS?</a></li>
+								<li><a href ="#css_syntax">CSS Syntax</a></li>
+								<li><a href ="#css_selectors">CSS Selectors</a></li>
+								<li><a href ="#css_id_selector"> CSS id Selector</a></li>
+								<li><a href ="#css_class_selector">CSS Class Selector</a></li>
+								<li><a href ="#css_universal_selector">CSS Universal Selector</a></li>
+								<li><a href ="#css_grouping_selector">CSS Grouping Selector</a></li>
+								<li><a href ="#css_colors">CSS Colors</a></li>
+								<li><a href ="#css_backgrounds">CSS Backgrounds</a></li>
+								<li><a href ="#css_background-image">CSS background-image</a></li>
+								<li><a href ="#css_borders">CSS Borders</a></li>
+								<li><a href ="#css_margins">CSS Margins</a></li>
+								<li><a href ="#css_paddings">CSS Paddings</a></li>
+								<li><a href ="#css_height_width_and_max_width">CSS Height, Width and Max-Width</a></li>
+								<li><a href ="#css_height_and_width_values">CSS Height and Width Values</a></li>
+								<li><a href ="#css_box_model">CSS Box Model</a></li>
+								<li><a href ="#three_ways_to_insert_css">Three ways to Insert CSS</a></li>
+								<li><a href ="#inline_css">Inline CSS</a></li>
+								<li><a href ="#external_css">External CSS</a></li>
+								<li><a href ="#internal_css">Internal CSS</a></li>
 								</ul>
 							</div>
 				</article>
 			</div>
 	</div>
 		<div class="tile is-ancestor">
-			<div class="tile is-parent">
+			<div class="tile is-6 is-parent">
 			<article class="tile is-child content task">
 				<p><a href="" class="tag is-dark">1 min read</a></p>
-					<h2 class="title" id="Javascript_definition">What is JAVASCRIPT?</h2>
-					<p class="description">JavaScript is one of the top 3 languages a web developer must learn. JavaScript is a programming language that programs the behavior of web pages. </p><br>
+					<h2 class="title" id="CSS_Tutorial">CSS Tutorial</h2>
 					<blockquote><ul>
-						<li>JavaScript is the world's most popular programming language. </li>
-						<li>JavaScript is the programming language of the Web. </li>
-						<li>JavaScript is easy to learn. </li>
+						<li>CSS is the language we use to style an HTML document.</li>
+						<li>CSS sketches how HTML elements should be displayed.</li>
+						<li>This tutorial will teach you to understand CSS from basic to advanced.</li>
 					</ul></blockquote>
 					<a class="button is-link read-more">View Example</a>
 				</article>
 			</div>
-		</div>
-		<div class ="tile is-ancestor">
 			<div class="tile is-6 is-parent ">
 			<article class="tile is-child content task">
 					<p><a href="" class="tag is-dark">2 min read</a></p>
-					<h2 class="title" id="change_elements_using_javascript">Changing HTML Elements</h2>
-					<p class="description">One of the most useful JavaScript HTML method is the <strong>getElementByID()</strong>.</p>
-					<p class="description">An example of this working is:
-					<blockquote><p class="notes">
-					<p><strong>document.getElementById(“erovoutika”).innerHTML = “Hello Erovoutika!” </strong></P>
-					<p>The example above selects the element with the id of <strong>“erovoutika”</strong> and changes the content of it to <strong>“Hello Erovoutika!”</strong>. </strong>.  </p>
-					</p></blockquote> 
+					<h2 class="title" id="css_definition">What is CSS?</h2>
+					<blockquote><ul>
+						<li>CSS stands for Cascading Style Sheets</li>
+						<li>CSS describes how HTML elements could be displayed on screen, paper, or in other media</li>
+						<li>CSS saves a lot of work. It can control the layout of multiple web pages all at once</li>
+						<li>External stylesheets are stored in CSS files</li>
+					</ul></blockquote>
 					<a class="button is-link read-more">View Example</a>
+			</article>
 			</div>
+		</div>
+			<div class ="tile is-ancestor">
 			<div class="tile is-parent">
 			<article class="tile is-child content task">
 					<p><a href="" class="tag is-dark">2 min read</a></p>
-					<h2 class="title" id ="change_attributes_using_javascript">Changing HTML Attributes</h2>
-					<p class="description">You can also change the attribute of an element by indicating the attribute you want to change.</p>
-					<p class="description">An example of this working is:
-					<blockquote><p class="notes">
-					<p><strong>document.getElementById(“erovoutika”).style.fontSize = “35px”; </strong></P>
-					<p>The example above changes the style attribute, specifically, the font size of the element to 35px making the element font larger.</p>
-					</p></blockquote> 
+					<h2 class="title" id ="css_syntax">CSS Syntax</h2>
+					<p class="description">A CSS rule consists of a selector and a declaration block.</p>
+					<center><img src="images/CSS_SyNtax.png" alt="Example1"></center>
+					<p class="description">An example of this working is:					
+					<ul>
+						<li>The selector points to the HTML element you want to style.</li>
+						<li>The declaration block contains one or more declarations separated by semicolons.</li>
+						<li>Each declaration includes a CSS property name and a value, separated by a colon.</li>
+						<li>Multiple CSS declarations are separated with semicolons, and declaration blocks are surrounded by curly braces.</li>
+					</ul>
+					<p class="description">Example</p>
+					<blockquote>
+					<p class="description">p {<br>
+  					color: red;<br>
+  					text-align: center;<br>
+					}</p>
+					</blockquote> 
+					<p class="description">Example Explained</p>
+					<ul>
+						<li>p is a selector in CSS (it points to the HTML element you want to style: &lt;p&gt;).</li>
+						<li>color is a property, and red is the property value</li>
+						<li>text-align is a property, and center is the property value</li>
+					</ul>
 					<a class="button is-link read-more">View Example</a>
 					</article>     
 			</div>
 		</div>
 		<div class="tile is-ancestor">
-			<div class="tile is-12 is-parent">
+			<div class="tile is-parent">
 				<article class="tile is-child content task">
 						<p><a href="" class="tag is-dark">2 min read</a></p>
-							<h2 class="title" id="hiding_and_showing_elements_using_js">Hiding Elements and Showing Elements </h2>
-							<p class="description">For hiding elements using JavaScript, a simple changing of the style attribute is all you need to do. </p>
-							<p class = "description">To demonstrate:</P>
+							<h2 class="title" id="css_selectors">CSS Selectors</h2>
+							<p class="description">CSS selectors are used to "find" (or select) the HTML elements you want to style. </p>
+							<p class = "description">We can divide CSS selectors into five categories:</P>
 							<blockquote>
-							<p class = "description"><strong>document.getElementById (“erovoutika”).style.display = “none”;</strong></p>
+							<ul>
+								<li>Simple selectors (select elements based on name, id, class)</li>
+								<li>Combinator selectors (select elements based on a specific relationship between them)</li>
+								<li>Pseudo-class selectors (select elements based on a certain state)</li>
+								<li>Pseudo-elements selectors (select and style a part of an element)</li>
+								<li>Attribute selectors (select elements based on an attribute or attribute value)</li>
+							</ul>
 							</blockquote>
-							<p>The example above hides the element with an ID of “erovoutika” by changing the style attribute, specifically the display style of the element to none. For showing the element again, we are just going to bring back the display of the style attribute to <strong>"block"</strong>.</p>
-							<p class = "description">To demonstrate:</P>
-							<blockquote>
-							<p class = "description"><strong>document.getElementById (“erovoutika”).style.display = “block”; </strong></p>
-							</blockquote>
-							</p>
+							
 						<a class="button is-link read-more">View Example</a>
 				</article>
 			</div>
 		</div>
+		<div class="tile  is-ancestor">
+			<div class="tile  is-parent">
+				<article class="tile is-child content task">
+						<p><a href="" class="tag is-dark">2 min read</a></p>
+							<h2 class="title" id="css_id_selector">CSS id Selector</h2>
+							<ul>
+								<li>The id selector uses the id attribute of an HTML element to select a specific element.</li>
+								<li>The id of an element is unique within a page, so the id selector is used to select one unique element!</li>
+								<li>To select an element with a specific id, write a hash (#) character, followed by the id of the element. </li>
+								
+							</ul>
+							<p class = "description">Example</P>
+							<blockquote><p class = "description">
+							&lt;!DOCTYPE html&gt;<br>
+							&lt;html&gt;<br>
+							&lt;head&gt;<br>
+							&lt;style&gt;<br>
+							#para1 { <br>
+							text-align: center;<br>
+							color: red;<br>
+							}<br>
+							&lt;/style&gt; <br>
+							&lt;/head&gt;<br>
+							&lt;body&gt;<br>
+							&lt;p id="para1"&gt;Hello World!&lt;/p&gt;<br>
+							&lt;p&gt;This paragraph is not affected by the style. &lt;/p&gt;<br>
+							&lt;/body&gt;<br>
+							&lt;/html&gt;</p>
+							</blockquote>
+							
+						<a class="button is-link read-more">View Example</a>
+				</article>
+			</div>
+		</div>
+						
 		<div class="tile is-ancestor">
 		<div class="tile is-parent">
 		<article class="tile is-child content task">
 					<p><a href="" class="tag is-dark">4 min read</a></p>
-						<h2 class="title" id="how_to_use_js">How to use JavaScript? </h2>
-						<p class="description">To use JavaScript, we are going to insert the <strong>&lt;script&gt;</strong> and <strong>&lt;/script&gt;</strong> tag inside into either the <strong>&lt;header&gt;</strong> or <strong>&lt;body&gt;</strong> tag.</p>
-						<p class="description"> To demonstrate:</p>
+						<h2 class="title" id="css_class_selector">CSS class Selector</h2>
+						<p class="description">The class selector selects HTML elements with a specific class attribute. To select elements with a specific class, write a period (.) character, followed by the class name.
+</p>
+						<p class="description">Example</p>
 						<blockquote>
 						<p class="description">&lt;!DOCTYPE html&gt;<br>
 						&lt;html&gt;<br>
 						&lt;head&gt;<br>	
-						&lt;script&gt;<br>
-						function erovoutikaFunc(){ <br>
-						document.getElementById(“erovoutika”).innerHTML =  “Hello Erovoutika”;<br>
+						&lt;style&gt;<br>
+						.center { <br>
+							text-align: center;<br>
+							color: red; <br>
 						}<br>
-						&lt;/script&gt;<br>
+						&lt;/style&gt;<br>
 						&lt;/head&gt;<br>
 						&lt;body&gt;<br>
-						&lt;p id="Erovoutika"&gt;Hello World!&lt;/p&gt; <br>
-						&lt;button type="button" onclick="erovoutikaFunc()"&gt;&lt;/button&gt;<br>
+						&lt;h1 class="center"&gt;Red and center-aligned heading&lt;/h1&gt; <br>
+						&lt;p class="center"&gt;Red and center-aligned paragraph.&lt;/p&gt;<br>
 						&lt;/body&gt;<br>
 						&lt;/html&gt;<br>
 					<a class="button is-link read-more">View Example</a>
@@ -176,23 +229,29 @@ function Top(){
 			<div class="tile is-parent ">
 			<article class="tile is-child content task">
 					<p><a href="" class="tag is-dark">4 min read</a></p>
-						<h2 class="title" id="external_javascript">External Javascript</h2>
-						<p class="description">JavaScript can also be placed in external files, as long as the file extension name is <strong>.js</strong>. Having an external JavaScript file can be very helpful when organizing your files. To make your external JavaScript included in your app, you can link the source of the external JavaScript.<br><br>To demonstrate:</P>
+						<h2 class="title" id="css_universal_selector">The CSS Universal Selector</h2>
+						<p class="description">The universal selector (*) selects all HTML elements on the page.</p>
+						<p class="description">Example</p>
 						<blockquote>
-						<p class="description">This is the content of the External file named: <strong>myExternalScript.js</strong></P>
-							<br>
-							<p class="description">function erovoutika Function(){<br>
-								document.getElementById(“erovoutika”).innerHTML = “General Erovoutika” <br>
+							<p class="description">
+							&lt;!DOCTYPE html &gt;<br>
+							&lt;html&gt;<br>
+							&lt;head&gt;<br>
+							&lt;style&gt;<br>
+							* {<br>
+								text-align: center;<br>
+								color: blue;<br>
 							}<br>
-							And this is the content of the main file:<br><br>
+							&lt;/style&gt;<br>
+							&lt;/head&gt;<br>
 							&lt;body&gt;<br>
-							&lt;p id="erovoutika"&gt;&lt;/script&gt;<br>
-							&lt;button type="button" onclick="erovoutikaFunction()"&gt;Click Me!&lt;/button&gt;<br>
-							&lt;script src=”myExternalScript.js”&gt;&lt;/script&gt;<br>
-							&lt;/body&gt;
-						</blockquote>
-						<p class="description">The result of this code will be, upon clicking the button, the Hello There! Should be replaced with General Erovoutika. 
-						<br>You can also use the src attribute to reference JavaScript files from the web! As long as you entered the correct web address.  
+							&lt;h1&gt;Hello World!&lt;/h1&gt;<br>
+							&lt;p&gt;Every element on the page will be affected by the style.&lt;/p&gt;<br>
+							&lt;p id="para1"&gt;Me too!&lt;/p&gt;<br>
+							&lt;p&gt;And me!&lt;/p&gt;
+							&lt;/body&gt;<br>
+							&lt;/html&gt;<br>
+						</p>	</blockquote>
 						<a class="button is-link read-more">View Example</a>
 					</article>
 			</div>
@@ -201,16 +260,29 @@ function Top(){
 				<div class="tile is-parent">
 				<article class="tile is-child content task">
 						<p><a href="" class="tag is-dark">2 min read</a></p>
-							<h2 class="title" id="data_output_js">Outputting Data</h2>
-							<p class="description">There are several ways to display data in JavaScript, which are: </P>
-						<blockquote>
-						<ul>
-						<li><strong>innerHTML</strong> – This is used to output data on HTML elements </li>
-						<li><strong>document.write()</strong> –  This is used to output data on HTML outputs</li>
-						<li><strong>console.log()</strong> – This is used to output data on the browser console </li>
-					</ul>
-						</blockquote>
-						<p class="description">With each of them having their advantages, like the <strong>console.log()</strong> is super helpful for debugging codes   </P>	
+							<h2 class="title" id="css_grouping_selector">CSS Grouping Selector</h2>
+							<p class="description">The grouping selector selects all the HTML elements with the same style definitions.
+						<br>Look at the following CSS code (the h1, h2, and p elements have the same style definitions):
+						</P>
+						<p class="description">Example</p>		
+						<blockquote><p class="description">
+						&lt;!DOCTYPE html &gt;<br>
+							&lt;html&gt;<br>
+							&lt;head&gt;<br>
+							&lt;style&gt;<br>
+							h1, h2, p {<br>
+								text-align: center;<br>
+								color: red;<br>
+							}<br>
+							&lt;/style&gt;<br>
+							&lt;/head&gt;<br>
+							&lt;body&gt;<br>
+							&lt;h1&gt;Hello World!&lt;/h1&gt;<br>
+							&lt;h2&gt;Smaller heading!&lt;/h2&gt;<br>
+							&lt;p&gt;This is a paragraph.&lt;/p&gt;<br>
+							&lt;/body&gt;<br>
+							&lt;/html&gt;<br>
+						</blockquote></p>	
 						<a class="button is-link read-more">View Example</a>
 				</article>
 				</div>
@@ -219,225 +291,395 @@ function Top(){
 				<div class="tile is-parent">
 				<article class="tile is-child content task">
 						<p><a href="" class="tag is-dark">2 min read</a></p>
-							<h2 class="title" id="js_values">JavaScript Values</h2>
-							<p class="description">There are two types of values in Javacript</P>
-							<ul>
-								<li><Strong>Literals</Strong>-Fixed Values</li>
-								<li><Strong>Variables</Strong>-Variable Values</li>
-							</ul>
-							<p class="description">The most important syntax for Fixed Values or Literals are Numbers and Strings.<br>Variables are values that store data values. JavaScript uses the let, var, and const keywords to declare its variables. 
-							<br> To demonstrate:</P>
+							<h2 class="title" id="css_colors">CSS Colors</h2>
+							<p class="description">Colors are specified using predefined color names, or RGB, HEX, HSL, RGBA, HSLA values.</P>
+							<p class="description"> Example</p>
 							<blockquote>
-							<p class="description">let x = 10;</P>
-							<p class="description">var y = 11;</P>
-							</blockquote>
-							<p class="description">To explain the code above, the we declared that x should have a value of 10 and that y with a value of 11. </P>
-						<a class="button is-link read-more">View Example</a>
-				</article>
-				</div>
-		</div>
-		<div class="tile is-ancestor">
-		<div class="tile  is-parent is-vertical">
-				<article class="tile is-child content task">
-						<p><a href="" class="tag is-dark">2 min read</a></p>
-							<h2 class="title" id="js_comments">JavaScript Comments</h2>
-							<p class="description">Comments are useful for the documentation of your JavaScript application, to put a comment on your application, you can put a double slash (//).<br><br>To demonstrate:  </P>
-						<blockquote>
-						// console.log(“I’ll not be printed”) <br>console.log(“I’ll be printed”) 
-						</blockquote>
-						<p class="description">To explain the code above, the first console.log will not be printed since we put a double slash at the beginning of the line. You can also use a slash asterisk (/*) and asterisk slash (*/) to comment out multi-line block of code. </P>
-						<a class="button is-link read-more">View Example</a>
-				</article>
-				<article class="tile is-child content task">
-						<p><a href="" class="tag is-dark">2 min read</a></p>
-							<h2 class="title" id="js_text_case">JavaScript Text Cases</h2>
-							<p class="description">JavaScript is a case-sensitive language meaning that firstName and firstname is not considered as a same variable.  </P>
-						<a class="button is-link read-more">View Example</a>
-				</article>
-		</div>
-		<div class="tile   is-6 is-parent is-vertical">
-				<article class="tile is-child content task">
-						<p><a href="" class="tag is-dark">1 min read</a></p>
-							<h2 class="title" id="js_functions_and_events">JavaScript Functions and Events</h2>
-							<p class="description">A function is a block of JavaScript code that is executed when it is called.<br>
-For example, a function can be called when an event occurs, an event is when a user clicks a button somewhere on the website page. </P>
-						<a class="button is-link read-more">View Example</a>
-				</article>
-				<article class="tile is-child content task">
-						<p><a href="" class="tag is-dark">2 min read</a></p>
-							<h2 class="title" id="js_operators">JavaScript Operators</h2>
-							<p class="description">JavaScript uses arithmetic operators to perform computations.<br>To demonstrate:</P>
+							<p class="description">
+						&lt;!DOCTYPE html &gt;<br>
+							&lt;html&gt;<br>
+							&lt;head&gt;<br>
+							&lt;body&gt;<br>
+							&lt;h3 style="color:Tomato;"&gt;Hello World&lt;/h3&gt;<br>
+							&lt;p style="color:DodgerBlue; background-color:rgb(255, 99, 71);"&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.&lt;/p&gt;<br>
+							&lt;p style="color:MediumSeaGreen;"&gt;Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.&lt;/p&gt;<br>
+							&lt;/body&gt;<br>
+							&lt;/html&gt;<br>
+							</p></blockquote>
 							
-							<blockquote>
-							<p class="description">(1 + 1) * 2 </P>
-							<p class="description">In an earlier example, you’ll see that we used = to declare the value of x, this is called assignment operator </P>
-							</blockquote>
 						<a class="button is-link read-more">View Example</a>
 				</article>
 				</div>
-						</div>
+		</div>
 		<div class="tile is-ancestor">
-			<div class="tile is-parent is-4">
-					<article class="tile is-child content task">
-							<p><a href="" class="tag is-dark">2 min read</a></p>
-								<h2 class="title" id="js_names">JavaScript Names</h2>
-								<p class="description">Like any other programming languages, there are limitations on how you can name variables. <br><br>A JavaScript name must start with: </P>
-								<blockquote>
-								<ul>
-									<li>A letter, from A to Z or a to z </li>
-									<li>A dollar sign ($)</li>
-									<li>An underscore (_)</li>
+		<div class="tile  is-6 is-parent">
+				<article class="tile is-child content task">
+						<p><a href="" class="tag is-dark">2 min read</a></p>
+							<h2 class="title" id="css_backgrounds">CSS Backgrounds</h2>
+							<p class="description">The CSS background properties are used to add background effects for elements.</P>
+						<blockquote><p class="description">
+						&lt;!DOCTYPE html &gt;<br>
+							&lt;html&gt;<br>
+							&lt;head&gt;<br>
+							&lt;style"&gt;<br>
+							&lt;body {&gt;<br>
+								background-color: lightblue;<br>
+							&lt;/style&gt;<br>
+							&lt;/head&gt;<br> 
+							&lt;body&gt;<br>
+							&lt;h1&gt;Hello World!&lt;/h1&gt;<br>
+							&lt;p&gt;This page has a light blue background color!&lt;/p&gt;<br>
+							&lt;/body&gt;<br>
+							&lt;/html&gt;</p>
+						</blockquote>
+						<a class="button is-link read-more">View Example</a>
+				</article>
+				</div>
+				<div class="tile  is-parent">
+				<article class="tile is-child content task">
+						<p><a href="" class="tag is-dark">2 min read</a></p>
+							<h2 class="title" id="css_background-image">CSS background-image</h2>
+							<p class="description">The background-image property specifies an image to use as the background of an element.
+							By default, the image is repeated so it covers the entire element.
+							</P>
+							<blockquote><p class="description">
+							&lt;!DOCTYPE html &gt;<br>
+							&lt;html&gt;<br>
+							&lt;head&gt;<br>
+							&lt;style"&gt;<br>
+							&lt;body {&gt;<br>
+								background-image: url("bgdesert.jpg");<br>
+							&lt;/style&gt;<br>
+							&lt;/head&gt;<br> 
+							&lt;body&gt;<br>
+							&lt;h1&gt;Hello World!&lt;/h1&gt;<br>
+							&lt;p&gt;This text is not easy to read on this background image.&lt;/p&gt;<br>
+							&lt;/body&gt;<br>
+							&lt;/html&gt; </p>
+						</blockquote>
+						<a class="button is-link read-more">View Example</a>
+				</article>
+							</div>	
+							</div>	
+		<div class="tile is-ancestor">
+		<div class="tile  is-parent">
+				<article class="tile is-child content task">
+						<p><a href="" class="tag is-dark">3 min read</a></p>
+							<h2 class="title" id="css_borders">CSS Borders</h2>
+							<p class="description">The CSS border properties allow you to specify the style, width, and color of an element's border.</P>
+							<p class="description">Example</p>
+							<blockquote><p class="description">
+							&lt;!DOCTYPE html &gt;<br>
+							&lt;html&gt;<br>
+							&lt;head&gt;<br>
+							&lt;style"&gt;<br>
+							p.dotted {border-style: dotted;}<br>
+							p.dashed {border-style: dashed;}<br>
+							p.solid {border-style: solid;}<br>
+							p.double {border-style: double;}<br>
+							p.groove {border-style: groove;}<br>
+							p.ridge {border-style: ridge;}<br>
+							p.inset {border-style: inset;}<br>
+							p.outset {border-style: outset;}<br>
+							p.none {border-style: none;}<br>
+							p.hidden {border-style: hidden;}<br>
+							p.mix {border-style: dotted dashed solid double;}<br>
+							&lt;/style&gt;<br>
+							&lt;/head&gt;<br> 
+							&lt;body&gt;<br>
+							&lt;h2&gt;The border-style Property&lt;/h2&gt;<br>
+							&lt;p&gt;This property specifies what kind of border to display:&lt;/p&gt;<br>
+							&lt;p class="dotted"&gt;A dotted border.&lt;/p&gt;<br>
+							&lt;p class="dashed"&gt;A dashed border.&lt;/p&gt;<br>
+							&lt;p class="solid"&gt;A solid border.&lt;/p&gt;<br>
+							&lt;p class="double"&gt;A double border.&lt;/p&gt;<br>
+							&lt;p class="groove"&gt;A groove border.&lt;/p&gt;<br>
+							&lt;p class="ridge"&gt;A ridge border.&lt;/p&gt;<br>
+							&lt;p class="inset"&gt;An inset border.&lt;/p&gt;<br>
+							&lt;p class="outset"&gt;An outset border.&lt;/p&gt;<br>
+							&lt;p class="none"&gt;No border.&lt;/p&gt;<br>
+							&lt;p class="hidden"&gt;A hidden border.&lt;/p&gt;<br>
+							&lt;p class="mix"&gt;A mixed border. &lt;/p&gt;<br>
+							&lt;/body&gt;<br>
+							&lt;/html&gt;</p>
+						</blockquote>
+						<a class="button is-link read-more">View Example</a>
+				</article>
+		</div>
+		</div>
+		<div class="tile is-ancestor">
+		<div class="tile  is-parent">
+				<article class="tile is-child content task">
+						<p><a href="" class="tag is-dark">3 min read</a></p>
+							<h2 class="title" id="css_margins">CSS Margins</h2>
+							<p class="description">The CSS margin properties are used to create space around elements, outside of any defined borders.
+With CSS, you have full control over the margins. There are properties for setting the margin for each side of an element (top, right, bottom, and left).
+</P>
+							<p class="description">Example</p>
+							<blockquote><p class="description">
+							&lt;!DOCTYPE html &gt;<br>
+							&lt;html&gt;<br>
+							&lt;head&gt;<br>
+							&lt;style"&gt;<br>
+							div { <br>
+							border: 1px solid black;<br>
+							margin-top: 100px;<br>
+							margin-bottom: 100px;<br>
+							margin-right: 150px;<br>
+							margin-left: 80px;<br>
+							background-color: lightblue;<br>
+							}<br>
+							&lt;/style&gt;<br>
+							&lt;/head&gt;<br> 
+							&lt;body&gt;<br>
+							&lt;h2&gt;Using individual margin properties&lt;/h2&gt;<br>
+							&lt;div&gt;This div element has a top margin of 100px, a right margin of 150px, a bottom margin of 100px, and a left margin of 80px.&lt;/div&gt;<br>
+							&lt;/body&gt;<br>
+							&lt;/html&gt;</p>
+						</blockquote>
+						<a class="button is-link read-more">View Example</a>
+				</article>
+		</div>
+		</div>		
+		<div class="tile is-ancestor">
+		<div class="tile  is-parent">
+				<article class="tile is-child content task">
+						<p><a href="" class="tag is-dark">3 min read</a></p>
+							<h2 class="title" id="css_paddings">CSS Padding</h2>
+							<p class="description">Padding is used to create space around an element's content, inside of any defined borders.The CSS padding properties are used to generate space around an element's content, inside of any defined borders. 
+</P>
+							<p class="description">Example</p>
+							<blockquote><p class="description">
+							&lt;!DOCTYPE html &gt;<br>
+							&lt;html&gt;<br>
+							&lt;head&gt;<br>
+							&lt;style"&gt;<br>
+							div { <br>
+							border: 1px solid black;<br>
+							background-color: lightblue;<br>
+							padding-top: 50px;<br>
+							padding-right: 30px;<br>
+							padding-bottom: 50px;<br>
+							padding-left: 80px;<br>
+							}<br>
+							&lt;/style&gt;<br>
+							&lt;/head&gt;<br> 
+							&lt;body&gt;<br>
+							&lt;h2&gt;Using individual padding properties&lt;/h2&gt;<br>
+							&lt;div&gt;This div element has a top padding of 50px, a right padding of 30px, a bottom padding of 50px, and a left padding of 80px. &lt;/div&gt;<br>
+							&lt;/body&gt;<br>
+							&lt;/html&gt;</p>
+						</blockquote>
+						<a class="button is-link read-more">View Example</a>
+				</article>
+		</div>
+		</div>
+		<div class="tile is-ancestor">
+		<div class="tile  is-parent">
+				<article class="tile is-child content task">
+						<p><a href="" class="tag is-dark">3 min read</a></p>
+							<h2 class="title" id="css_height_width_and_max_width">CSS Height, Width and Max-width</h2>
+							<blockquote><p class="description">The CSS height and width properties are used to set the height and width of an element.<br>
+The CSS max-width property is used to set the maximum width of an element.<br> The height and width properties are used to set the height and width of an element.<br>
+The height and width properties do not include padding, borders, or margins.<br> It sets the height/width of the area inside the padding, border, and margin of the element.
+						</P></blockqoute>
+						<a class="button is-link read-more">View Example</a>
+				</article>
+		</div>
+		</div>
+		<div class="tile is-ancestor">
+		<div class="tile  is-parent">
+				<article class="tile is-child content task">
+						<p><a href="" class="tag is-dark">3 min read</a></p>
+							<h2 class="title" id="css_height_and_width_values">CSS Height and Width Values</h2>
+							<p class="description">The height and width properties may have the following values:</p>
+								
+							<blockquote><ul>
+								<li>auto - This is default. The browser calculates the height and width</li>
+								<li>length - Defines the height/width in px, cm, etc.</li>
+								<li>% - Defines the height/width in percent of the containing block</li>
+								<li>initial - Sets the height/width to its default value</li>
+								<li>inherit - The height/width will be inherited from its parent value</li>
 								</ul>
-								</blockquote>
-							<a class="button is-link read-more">View Example</a>
-					</article>
-			</div>
-			<div class="tile is-parent ">
-					<article class="tile is-child content task">
-							<p><a href="" class="tag is-dark">2 min read</a></p>
-								<h2 class="title" id="js_functions">JavaScript Functions</h2>
-								<p class="description">A function is a block of code that is designed to do a certain task. A function is executed when it is called somewhere in your JavaScript app. <br> <br> To demonstrate: </P>
-								<blockquote>
-								<p class="description">function erovoutikaFunction(e1, e2){<br>
-								return e1 + e2;<br>	 
-								}<br>
-								console.log(erovoutikaFunction(1, 2)) // 3 <br>
-								</blockquote>
-								To explain the code above, the function erovoutikaFunction returns the sum of the two variables that the user have inputted within the function’s parameter. </P> 
-							<a class="button is-link read-more">View Example</a>
-					</article>
-			</div>
+							</blockquote>
+
+							<p class="description">Example</p>
+
+							<blockquote><p class="description">
+							&lt;!DOCTYPE html &gt;<br>
+							&lt;html&gt;<br>
+							&lt;head&gt;<br>
+							&lt;style"&gt;<br>
+							div { <br>
+								height: 200px;<br>
+								width: 50%;<br>
+								background-color: powderblue;<br>
+							}<br>
+							&lt;/style&gt;<br>
+							&lt;/head&gt;<br> 
+							&lt;body&gt;<br>
+							&lt;h2&gt;Set the height and width of an element&lt;/h2&gt;<br>
+							&lt;div&gt;This div element has a height of 200px and a width of 50%.&lt;/div&gt;<br>
+							&lt;/body&gt;<br>
+							&lt;/html&gt;</p>
+							</blockquote>
+						<a class="button is-link read-more">View Example</a>
+				</article>
+		</div>
+		</div>	
+		<div class="tile is-ancestor">
+		<div class="tile  is-parent">
+				<article class="tile is-child content task">
+						<p><a href="" class="tag is-dark">3 min read</a></p>
+							<h2 class="title" id="css_box_model">CSS Box Model</h2>
+							<p class="description">In CSS, the term "box model" is used when talking about design and layout.
+							The CSS box model is essentially a box that wraps around every HTML element. It consists of:<br>
+							<ul>
+							<li>margins</li> 
+							<li>borders</li> 
+							<li>padding and the actual content.</li></ul>  
+							The image below illustrates the box model:
+							</p>
+							<center><img src="images/CSS_BOX_Model.png" alt="Example1"></center>
+							<p class="description">Example</p>
+							<blockquote><p class="description">
+							&lt;!DOCTYPE html &gt;<br>
+							&lt;html&gt;<br>
+							&lt;head&gt;<br>
+							&lt;style"&gt;<br>
+							div { <br>
+								background-color: lightgrey;<br>
+								width: 300px;<br>
+								border: 15px solid green;<br>
+								padding: 50px;<br>
+								margin: 20px;<br>
+							}<br>
+							&lt;/style&gt;<br>
+							&lt;/head&gt;<br> 
+							&lt;body&gt;<br>
+							&lt;h2&gt;Demonstrating the Box Model&lt;/h2&gt;<br>
+							&lt;div&gt;This div element has a height of 200px and a width of 50%.&lt;/div&gt;<br>
+							&lt;p&gt;The CSS box model is essentially a box that wraps around every HTML element. It consists of: borders, padding, margins, and the actual content.&lt;/p&gt;<br>
+							&lt;div&gt;This text is the content of the box. We have added a 50px padding, 20px margin and a 15px green border. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/div&gt;<br>
+							&lt;/body&gt;<br>
+							&lt;/html&gt;</p>
+							</blockquote>
+						<a class="button is-link read-more">View Example</a>
+				</article>
+		</div>
 		</div>
 		<div class="tile is-ancestor">
-		<div class="tile is-parent is-6 is-vertical">
-		<article class="tile is-child content task">
-							<p><a href="" class="tag is-dark">2 min read</a></p>
-								<h2 class="title" id="access_objects">Accessing Objects</h2>
-								<p class="description">There are two ways you can access a JavaScript object:  </P>
-								<blockquote>
-								<p class="description">
-								<strong>objectName.propertyName</strong> or <strong>
-								objectName[“propertyName”] </strong>
-								</p>
-								</blockquote>
-							<a class="button is-link read-more">View Example</a>
-					</article>
-					<article class="tile is-child content task">
-							<p><a href="" class="tag is-dark">2 min read</a></p>
-								<h2 class="title" id="access_object_methods">Accessing Object Methods</h2>
-								<p class="description">To access an object method, you can call it together with the object name. <br><br> To demonstrate:</P>
-								<blockquote>
-								<p class="description">
-								ErovoutikaIntern.fullName(); //  John Doe</p>
-								</blockquote>
-								<p class="description">To explain the code above, the fullName method takes the firstName and lastName property of the erovoutikaIntern object. <br><br>
-								<strong>Note:</strong> if you call the function without the parenthesis, it will show the method definition instead.</p>
-								<a class="button is-link read-more">View Example</a>
-					</article>
-			</div>
-			<div class="tile is-parent is-vertical">
-			<article class="tile is-child content task">
-							<p><a href="" class="tag is-dark">2 min read</a></p>
-								<h2 class="title" id="js_objects">JavaScript Objects</h2>
-								<p class="description">Objects are variables too but objects can contain many types of values.<br><br>To demonstrate: </P>
-								<blockquote>
-								<p class="description">
-								const erovoutikaIntern = { firstName: “John”, <br>
-			      				lastName: “Doe”, <br>
-      							contactNumber: “09952112978” }; <br></p>
-								</blockquote>
-							<a class="button is-link read-more">View Example</a>
-					</article>
-					<article class="tile is-child content task">
-							<p><a href="" class="tag is-dark">2 min read</a></p>
-								<h2 class="title" id="object_methods">Object Methods</h2>
-								<p class="description">Objects can have methods that are like functions inside an object.<br><br>To demonstrate:</P>
-								<blockquote>
-								<p class="description">
-								const erovoutikaIntern = { firstName: “John”, <br> 
-			      				lastName: “Doe”, <br>
-     							fullName:  function() {return this.firstName + “ “ + this.lastName};<br>
-								</p>
-								</blockquote>
-							<a class="button is-link read-more">View Example</a>
-					</article>
-			</div>
+		<div class="tile  is-parent">
+				<article class="tile is-child content task">
+						<p><a href="" class="tag is-dark">3 min read</a></p>
+							<h2 class="title" id="three_ways_to_insert_css">Three Ways to Insert CSS</h2>
+							<p class="description">There are three ways of inserting a style sheet:
+							</p>
+							<blockquote>
+								<ul>
+									<li>External CSS</li>
+									<li>Internal CSS</li>
+									<li>Inline CSS</li>
+								</ul>
+							</blockquote>
+				</article>
+		</div>
 		</div>
 		<div class="tile is-ancestor">
-			<div class="tile is-parent">
+		<div class="tile  is-parent">
 				<article class="tile is-child content task">
-								<p><a href="" class="tag is-dark">2 min read</a></p>
-									<h2 class="title" id="js_conditional_statements">Conditional Statements</h2>
-									<p class="description">Conditional statements are used to perform different actions to a set of different conditions. In JavaScript we have these following conditional statements: </P>
-									<blockquote>
-									<ulL>
-										<li><strong>If</strong> – is executed when the specified condition is TRUE </li>
-										<li><strong>Else</strong> –  is executed when the specified condition is FALSE  </li>
-										<li><strong>Else if</strong> – is executed when the new specified condition is TRUE  </li>
-										<li><strong>Switch</strong> – is executed when one of the many alternative blocks of code is true.  </li>
-									</ul>
-									</blockquote>
-								<a class="button is-link read-more">View Example</a>
+						<p><a href="" class="tag is-dark">3 min read</a></p>
+							<h2 class="title" id="inline_css">Inline CSS</h2>
+							<p class="description">An inline style may be used to apply a unique style for a single element.To use inline styles, add the style attribute to the relevant element. The style attribute can contain any CSS property.
+							</p>
+							<blockquote>
+							<p class="description">
+							&lt;!DOCTYPE html &gt;<br>
+							&lt;html&gt;<br>
+							&lt;body&gt;<br>
+							&lt;h1 style="color:blue;text-align:center;"&gt;This is a heading&lt;/h1&gt;<br>
+							&lt;p style="color:red;"&gt;This is a paragraph.&lt;/p&gt;<br>
+							&lt;/body&gt;<br>
+							&lt;/html&gt;<br>
+							</p>
+							</blockquote>
+							<a class="button is-link read-more">View Example</a>
 				</article>
-			</div>					
+		</div>
 		</div>
 		<div class="tile is-ancestor">
-			<div class="tile is-6 is-parent">
+		<div class="tile  is-parent">
 				<article class="tile is-child content task">
-								<p><a href="" class="tag is-dark">1 min read</a></p>
-									<h2 class="title" id="js_if_statement">If Statement</h2>
-									<p class="description">is executed when the specified condition is TRUE.<br><br>To demonstrate: </P>
-									<blockquote>
-									<p class="description">
-									var isDayTime = True <br>
-									if (isDayTime == True) { <br>
-									console.log(“Its daytime!”); <br>
-									} </p>
-									</blockquote>
-									<p class="description">To explain the code above, the if condition checks if the variable isDayTime is true, which it is, so it will pass through this condition and outputs Its daytime! </p>
-								<a class="button is-link read-more">View Example</a>
+						<p><a href="" class="tag is-dark">3 min read</a></p>
+							<h2 class="title" id="external_css">External CSS</h2>
+							<p class="description">With an external style sheet, you can change the look of an entire website by changing just one file.Each HTML page must include a reference to the external style sheet file inside the <strong>&lt;link&gt;</strong> element, inside the head section.
+							</p>
+							<p class="description">Example</p>
+							<blockquote>
+							<p class="description">
+							&lt;!DOCTYPE html &gt;<br>
+							&lt;html&gt;<br>
+							&lt;head&gt;<br>
+							&lt;link rel="stylesheet" href="mystyle.css"&gt;<br>
+							&lt;/head&gt;<br>
+							&lt;body&gt;<br>
+							&lt;h1&gt;This is a heading.&lt;/h1&gt;<br>
+							&lt;p&gt;This is a paragraph.&lt;/p&gt;<br>
+							&lt;/body&gt;<br>
+							&lt;/html&gt;<br>
+							<br>
+							<strong>mystyle.css</strong><br>
+							body {<br>
+							background-color: lightblue;<br>
+							}<br>
+							h1 {<br>
+							color: navy;<br>
+							margin-left: 20px;<br>
+							}<br>
+
+							</p>
+							</blockquote>
+							<a class="button is-link read-more">View Example</a>
 				</article>
-			</div>
-			<div class="tile is-parent">
-				<article class="tile is-child content task">
-								<p><a href="" class="tag is-dark">1 min read</a></p>
-									<h2 class="title" id="js_else_statement">Else Statement </h2>
-									<p class="description">is executed when the specified condition is FALSE.<br><br>To demonstrate: </P>
-									<blockquote>
-									<p class="description">var isDayTime = True <br>
-									if (isDayTime == True) { <br>
-									console.log(“Its daytime!”); <br>
-									} else { <br>
-									console.log(“Its nighttime!”); <br>
-									} </P>
-									</blockquote>
-									<p class="description">To explain the code above, the if condition checks if the variable isDayTime is true, which is not true! So it moves to the else block where it outputs Its nighttime!. </p>
-									
-								<a class="button is-link read-more">View Example</a>
-				</article>
-			</div>					
+		</div>
 		</div>
 		<div class="tile is-ancestor">
-			<div class="tile  is-parent">
+		<div class="tile  is-parent">
 				<article class="tile is-child content task">
-								<p><a href="" class="tag is-dark">1 min read</a></p>
-									<h2 class="title" id="js_else_if_statement">Else If Statement  </h2>
-									<p class="description">Is executed when the newly specified condition is TRUE.<br><br>To demonstrate: </P>
-									<blockquote>
-									<p class="description">
-									var myNum = 5  <br>
-									If (myNum > 6) {  <br>
-									console.log(“Im greater!”)  <br>
-									}<br>
-									Else if (myNum < 6) { <br>
-									console.log(“Im here!”) <br> 
-									}  </p>
-									</blockquote>
-									<p class="description">To explain the code above, the if condition checks if the variable myNum is true, which is not! So it moves to the next condition in else if, upon checking, its true! So it will output Im here!.</p>
-								<a class="button is-link read-more">View Example</a>
+						<p><a href="" class="tag is-dark">3 min read</a></p>
+							<h2 class="title" id="internal_css">Internal CSS</h2>
+							<p class="description">An internal style sheet may be used if one single HTML page has a unique style.
+The internal style is defined inside the <strong>&lt;style&gt;</strong> element, inside the head section.
+
+							</p>
+							<p class="description">Example</p>
+							<blockquote>
+							<p class="description">
+							&lt;!DOCTYPE html &gt;<br>
+							&lt;html&gt;<br>
+							&lt;head&gt;<br>
+							&lt;style&gt;<br>
+							body { <br>
+							background-color: linen; <br>
+							}<br>
+							h1 {<br>
+							color: maroon;<br>
+							margin-left: 40px;<br>
+							}<br>
+							&lt;/style&gt;<br>
+							&lt;/head&gt;<br>
+							&lt;body&gt;<br>
+							&lt;h1&gt;This is a heading.&lt;/h1&gt;<br>
+							&lt;p&gt;This is a paragraph.&lt;/p&gt;<br>
+							&lt;/body&gt;<br>
+							&lt;/html&gt;<br>
+							<br>
+							</p>
+							</blockquote>
+							<a class="button is-link read-more">View Example</a>
 				</article>
-			</div>				
 		</div>
+		</div>									
 		<button class="mybutton button is-large is-responsive" onclick="Top()"><span class="material-symbols-outlined">
 arrow_upward
 </span></buttton>
