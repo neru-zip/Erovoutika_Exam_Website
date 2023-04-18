@@ -5,7 +5,25 @@
     You can do whatever you want with the code. However if you love my content, you can subscribed my YouTube Channel
     🌎link: www.youtube.com/codingdesign
  -->
- 
+<?php
+    include 'code_samples.php'; //file that contain all the code samples
+
+    if (isset($_GET['learn_html'])){
+        $id = $_GET['learn_html'];
+        //Each sample in the tutorial have id and that id is its variable index in the array below
+        // array of variables of samples
+
+        // html tutorial samples
+        $arr_html= array($html0, $html1, $html2, $html3, $html4, $html5, $html6, $html7);
+    }
+
+    if (isset($_GET['learn_css'])){
+        $id = $_GET['learn_css'];
+        $arr_html = array($html_css0, $html_css1);
+        $arr_css = array($css0, $css1);
+
+    }
+?>
  <!DOCTYPE html>
 <html lang="en">
 
@@ -15,21 +33,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Live Code Editor</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 
 <style>
-    :root {
-    --dark-blue: #003a8c;
-    --blue: #3b6ca4;
-    --light-blue: rgb(74, 225, 255);
-    --pink: rgb(255, 40, 113);
-}
+        :root {
+        --dark-blue: #003a8c;
+        --blue: #3b6ca4;
+        --light-blue: rgb(74, 225, 255);
+        --pink: rgb(255, 40, 113);
+    }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
 body {
   
@@ -37,10 +56,10 @@ body {
     font-family: Consolas;
     background-image: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(70,196,252,1) 100%);
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
 .code-editor {
     
@@ -60,18 +79,18 @@ resize: horizontal;
 
 
 
-.code {
-    display: grid;
+    .code {
+        display: grid;
 
-    grid-template-rows: repeat(10, 2fr);
-    overflow-y: auto;
-	
-    background-color: var(--dark-blue);
-    padding: 1rem;
-    
-	
-	
-}
+        grid-template-rows: repeat(10, 2fr);
+        overflow-y: auto;
+        
+        background-color: var(--dark-blue);
+        padding: 1rem;
+        
+        
+        
+    }
 
 h1 {
     font: 500 1.1rem sans-serif;
@@ -80,16 +99,16 @@ h1 {
     color: #fff;
 	
 
-	
-}
+        
+    }
 
-h1 > img {
-    width: 1.3rem;
-    margin-right: 1rem;
-	
-    vertical-align: middle;
-	
-}
+    h1 > img {
+        width: 1.3rem;
+        margin-right: 1rem;
+        
+        vertical-align: middle;
+        
+    }
 
 .code textarea {
     width: 100%;
@@ -106,39 +125,39 @@ h1 > img {
     
 	
 
-	
-}
+        
+    }
 
-.code textarea::-webkit-scrollbar {
-    width: .4rem;
-}
-.code textarea::-webkit-scrollbar-thumb {
-    background-color: var(--pink);
-    border-radius: .4rem;
-}
+    .code textarea::-webkit-scrollbar {
+        width: .4rem;
+    }
+    .code textarea::-webkit-scrollbar-thumb {
+        background-color: var(--pink);
+        border-radius: .4rem;
+    }
 
-#result {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
+    #result {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
 
-a {
+    a {
 
-    color: #fff;
-  
-}
-
-
-#img{
-	margin-left:20px;
-	
-}
+        color: #fff;
+    
+    }
 
 
-html-code{
-	margin-top:-50px;
-}
+    #img{
+        margin-left:20px;
+        
+    }
+
+
+    html-code{
+        margin-top:-50px;
+    }
 
 
 
@@ -297,20 +316,31 @@ html-code{
 
 <body>
 
-
+    <!-- Code Editor -->
     <div class="code-editor">
-	
         <div class="code">
 		<a href="learn.php"><img id="img1" src="images/Blue BG Logo.png" alt=""></a>
 		
 		<h1 id="bck"><a href="learn.php">◄ Back to Tutorial</a></h1>
             <div class="html-code">
                 <h1><img src="images/html_logo.png" alt="">HTML</h1>
-                <textarea></textarea>
+                <textarea><?php
+                            if(isset($_GET['learn_html'])){
+                                echo $arr_html[$id]; // selecting user's chosen variable in array
+                                
+                                //echo $html0;
+                            }
+                            
+                            if(isset($_GET['learn_css'])){
+                                echo $arr_html[$id];
+                            }?></textarea>
             </div>
             <div class="css-code">
                 <h1><img src="images/css_logo.png" alt="">CSS</h1>
-                <textarea></textarea>
+                <textarea><?php
+                            if (isset($_GET['learn_css'])){
+                                echo $arr_css[$id];
+                            }?></textarea>
             </div>
             <div class="js-code">
                 <h1><img src="images/js_logo.png" alt="">JAVASCRIPT</h1>
@@ -327,15 +357,18 @@ html-code{
 </body>
 <script>
     const html_code = document.querySelector('.html-code textarea');
-const css_code = document.querySelector('.css-code textarea');
-const js_code = document.querySelector('.js-code textarea');
-const result = document.querySelector('#result');
+    const css_code = document.querySelector('.css-code textarea');
+    const js_code = document.querySelector('.js-code textarea');
+    const result = document.querySelector('#result');
 
-function run() {
-    // Storing data in Local Storage
-    localStorage.setItem('html_code', html_code.value);
-    localStorage.setItem('css_code', css_code.value);
-    localStorage.setItem('js_code', js_code.value);
+    // Run code editor
+    function run() {
+        /*
+        // Storing data in Local Storage
+        localStorage.setItem('html_code', html_code.value);
+        localStorage.setItem('css_code', css_code.value);
+        localStorage.setItem('js_code', js_code.value);
+        */
 
     // Executing HTML, CSS & JS code
     result.contentDocument.body.innerHTML = `<style>${localStorage.css_code}</style>` + localStorage.html_code;
@@ -348,9 +381,9 @@ css_code.onkeyup = () => run();
 js_code.onkeyup = () => run();
 
 
-// Accessing data stored in Local Storage. To make it more advanced you could check if there is any data stored in Local Storage.
-html_code.value = localStorage.html_code;
-css_code.value = localStorage.css_code;
-js_code.value = localStorage.js_code;
+    // Accessing data stored in Local Storage. To make it more advanced you could check if there is any data stored in Local Storage.
+    //html_code.value = localStorage.html_code;
+    //css_code.value = localStorage.css_code;
+    //js_code.value = localStorage.js_code;
 </script>
 </html>
