@@ -159,7 +159,7 @@
                 <div class="row">
                     <div class="col-9"></div>
                     <div class="col-3">
-                        <a id="i-a--examlist-addbutton" class="btn btn-primary fs-4 c-a--examlist" name="modify_add_button" onclick="modifyExamList(this.name,null,null)">Add New Exam</a>
+                        <a id="i-a--examlist-addbutton" class="btn btn-primary fs-4 c-a--examlist-add" name="modify_add_button" onclick="modifyExamList(this.name,null,null)">Add New Exam</a>
                     </div>
                 </div>
             </div>
