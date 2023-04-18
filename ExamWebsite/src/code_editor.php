@@ -326,7 +326,7 @@ h1 {
                 <h1><img src="images/html_logo.png" alt="">HTML</h1>
                 <textarea><?php
                             if(isset($_GET['learn_html'])){
-                                echo $arr_html[$id]; // selecting user's chosen variable in array
+                                echo "$arr_html[$id]"; // selecting user's chosen variable in array
                                 
                                 //echo $html0;
                             }
@@ -371,8 +371,8 @@ h1 {
         */
 
     // Executing HTML, CSS & JS code
-    result.contentDocument.body.innerHTML = `<style>${localStorage.css_code}</style>` + localStorage.html_code;
-    result.contentWindow.eval(localStorage.js_code);
+    result.contentDocument.body.innerHTML = `<style>${css_code.value}</style>` + html_code.value;
+    result.contentWindow.eval(js_code.value);
 }
 
 // Checking if user is typing anything in input field
