@@ -138,7 +138,7 @@ header.sticky .menu .userNav a:hover:not(:last-child){
 
 :is(header, header.sticky) .menu .userNav #signupbtn:hover{
   transform: scale(.92);
-  font-size: larger;
+  /* font-size: larger; */
 }
 
 .userOptions {
@@ -149,8 +149,6 @@ header.sticky .menu .userNav a:hover:not(:last-child){
   left: 82%;
 
   max-height: 0px;
-
-  
 
   width: 150px;
   /* color: inherit; */
@@ -222,6 +220,10 @@ header .btn{
   text-decoration: none;
   cursor: pointer;
   border: none;
+
+  font-size: .9rem;
+  padding: 0 10px;
+
 }
 @media (max-width: 1024px) {
   header{
@@ -313,8 +315,47 @@ header .btn{
   }
   #signupbtn{
     align-items: center;
-    width: 70px;
+    width: fit-content;
     height: 35px;
+    padding: 0 10px;
     /* position: absolute; */
+  }
+
+  .userOptions {
+  /* display: none; */
+  position: absolute;
+
+  top: 60%;
+  
+  left: -160px;
+
+  min-height: 170px;
+  max-width: 0px;
+
+  width: 150px;
+  color: inherit;
+
+  /* border: solid 1px green; */
+  border-radius: 10px;
+
+  box-shadow: 0px 0px 41px -16px rgba(0,0,0,0.62);
+  transition: max-width 500ms, padding 500ms; 
+  
+  overflow: hidden;
+  }
+
+  .userOptions.show-option{
+    /* display: block; */
+    max-width: 150px;
+  
+    padding: 10px 0 0 0;
+
+    
+  }
+
+  header .menu.active .userNav .userOptions {
+    background:#0F3695;
+
+    /* transition: background 150ms; */
   }
 }
