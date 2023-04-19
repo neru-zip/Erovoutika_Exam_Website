@@ -158,6 +158,12 @@ a.btn.ms-3.mb-3 {
     width: 17rem
 }
 
+
+.row{
+    padding-bottom:20px;
+    }
+
+
 /* Cards */
 .card {
     border-color: #0C2A73;
@@ -168,11 +174,76 @@ a.btn.ms-3.mb-3 {
 
 .card img {
     height: 150px;
+    padding:15px;
 }
 
 .c-a--examlist{
     background: #2055B5;
+    width:120px;
+    margin-left:42px;
 }
+
+
+.c-a--examlist-delete{
+
+    background-color: #dc3545;
+    margin-left:42px;
+    width:120px;
+    border-color:#dc3545;
+}
+
+.c-a--examlist-publish{
+
+    background-color: #198754;
+    margin-left:42px;
+    width:120px;
+    border-color:#198754;
+   
+}
+
+
+
+.c-a--examlist-add{
+    width:200px;
+    padding:15px 10px;
+    margin-left:110px;
+    margin-top:-35px;
+}
+
+.fw-bold-title{
+    color:#003a8c !important;
+    font-weight: bold;
+}
+
+.fs-5-desc{
+    color:#003a8c !important;
+    font-size: 22px;
+}
+
+.fs-5-pubstat{
+    padding-top: 20px;
+    font-size: 18px;
+    font-family: Century Gothic;
+    font-weight: bold;
+}
+
+.fs-5-lastedit{
+    font-size: 18px;
+    font-family: Century Gothic;
+    font-weight: bold;
+}
+
+.fs-5-publisher{
+    font-size: 18px;
+    font-family: Century Gothic;
+    font-weight: bold;
+}
+
+
+
+
+
+
 
 .show{left: 0}
 
