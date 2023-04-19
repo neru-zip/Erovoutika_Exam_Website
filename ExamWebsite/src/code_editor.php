@@ -50,267 +50,267 @@
         box-sizing: border-box;
     }
 
-body {
-  
+    body {
     
-    font-family: Consolas;
-    background-image: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(70,196,252,1) 100%);
+        
+        font-family: Consolas;
+        background-image: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(70,196,252,1) 100%);
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.code-editor {
-    
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    background-color: #fff;
-   overflow: hidden;
-resize: horizontal;
-	
-}
-
-
-    
-    
-
-
-
-    .code {
+    .code-editor {
+        
+        width: 100vw;
+        height: 100vh;
         display: grid;
-
-        grid-template-rows: repeat(10, 2fr);
-        overflow-y: auto;
-        
-        background-color: var(--dark-blue);
-        padding: 1rem;
-        
-        
+        grid-template-columns: 50% 50%;
+        background-color: #fff;
+    overflow: hidden;
+    resize: horizontal;
         
     }
 
-h1 {
-    font: 500 1.1rem sans-serif;
-	font-weight: bold;
-    margin-top: 50px;
-    color: #fff;
-	
 
         
-    }
-
-    h1 > img {
-        width: 1.3rem;
-        margin-right: 1rem;
         
-        vertical-align: middle;
-        
-    }
 
-.code textarea {
-    width: 100%;
-	margin-top:20px;
-    height: calc(11rem - 3rem);
-    background-color: var(--blue);
-    color: white;
-    border: none;
-    padding: 1rem;
-    resize: vertical;
-	font-size:16px;
-	border:solid 1px #7595BF;
-    margin: 0 auto;
-    
-	
 
-        
-    }
 
-    .code textarea::-webkit-scrollbar {
-        width: .4rem;
-    }
-    .code textarea::-webkit-scrollbar-thumb {
-        background-color: var(--pink);
-        border-radius: .4rem;
-    }
+        .code {
+            display: grid;
 
-    #result {
-        width: 100%;
-        height: 100%;
-        border: none;
-    }
+            grid-template-rows: repeat(10, 2fr);
+            overflow-y: auto;
+            
+            background-color: var(--dark-blue);
+            padding: 1rem;
+            
+            
+            
+        }
 
-    a {
-
+    h1 {
+        font: 500 1.1rem sans-serif;
+        font-weight: bold;
+        margin-top: 50px;
         color: #fff;
-    
+        
+
+            
+        }
+
+        h1 > img {
+            width: 1.3rem;
+            margin-right: 1rem;
+            
+            vertical-align: middle;
+            
+        }
+
+    .code textarea {
+        width: 100%;
+        margin-top:20px;
+        height: calc(11rem - 3rem);
+        background-color: var(--blue);
+        color: white;
+        border: none;
+        padding: 1rem;
+        resize: vertical;
+        font-size:16px;
+        border:solid 1px #7595BF;
+        margin: 0 auto;
+        
+        
+
+            
+        }
+
+        .code textarea::-webkit-scrollbar {
+            width: .4rem;
+        }
+        .code textarea::-webkit-scrollbar-thumb {
+            background-color: var(--pink);
+            border-radius: .4rem;
+        }
+
+        #result {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        a {
+
+            color: #fff;
+        
+        }
+
+
+        #img{
+            margin-left:20px;
+            
+        }
+
+
+        html-code{
+            margin-top:-50px;
+        }
+
+
+
+    .html-code{
+        margin-top: -45px;
     }
 
+    .css-code{
+        margin-top: -40px;
+    }
 
-    #img{
-        margin-left:20px;
+    .js-code{
+        margin-top: -35px;
+    }
+
+    #img1{
+        width:120px;
+        margin-top:-10px;
         
     }
 
 
-    html-code{
-        margin-top:-50px;
-    }
-
-
-
-.html-code{
-	margin-top: -45px;
-}
-
-.css-code{
-	margin-top: -40px;
-}
-
-.js-code{
-	margin-top: -35px;
-}
-
-#img1{
-	width:120px;
-	margin-top:-10px;
-	
-}
-
-
-#bck{
-	font-family: sans-serif;
-	color: white;
-	font-weight: bold;
-	font-size: 1rem;
-	margin-top:-50px;
-	margin-left:480px;
-	padding: 0 10px 0 0;
-    margin: 0 auto;
- position: absolute;
-    left:480px;
-}
-
-.button {
-  border: none;
-  color: white;
-  padding: 5px 20px;
-  text-align: center;
-  display: inline-block;
-  font-size: 15px;
-  font-family:  sans-serif;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  
-}
-
-.button1 {
-  background-color: white; 
-  color: #003a8c; 
-  border: 2px solid white;
-  position: absolute;
-  margin: 0 auto;
-  bottom: 0px;
-  left:1010px;
- 
-
-}
-
-.button1:hover {
-  background-color: #003a8c;
-  color: white;
-}
-
-
-
-/** SCREENS */
-
-/** Iphone */
-
-@media only screen and (max-width: 375px) {
-   
-  #bck{
-    margin-left:-480px;
-    position: relative;
-  }
- 
-
-  .code textarea {
-    padding: 0;
-  }
-
-
-  .button1{
-   margin-left: -910px;
-   margin-bottom: 45px;
-   position: absolute;
-  }
-
-  .html-code{
-        margin-top: -30px;
-    }
-}
-
-@media only screen and (min-width: 384px) and (max-height: 854px)  {
-   
     #bck{
-     margin-left:-480px;
-     position: relative;
-   }
+        font-family: sans-serif;
+        color: white;
+        font-weight: bold;
+        font-size: 1rem;
+        margin-top:-50px;
+        margin-left:480px;
+        padding: 0 10px 0 0;
+        margin: 0 auto;
+    position: absolute;
+        left:480px;
+    }
 
-   .button1{
-   margin-left: -905px;
-   margin-bottom: 215px;
-   position: absolute;
-   }
-   
+    .button {
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    font-family:  sans-serif;
+    transition-duration: 0.4s;
+    cursor: pointer;
     
- }
- 
- @media only screen and (min-width: 412px) and (max-height: 732px) {
-   
-   #bck{
-     margin-left:-480px;
-     position: relative;
-   }
-  
- 
-   .code textarea {
-     padding: 0;
-   }
- 
- 
-   .button1{
-    margin-left: -895px;
-   margin-bottom: 110px;
-   }
- }
+    }
 
-@media only screen and (min-width: 1920px) and (max-height: 1080px) {
+    .button1 {
+    background-color: white; 
+    color: #003a8c; 
+    border: 2px solid white;
+    position: absolute;
+    margin: 0 auto;
+    bottom: 0px;
+    left:1010px;
+    
+
+    }
+
+    .button1:hover {
+    background-color: #003a8c;
+    color: white;
+    }
+
+
+
+    /** SCREENS */
+
+    /** Iphone */
+
+    @media only screen and (max-width: 375px) {
+    
+    #bck{
+        margin-left:-480px;
+        position: relative;
+    }
+    
+
+    .code textarea {
+        padding: 0;
+    }
+
+
     .button1{
-    margin-left:-160px;
-    margin-top: 10px;
-    position: relative;
-  }
-
-  #bck{
-     margin-left:320px;
-     position: absolute;
-   }
-
-  h1{
-    font-size: 1rem;
-  }
-
-  .html-code{
-        margin-top: -35px;
+    margin-left: -910px;
+    margin-bottom: 45px;
+    position: absolute;
     }
-    .css-code{
-        margin-top: -35px;
+
+    .html-code{
+            margin-top: -30px;
+        }
     }
-}
+
+    @media only screen and (min-width: 384px) and (max-height: 854px)  {
+    
+        #bck{
+        margin-left:-480px;
+        position: relative;
+    }
+
+    .button1{
+    margin-left: -905px;
+    margin-bottom: 215px;
+    position: absolute;
+    }
+    
+        
+    }
+    
+    @media only screen and (min-width: 412px) and (max-height: 732px) {
+    
+    #bck{
+        margin-left:-480px;
+        position: relative;
+    }
+    
+    
+    .code textarea {
+        padding: 0;
+    }
+    
+    
+    .button1{
+        margin-left: -895px;
+    margin-bottom: 110px;
+    }
+    }
+
+    @media only screen and (min-width: 1920px) and (max-height: 1080px) {
+        .button1{
+        margin-left:-160px;
+        margin-top: 10px;
+        position: relative;
+    }
+
+    #bck{
+        margin-left:320px;
+        position: absolute;
+    }
+
+    h1{
+        font-size: 1rem;
+    }
+
+    .html-code{
+            margin-top: -35px;
+        }
+        .css-code{
+            margin-top: -35px;
+        }
+    }
 
 </style>
 
@@ -326,7 +326,7 @@ h1 {
                 <h1><img src="images/html_logo.png" alt="">HTML</h1>
                 <textarea><?php
                             if(isset($_GET['learn_html'])){
-                                echo $arr_html[$id]; // selecting user's chosen variable in array
+                                echo "$arr_html[$id]"; // selecting user's chosen variable in array
                                 
                                 //echo $html0;
                             }
@@ -370,15 +370,15 @@ h1 {
         localStorage.setItem('js_code', js_code.value);
         */
 
-    // Executing HTML, CSS & JS code
-    result.contentDocument.body.innerHTML = `<style>${localStorage.css_code}</style>` + localStorage.html_code;
-    result.contentWindow.eval(localStorage.js_code);
-}
+        // Executing HTML, CSS & JS code
+        result.contentDocument.body.innerHTML = `<style>${css_code.value}</style>` + html_code.value;
+        result.contentWindow.eval(js_code.value);
+    }
 
-// Checking if user is typing anything in input field
-html_code.onkeyup = () => run();
-css_code.onkeyup = () => run();
-js_code.onkeyup = () => run();
+    // Checking if user is typing anything in input field
+    html_code.onkeyup = () => run();
+    css_code.onkeyup = () => run();
+    js_code.onkeyup = () => run();
 
 
     // Accessing data stored in Local Storage. To make it more advanced you could check if there is any data stored in Local Storage.
