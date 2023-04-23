@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <?php 
 include_once $_SERVER['DOCUMENT_ROOT'].'/src/includes/connectdb.php';
+
+require_once($_SERVER["DOCUMENT_ROOT"].'/src/payment/paymongo_instance.php');
+
+var_dump($_SERVER);
+try {
+	// $client->webhooks->disable('hook_HUG7qDyQrfUrwv5Z8UwC2a49');
+	$paymentLink = $client->payments->all([
+		"limit" => 2
+	]);
+	echo "<pre>";
+	var_dump($paymentLink) ;
+
+	// $content = $paymentLink->data[0]->checkout_url ?? null;
+	
+	// echo $content;
+	echo "</pre>";
+} catch(\Paymongo\Exceptions\InvalidRequestException $e){
+	echo 'ERROR';
+}
+
+
 ?>
 <html>
 <head>
@@ -46,7 +67,11 @@ switch($method){
 	</h1>
 	<h1>Plan: <?php echo strtoupper($planText);?> </h1>
 	<h1>Payment Method: <?php echo strtoupper($methodText);?> </h1>
+
+
 	<button id="toReg">Proceed to Exam </button>
+
+	<a href="<?php echo $content?>"><button id="toReg">Proceed to Paymongo </button></a>
 </body>
 </html>
 <script>
