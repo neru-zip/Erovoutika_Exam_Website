@@ -7,10 +7,6 @@ class Link extends \Paymongo\Entities\BaseEntity
     public function __construct($apiResource)
     {
         $attributes = $apiResource->attributes;
-
-        echo "<pre> HEREEE ";
-	var_dump($attributes['payments']) ;
-	echo "</pre>";
         
 
         $this->id = $apiResource->id;

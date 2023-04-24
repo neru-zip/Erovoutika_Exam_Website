@@ -14,57 +14,42 @@ $searchInput;
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/exam_enroll_style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha383-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha383-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp3YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/24d5cf3efd.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>  <script src="https://kit.fontawesome.com/24d5cf3efd.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   <title>Enroll</title>
 </head>
 <body>
-    <div>
-        <center>
-            <table id="paymentMessage" style="border:1px black solid;background-color: white; position: fixed; z-index: 99; left: 50%; top: 50%; transform: translate(-50%, -50%); ">
-                <tr>
-                    <td align="right">
-                        <button id = "closePayBtn">Close</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="center">
-                        Please Select your payment plan
-                    </td>
-                </tr>
-                <tr>
-                    <td align="center">
-                        <select id = "payPlan">
-                            <option value="1">595 6 monthly payments</option>
-                            <option value="2">2995 One-time payment</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="center">
-                        Please Select your payment method
-                    </td>
-                </tr>
-                <tr>
-                    <td align="center"> 
-                        <select id = "payMethod">
-                            <option value="1">mastercard</option>
-                            <option value="2">gcash</option>
-                            <option value="3">maya</option>
-                            <option value="4">bpi</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="center">
-                        <button id = "payBtn">Apply Now</button>
-                    </td>
-                </tr>
-            </table>
-        </center>
+    <div id="paymentMessage" class="payment__container">
+        <section class="payment_section">
+            <div class="bg-dark text-white payment_info__containter" >
+                
+                <fieldset>
+                    <legend>Test</legend>
+
+                    <label for="payMethod"> Please Select your payment plans: </label>
+                    <select id = "payMethod" class="form-select">
+                        <option  value="1">mastercard</option>
+                        <option  value="2">gcash</option>
+                        <option  value="3">maya</option>
+                        <option  value="4">bpi</option>
+                    </select>
+                    
+                    <label for="payPlan">  Please select payment type:  </label>
+                    <select id = "payPlan" class="form-select">
+                        <option value="1">595 6 monthly payments</option>
+                        <option value="2">2995 One-time payment</option>
+                    </select>
+
+                    <button id = "payBtn" class="btn btn-secondary">Apply Now</button>
+                    <button id = "closePayBtn" class="btn btn-danger">Close</button>
+                </fieldset> 
+            </div>
+            
+            
+        </section>
+
     </div>
 <!-- Navigation Bar -->
     <?php include_once __DIR__."/includes/header.php"?>
@@ -103,12 +88,12 @@ $searchInput;
 
         <?php
         $stepNum = 1;
-        $betStart = 1;
+        $betStart = 0;
         $betEnd = 6;
         $examCount = 0;
         $total = $connectdb->query("SELECT COUNT(*) FROM tbExam");
         $row = $total->fetch_array(MYSQLI_NUM);
-        $pages = ceil($row[0]/5);
+        $pages = ceil($row[0]/6);
         for($i=0;$i<$pages;$i++){
             echo '<fieldset class="step" id="step'.$stepNum.'">';
             if($stepNum > 1){
@@ -117,7 +102,9 @@ $searchInput;
             echo '<div class="exam_container">';
             echo '<div class="row">';
             if(empty($searchInput) || $searchInput == null || $searchInput == ""){
-                $res = $connectdb->query("SELECT * FROM tbExam WHERE clExID BETWEEN ".$betStart." AND ".$betEnd."");
+                // $res = $connectdb->query("SELECT * FROM tbExam WHERE clExID BETWEEN ".$betStart." AND ".$betEnd."");
+                $res = $connectdb->query("SELECT * FROM tbExam WHERE clExPublishedBy IS NOT NULL LIMIT $betStart,  6");
+
             }
             else{
                 if($stepNum == 1){
@@ -133,6 +120,7 @@ $searchInput;
                 while($userFkRow = $userFkRes->fetch_array(MYSQLI_NUM)){
                     $userData = $userFkRow;
                 }
+                
                 echo '<div class="col-sm-4 py-4">';
                 echo '<div class="card h-200">';
                 echo '<div class="card-body border border-3 border-primary rounded ">';
@@ -256,6 +244,33 @@ $searchInput;
 
             </script>
 
+        <script type="text/javascript">
+            var paymentMessage = document.getElementById("paymentMessage");
+            var closePayBtn = document.getElementById("closePayBtn");
+            var payBtn = document.getElementById("payBtn");
+            var searchVal = document.getElementById("searchExam");
+            var searchTxt = searchVal.value;
+            var id;
+            function enroll(x){
+                console.log(x);
+                paymentMessage.style.visibility="visible";
+                id = $(x).attr('id');
+            }
+            function closePay(){
+                paymentMessage.style.visibility="hidden";
+            }
+            function paySubmit(){
+                var payPlan = document.getElementById("payPlan");
+                var payMethod = document.getElementById("payMethod");
+                var payPlanVal = payPlan.value;
+                var payMethodVal = payMethod.value;
+                window.location.href="payment.php?id="+id+"&plan="+payPlanVal+"&method="+payMethodVal+"";
+            }
+            payBtn.addEventListener("click", paySubmit);
+            closePayBtn.addEventListener("click", closePay);
+            paymentMessage.style.visibility="hidden";
+        </script>
+
         <footer class="bg-light text-center text-white">
         <!-- Grid container -->
         <div class="container p-4 pb-0">
@@ -325,30 +340,7 @@ $searchInput;
         </div>
         <!-- Copyright -->
         </footer>
+
+        
 </body>
 </html>
-<script type="text/javascript">
-    var paymentMessage = document.getElementById("paymentMessage");
-    var closePayBtn = document.getElementById("closePayBtn");
-    var payBtn = document.getElementById("payBtn");
-    var searchVal = document.getElementById("searchExam");
-    var searchTxt = searchVal.value;
-    var id;
-    function enroll(x){
-        paymentMessage.style.visibility="visible";
-        id = $(x).attr('id');
-    }
-    function closePay(){
-        paymentMessage.style.visibility="hidden";
-    }
-    function paySubmit(){
-        var payPlan = document.getElementById("payPlan");
-        var payMethod = document.getElementById("payMethod");
-        var payPlanVal = payPlan.value;
-        var payMethodVal = payMethod.value;
-        window.location.href="payment.php?id="+id+"&plan="+payPlanVal+"&method="+payMethodVal+"";
-    }
-    payBtn.addEventListener("click", paySubmit);
-    closePayBtn.addEventListener("click", closePay);
-    paymentMessage.style.visibility="hidden";
-</script>
