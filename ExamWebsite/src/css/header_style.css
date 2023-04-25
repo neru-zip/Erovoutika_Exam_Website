@@ -283,12 +283,13 @@ header .btn{
     flex-direction: column;
     align-items: flex-start;
     min-width: 400px;
-    height: 100vh;
+    height: 100%;
     top: 0;
     right: -100%;
     padding: 20px 10px;
     transition-property: right;
     transition: 0.5s;
+    justify-content: flex-start;
   }
 
   header .menu .close-btn {
@@ -319,6 +320,10 @@ header .btn{
     height: 35px;
     padding: 0 10px;
     /* position: absolute; */
+  }
+
+  header .menu .basicNav {
+    margin-top: 50px; 
   }
 
   .userOptions {

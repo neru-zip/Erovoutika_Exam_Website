@@ -21,16 +21,16 @@
                             
 
                             if (!$nav['clUrPhoto']){
-                                echo '<img src="../images/Display Picture Icon.png" alt="display picture">';
+                                echo '<img src="/src/images/Display Picture Icon.png" alt="display picture">';
                             }
                             else{
-                                echo '<img src="../images/user images/'. $nav['clUrPhoto'] .'" alt="display picture">';
+                                echo '<img src="/src/images/user images/'. $nav['clUrPhoto'] .'" alt="display picture">';
                             }
                         ?>
                     </a>
                 </div>
                 <div>
-                    <button type="button" class="btn ms-4 mt-2">
+                    <button type="button" class="btn ms-4">
                         <a href="../includes/logout.php" class="fw-bold" id="i--button--logout">Logout</a>
                     </button>
                 </div>
@@ -40,9 +40,9 @@
             <nav class="nav">
                 <div> 
                     <!-- Admin Home with Logo -->
-                    <a href="AdminHome.php" class="nav_logo"> 
+                    <a href="/" class="nav_logo"> 
                         <i>
-                            <img src="../images/Small Logo.png" alt="Erovoutika Logo" id="i--logo--erovoutika">
+                            <img src="/src/images/Small Logo.png" alt="Erovoutika Logo" id="i--logo--erovoutika">
                         </i> 
                         <span class="nav_logo-name fs-5 fw-bold">Erouvotika</span> 
                     </a>

@@ -31,12 +31,13 @@
 
 .header_img img{width: 40px}
 
-/* #i--account--admin {
+#i--account--admin {
     display: inline-flex;
-    justify-content: flex-end;
-} */
+    justify-content: center;
+    align-items: center;
+}
 
-button.btn.ms-4.mt-2 {
+button.btn.ms-4 {
     border-color: black;
     border-width: 0.2rem;
 }
@@ -45,7 +46,9 @@ button.btn.ms-4.mt-2 {
     color: black;
 }
 
-#i--button--logout:hover {
+button.btn.ms-4:hover {
+    border-width: 0.2rem;
+    border-color: black;
     color: #2055b5;
 }
 

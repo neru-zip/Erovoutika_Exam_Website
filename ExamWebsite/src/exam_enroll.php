@@ -22,12 +22,18 @@ $searchInput;
 </head>
 <body>
     <div id="paymentMessage" class="payment__container">
+        <?php if (!(empty($_SESSION["admin_sid"]) && empty($_SESSION["client_sid"]))):?>
         <section class="payment_section">
             <div class="bg-dark text-white payment_info__containter" >
                 
                 <fieldset>
-                    <legend>Test</legend>
+                    
 
+                    <p>You are about to be redirected to the Payment Portal. Are you sure that you want to apply for: </p>
+
+                    <legend id="fieldLegend">Test</legend>
+
+                    <p></p>
                     <label for="payMethod"> Please Select your payment plans: </label>
                     <select id = "payMethod" class="form-select">
                         <option  value="1">mastercard</option>
@@ -38,18 +44,31 @@ $searchInput;
                     
                     <label for="payPlan">  Please select payment type:  </label>
                     <select id = "payPlan" class="form-select">
-                        <option value="1">595 6 monthly payments</option>
-                        <option value="2">2995 One-time payment</option>
+                        <option value="1">6 monthly payments</option>
+                        <option value="2">One-time payment</option>
                     </select>
 
                     <button id = "payBtn" class="btn btn-secondary">Apply Now</button>
                     <button id = "closePayBtn" class="btn btn-danger">Close</button>
                 </fieldset> 
             </div>
-            
-            
         </section>
+        <?php else: ?>
+        <section class="payment_section">
+            <div class="bg-dark text-white payment_info__containter" >
+                
+                <fieldset>
+                    <h4>Login Required!</h4>
 
+                     
+                    <a href="login.php" style="text-decoration: none;">
+                        <button type="button" class="btn btn-secondary">Login</button>
+                    </a>
+                    <button type="button" id = "closePayBtn" class="btn btn-danger">Close</button>
+                </fieldset> 
+            </div>
+        </section>
+        <?php endif; ?>
     </div>
 <!-- Navigation Bar -->
     <?php include_once __DIR__."/includes/header.php"?>
@@ -124,13 +143,13 @@ $searchInput;
                 echo '<div class="col-sm-4 py-4">';
                 echo '<div class="card h-200">';
                 echo '<div class="card-body border border-3 border-primary rounded ">';
-                echo '<h2 class="d-flex border-5 border-bottom border-primary mb-4">';
+                echo '<h2 class="d-flex border-5 border-bottom border-primary mb-4"  id="testTitle'.$row3[0].'">';
                 echo  $row3[1];
                 echo '</h2>';
                 echo '<table>';
                 echo '<tr><td colspan = 2>'.$row3[2].'</td></tr>';
                 echo '<tr><td colspan = 2><b>Instructions: </b>'.$row3[3].'</td></tr><tr><td><b>Publisher: </b>'.$userData[1].' '.$userData[2].'</td>';
-                echo '<td><b>Price: </b> '."00".'</td></tr><tr><td colspan=2><b>Publish Date: </b>'.$row3[7].'</td></tr>';
+                echo '<td><b>Price: </b> '.$row3[9].'</td></tr><tr><td colspan=2><b>Publish Date: </b>'.$row3[7].'</td></tr>';
                 echo '</table>';
                 echo '<div><button type="button" class="btn btn-primary" id="'.$row3[0].'" onclick="enroll(this)">Take Quiz</button></div>';
                 echo '</div>';
@@ -152,11 +171,13 @@ $searchInput;
             $betEnd += 6;
         }
         ?>
+
         
         </div>
 
         <!-- Search Bar -->
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
             <script>
             $(document).ready(function(){
                 $('.search-box input[type="text"]').on("keyup input", function(){
@@ -244,6 +265,7 @@ $searchInput;
 
             </script>
 
+        
         <script type="text/javascript">
             var paymentMessage = document.getElementById("paymentMessage");
             var closePayBtn = document.getElementById("closePayBtn");
@@ -251,10 +273,26 @@ $searchInput;
             var searchVal = document.getElementById("searchExam");
             var searchTxt = searchVal.value;
             var id;
+
+            
+            closePayBtn.addEventListener("click", closePay);
+            
+                
             function enroll(x){
-                console.log(x);
-                paymentMessage.style.visibility="visible";
                 id = $(x).attr('id');
+                console.log(id)
+
+                <?php if(!(empty($_SESSION["admin_sid"]) && empty($_SESSION["client_sid"]))):?> 
+
+                let paymentLegend = document.getElementById("fieldLegend");
+                let testTitle = document.getElementById("testTitle"+id);
+                console.log(testTitle.innerHTML);
+                paymentLegend.innerHTML = testTitle.innerHTML;
+
+                <?php endif;?>
+
+                paymentMessage.style.visibility="visible";
+                
             }
             function closePay(){
                 paymentMessage.style.visibility="hidden";
@@ -266,9 +304,10 @@ $searchInput;
                 var payMethodVal = payMethod.value;
                 window.location.href="payment.php?id="+id+"&plan="+payPlanVal+"&method="+payMethodVal+"";
             }
+
             payBtn.addEventListener("click", paySubmit);
-            closePayBtn.addEventListener("click", closePay);
             paymentMessage.style.visibility="hidden";
+            
         </script>
 
         <footer class="bg-light text-center text-white">
@@ -340,7 +379,5 @@ $searchInput;
         </div>
         <!-- Copyright -->
         </footer>
-
-        
 </body>
 </html>

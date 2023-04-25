@@ -48,10 +48,10 @@ if($_SESSION['admin_sid']==session_id())
                     <div class="col-2">
                         <?php
                             if ($row['clUrPhoto'] == ""){
-                                echo '<img src="../images/Display Picture Icon.png" alt="Photo/Icon" class="img-fluid m-3" id="i--banner--dp">';
+                                echo '<img src="/src/images/Display Picture Icon.png" alt="Photo/Icon" class="img-fluid m-3" id="i--banner--dp">';
                             }
                             else{
-                                echo '<img src="../images/user images/'. $row['clUrPhoto'] .'" alt="Photo/Icon" class="img-fluid m-3" id="i--banner--dp">';
+                                echo '<img src="/src/images/user images/'. $row['clUrPhoto'] .'" alt="Photo/Icon" class="img-fluid m-3" id="i--banner--dp">';
                             }
                         ?>
                     </div>

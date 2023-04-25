@@ -69,7 +69,7 @@
 .payment__container {
     visibility: hidden;
     position: absolute;
-    min-width: 100vh;
+    min-width: 100%;
     min-height: 100vh;
     top: 0;
     right: 0;
@@ -83,7 +83,7 @@
     
     backdrop-filter: blur(10px);
     min-height: 100vh;
-    min-width: 100vh;
+    min-width: 100%;
     z-index: 999;
   }
 
@@ -99,8 +99,8 @@
 
     transform: translate(-50%, -50%);
 
-    min-height: 350px;
-    max-heigth: 400px;
+    min-height: auto;
+    max-height: 400px;
     min-width: 300px;
     max-width: 350px;
 
