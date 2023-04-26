@@ -9,30 +9,21 @@ $row = $res->fetch_array(MYSQLI_NUM);
 
 try {
 	// $client->webhooks->disable('hook_HUG7qDyQrfUrwv5Z8UwC2a49');
-	$paymentLink = $client->links->all([
+	// $paymentLink = $client->links->all([
 			// "amount" => $row[9]*100,
 			// "description" => "Payment to Erovoutika for the Exam $row[1]",
 			// "remark" => "Good day!"
-			"reference_number" => "cPVWSdM"
-	]);
-	echo "<pre>";
-	var_dump($paymentLink) ;
+			// "reference_number" => "cPVWSdM"
+	// ]);
+	// echo "<pre>";
+	// var_dump($paymentLink) ;
 
-	$content = $paymentLink->data[0]->checkout_url ?? null;
-	
-	echo $content." IM THE CONTENT";
-	echo "</pre>";
+	// $content = $paymentLink->data[0]->checkout_url ?? null;
+	// echo "</pre>";
 } catch(\Paymongo\Exceptions\InvalidRequestException $e){
-	echo 'ERROR';
+	// echo 'ERROR';
 }
 
-
-?>
-<html>
-<head>
-	<title></title>
-</head>
-<?php
 $plan = $_GET['plan'];
 $method = $_GET['method'];
 $planText;
@@ -60,21 +51,58 @@ switch($method){
 	break;
 }
 ?>
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Payment Portal</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<link rel="stylesheet" href="/src/css/payment.css">
+</head>
+
 <body>
-	<h1>You have chosen
-		<?php
-            	echo " ".$row[1]." ";
-		?>
-		Exam
-	</h1>
-	<h1>Plan: <?php echo strtoupper($planText);?> </h1>
-	<h1>Payment Method: <?php echo strtoupper($methodText);?> </h1>
-	<h1>Amount: <?php echo $row[9];?> </h1>
+	<main class="container d-flex flex-column flex-lg-row flex-md-row col-7 row-4" style="height: 100vh">
+		<section class="py-sm-3 px-lg-3 flex-fill lh-sm flex-justify-center">
+			<span>
+				You have chosen
+			<h1>
+				<?php echo " ".$row[1]." "; ?>
+			</h1>
+			
+				Exam
+			</span>
+		</section>
+		<section class="flex-fill p-3 col-fluid text-white ml-md-3" style="background: royalblue;">
+			<span>Amount: </span>
+				<p style=" font-size: larger">
+				<?php echo $row[9];?>
+				</p>
 
+			<span>Plan: </span>
+				<p>
+				<?php echo strtoupper($planText);?> 	
+				</p>
 
-	<button id="toReg">Proceed to Exam </button>
-
-	<a href="<?php echo $content?>"><button id="toReg">Proceed to Paymongo </button></a>
+			<span>Payment Method: </span>	
+				<p>
+				<?php echo strtoupper($methodText);?>	
+				</p>	
+		
+		
+			<button id="toReg" class="btn btn-danger">
+				Cancel 
+			</button>
+		
+			<a href="<?php /*echo $content*/?>">
+				<button id="toReg" class="btn btn-success">
+					Proceed to Paymongo
+				</button>
+			</a>
+		</section>
+	</main>
 </body>
 </html>
 <script>
