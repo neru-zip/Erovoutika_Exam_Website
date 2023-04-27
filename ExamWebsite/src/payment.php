@@ -4,52 +4,26 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/src/includes/connectdb.php';
 
 require_once($_SERVER["DOCUMENT_ROOT"].'/src/payment/paymongo_instance.php');
 
-$res = $connectdb->query("SELECT * FROM tbExam WHERE clExID = ".$_GET['id']);
+$res = $connectdb->query("SELECT * FROM tbExam WHERE clExID = ".$_GET['uid']);
 $row = $res->fetch_array(MYSQLI_NUM);
 
 try {
 	// $client->webhooks->disable('hook_HUG7qDyQrfUrwv5Z8UwC2a49');
-	// $paymentLink = $client->links->all([
-			// "amount" => $row[9]*100,
-			// "description" => "Payment to Erovoutika for the Exam $row[1]",
+	// $paymentLink = $client->links->create([
+	// 		"amount" => $row[9]*100,
+	// 		"description" => "Payment to Erovoutika for the Exam $row[1]",
 			// "remark" => "Good day!"
 			// "reference_number" => "cPVWSdM"
 	// ]);
 	// echo "<pre>";
 	// var_dump($paymentLink) ;
 
-	// $content = $paymentLink->data[0]->checkout_url ?? null;
+	// $content = $paymentLink->checkout_url ?? null;
 	// echo "</pre>";
 } catch(\Paymongo\Exceptions\InvalidRequestException $e){
 	// echo 'ERROR';
 }
 
-$plan = $_GET['plan'];
-$method = $_GET['method'];
-$planText;
-$methodText;
-switch($plan){
-	case 1:
-	$planText = "595 6 Monthly Payments";
-	break;
-	case 2:
-	$planText = "2995 One Time Payment";
-	break;
-}
-switch($method){
-	case 1:
-	$methodText = "mastercard";
-	break;
-	case 2:
-	$methodText = "gcash";
-	break;
-	case 3:
-	$methodText = "maya";
-	break;
-	case 4:
-	$methodText = "bpi";
-	break;
-}
 ?>
 
 <html>
@@ -64,7 +38,7 @@ switch($method){
 </head>
 
 <body>
-	<main class="container d-flex flex-column flex-lg-row flex-md-row col-7 row-4" style="height: 100vh">
+	<main class="d-flex flex-column flex-lg-row flex-md-row col-7 row-4 mx-md-auto w-md-100 " style="height: 100vh">
 		<section class="py-sm-3 px-lg-3 flex-fill lh-sm flex-justify-center">
 			<span>
 				You have chosen
@@ -81,26 +55,38 @@ switch($method){
 				<?php echo $row[9];?>
 				</p>
 
-			<span>Plan: </span>
-				<p>
-				<?php echo strtoupper($planText);?> 	
-				</p>
+			<form action="">
 
-			<span>Payment Method: </span>	
+				<legend> FILL OUT YOUR INFORMATION: </legend>
+				
+				<input type="radio" id="gcash" name="gcash" value="gcash">
+				<label for="gcash"> GCASH </label> <br>
+
+				<input type="radio" id="gpay" name="gpasy" value="gpay"> 
+				<label for="gpay"> GRAP PAY </label> <br>
+				
+				<input type="radio" id="maya" name="maya" value="maya"> 
+				<label for="maya"> MAYA </label> <br>
+				
+				
+				<span>Payment Method: </span>	
 				<p>
-				<?php echo strtoupper($methodText);?>	
+					
 				</p>	
-		
-		
-			<button id="toReg" class="btn btn-danger">
-				Cancel 
-			</button>
-		
-			<a href="<?php /*echo $content*/?>">
-				<button id="toReg" class="btn btn-success">
-					Proceed to Paymongo
+				
+				<span>Plan: </span>
+			
+				<button id="toReg" class="btn btn-danger">
+					Cancel 
 				</button>
-			</a>
+			
+				<a href="<?php /*echo $content*/ ?>">
+					<button id="toReg" class="btn btn-success">
+						Proceed to Paymongo
+					</button>
+				</a>
+			
+			</form>
 		</section>
 	</main>
 </body>

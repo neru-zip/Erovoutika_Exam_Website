@@ -33,15 +33,19 @@ $searchInput;
 
                     <legend id="fieldLegend">Test</legend>
 
-                    <p></p>
-                    <label for="payMethod"> Please Select your payment plans: </label>
+                    <p>For an amount of:</p>
+                    <span id="fieldAmount">00</span>
+
+                    <!-- <label for="payMethod"> Please Select your payment plans: </label>
                     <select id = "payMethod" class="form-select">
                         <option  value="1">mastercard</option>
                         <option  value="2">gcash</option>
                         <option  value="3">maya</option>
                         <option  value="4">bpi</option>
-                    </select>
-                    
+                    </select> -->
+
+                    </br>
+
                     <label for="payPlan">  Please select payment type:  </label>
                     <select id = "payPlan" class="form-select">
                         <option value="1">6 monthly payments</option>
@@ -149,7 +153,7 @@ $searchInput;
                 echo '<table>';
                 echo '<tr><td colspan = 2>'.$row3[2].'</td></tr>';
                 echo '<tr><td colspan = 2><b>Instructions: </b>'.$row3[3].'</td></tr><tr><td><b>Publisher: </b>'.$userData[1].' '.$userData[2].'</td>';
-                echo '<td><b>Price: </b> '.$row3[9].'</td></tr><tr><td colspan=2><b>Publish Date: </b>'.$row3[7].'</td></tr>';
+                echo '<td><b>Price:</b><span id="examPrice'.$row3[0].'">'.$row3[9].'</span></td></tr><tr><td colspan=2><b>Publish Date: </b>'.$row3[7].'</td></tr>';
                 echo '</table>';
                 echo '<div><button type="button" class="btn btn-primary" id="'.$row3[0].'" onclick="enroll(this)">Take Quiz</button></div>';
                 echo '</div>';
@@ -272,6 +276,9 @@ $searchInput;
             var payBtn = document.getElementById("payBtn");
             var searchVal = document.getElementById("searchExam");
             var searchTxt = searchVal.value;
+            var paymentLegend = document.getElementById("fieldLegend");
+            var paymentPopup = document.getElementById("fieldAmount");
+
             var id;
 
             
@@ -284,11 +291,12 @@ $searchInput;
 
                 <?php if(!(empty($_SESSION["admin_sid"]) && empty($_SESSION["client_sid"]))):?> 
 
-                let paymentLegend = document.getElementById("fieldLegend");
                 let testTitle = document.getElementById("testTitle"+id);
-                console.log(testTitle.innerHTML);
-                paymentLegend.innerHTML = testTitle.innerHTML;
 
+                let paymentPrice = document.getElementById("examPrice"+id);
+
+                paymentLegend.innerHTML = testTitle.innerHTML;
+                paymentPopup.innerHTML = paymentPrice.innerHTML;
                 <?php endif;?>
 
                 paymentMessage.style.visibility="visible";
@@ -300,9 +308,31 @@ $searchInput;
             function paySubmit(){
                 var payPlan = document.getElementById("payPlan");
                 var payMethod = document.getElementById("payMethod");
-                var payPlanVal = payPlan.value;
-                var payMethodVal = payMethod.value;
-                window.location.href="payment.php?id="+id+"&plan="+payPlanVal+"&method="+payMethodVal+"";
+                // var payPlanVal = payPlan.value;
+                // var payMethodVal = payMethod.value;
+                $(document).ready(function(){
+                    $.ajax({
+                        url: "/src/payment/payment_intent.php" ,
+                        type: "POST", 
+                        data: {
+                            type: "create",
+                            exam_id: id,
+                            price: paymentPopup.innerHTML, 
+                            user_id: <?php echo $_SESSION['clUrID']?>
+                        },
+                        dataType: "json",
+                        cache: false,
+                        success: (data) => {
+                            // alert(data.query)
+                            console.log(data.query)
+                            window.location.href="payment.php?eid="+id+"&pid="+data.pi+"&uid="+data.u+"";
+                        },
+                        fail: (data) =>{
+                            alert("NOT PROCESSED")
+                        }
+                    })
+                })
+                
             }
 
             payBtn.addEventListener("click", paySubmit);
