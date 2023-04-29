@@ -73,7 +73,7 @@ if($_SESSION['admin_sid']==session_id())
                         <span class="nav_logo-name fs-5 fw-bold">Erouvotika</span> 
                     </a>
                     <div class="nav_list"> 
-                        <a href="AdminHome.php" class="nav_link active"> 
+                        <a href="AdminHome.php" class="nav_link"> 
                             <i class='bx bx-grid-alt nav_icon'></i> 
                             <span class="nav_name fw-bold">Dashboard</span> 
                         </a> 
@@ -89,7 +89,7 @@ if($_SESSION['admin_sid']==session_id())
                             <i class='bx bx-message-square-detail nav_icon'></i> 
                             <span class="nav_name">Exam List</span> 
                         </a>
-                        <a href="AdminTransaction.php" class="nav_link"> 
+                        <a href="AdminTransaction.php" class="nav_link active"> 
                             <i class='bx bx-bar-chart-alt-2 nav_icon'></i> 
                             <span class="nav_name">Transaction List</span> 
                         </a>
@@ -106,86 +106,53 @@ if($_SESSION['admin_sid']==session_id())
         <!--Container Main start-->
         <div class="height-100" id="i--container--mainContent">
             <div class="container my-3">
-                <!-- Profile Banner -->
-                <div class="row" id="i--row--banner">
-                    <div class="col-2">
-                        <?php
-                            if ($row['clUrPhoto'] == ""){
-                                echo '<img src="../images/Display Picture Icon.png" alt="Photo/Icon" class="img-fluid m-3" id="i--banner--dp">';
-                            }
-                            else{
-                                echo '<img src="../images/user images/'. $row['clUrPhoto'] .'" alt="Photo/Icon" class="img-fluid m-3" id="i--banner--dp">';
-                            }
-                        ?>
-                    </div>
-                    <div class="col-8">
-                        <h1 class="text-light mt-2" id="i--banner--title">Welcome, <?php echo $clUrUsername ?></h1>
-                        <p class="text-light" id="i--banner--subtitle">You can manage the exam website here</p>
-                    </div>
-                    <div class="col-2">
-                        <a href = "AdminProfile.php" role="button" class="btn btn-light my-3" id="i--button--editProfile">Edit Profile</a>
-                    </div>
+                <div class="col display-6">
+                    TRANSACTION LIST
                 </div>
-                <!-- Edit History -->
                 <div class="row mt-5">
-                    <div class="col display-6">
-                        RECENT EDITED EXAM
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered">
+                            <caption>List of Recorded Transactions</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Transaction ID</th>
+                                    <th scope="col">Exam</th>                                    
+                                    <th scope="col">Username</th>
+                                    <th scope="col">Payment Method</th>
+                                    <th scope="col">Amount Paid</th>
+                                    <th scope="col">Transaction Date</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $sql = "SELECT t.ID, t.transactionID, e.clExName, u.clUrUsername, t.transactionMthd, t.transactionAmt, t.transactionDate, t.transactionStat FROM tbtransaction AS t INNER JOIN tbexam AS e INNER JOIN tbusers AS u ON t.ExID = e.clExID AND t.transactionUserID = u.clUrID";
+                                $result = $connectdb->query($sql);
+                                        
+                                if ($result->num_rows > 0) {
+                                    // output data of each row
+                                    while($row = $result->fetch_array(MYSQLI_NUM)) {
+
+                                        echo'<tr>';
+                                            echo'<th scope="row">'.$row[0].'</th>';
+                                            echo'<td>'.$row[1].'</td>';
+                                            echo'<td>'.$row[2].'</td>';
+                                            echo'<td>'.$row[3].'</td>';
+                                            echo'<td>Method '.$row[4].'</td>';
+                                            echo'<td>'.$row[5].'</td>';
+                                            echo'<td>'.$row[6].'</td>';
+                                            echo'<td>Status '.$row[7].'</td>';
+                                    }            
+                                        echo '</tr>';
+                                }    
+                                
+                                ?>
+                            </tbody>
+                        </table>
                     </div>
-                </div>
-                <!-- Blue Line -->
-                <div class="row">
-                    <div class="col-4" id="i--line--blue"></div>
-                </div>
-                <!-- Edit Banners -->
-                <div class="row my-2 gy-3">
-                <!-- 
-                    Things to change:
-                        Since this is recent edited exam
-                        we need to explicitly change the content by sorting it via
-                        date, status
-                -->
-                <?php
-
-                    $sql = "SELECT * FROM tbexam order by clExLastEditDate desc";
-                    $result = $connectdb->query($sql);
-                    
-
-                    if ($result->num_rows > 0) {
-                    while($row = $result->fetch_assoc()) {
-                        // To fetch the last editor of the exam
-                        $UrLastEditor = $row["clExLastEditedBy"];
-                        $query = "SELECT clUrUsername FROM tbusers WHERE clUrID = $UrLastEditor";
-                        $rs = $connectdb->query($query);
-                        $rw = $rs->fetch_assoc();
-
-                        echo '<div class="col-12">';
-                        echo '<div class="card" id="i--card--edit">
-                                <div class="card-body">
-                                    <div class="container">';
-                                echo ' <div class="row fs-5">
-                                        '.$row["clExName"].'
-                                        </div>
-                                        <div class="row" id="i--line--card"></div>
-                                        <div class="row mt-4 fs-5">
-                                            EXAM DESCRIPTION: '.$row["clExDescription"].'
-                                        </div>
-                                        <div class="row my-2 fs-5">
-                                        EDIT DATE: '.$row["clExLastEditDate"].'
-                                        </div>
-                                        <div class="row my-2 fs-5">
-                                        EDITED BY: '.$rw["clUrUsername"].'
-                                        </div>';
-                        echo '      </div>
-                                </div>
-                              </div>';
-                        echo '</div>';
-                    }
-                }
-
-                ?>
                 </div>
             </div>
-        </div>
         <!--Container Main end-->
                      
         <footer>
