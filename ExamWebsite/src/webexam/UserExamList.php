@@ -86,7 +86,7 @@ if($_SESSION['client_sid']==session_id()){
             <!-------------------------- EXAM CONTENT ---------------------------->
             <?php
 
-              $sql = "SELECT * FROM tbexam WHERE clExPublish = 1";
+              $sql = "SELECT * FROM `tbexam` WHERE clExPublish = 1";
               $result = $connectdb->query($sql);
 
               if ($result->num_rows > 0) {
@@ -117,18 +117,18 @@ if($_SESSION['client_sid']==session_id()){
           //<!-- Modal -->
           
                   //To count items in each question
-                  $sql = "SELECT count(*) as total from tbquestion where clExID = ". $row['clExID'] .";";
+                  $sql = "SELECT count(*) as total from tbQuestion where clExID = ". $row['clExID'] .";";
                   $rs = $connectdb->query($sql);
                   $data = $rs->fetch_assoc();
 
                   //To check the exam's question type
                     // Check if there's IDENTIFICATION question
-                      $sql = "SELECT count(*) as total from tbquestion where clExID = ". $row['clExID'] ." and clQsType = 0;";
+                      $sql = "SELECT count(*) as total from tbQuestion where clExID = ". $row['clExID'] ." and clQsType = 0;";
                       $rs = $connectdb->query($sql);
                       $Identification_Q = $rs->fetch_assoc();
 
                     // Check if there's MULTIPLE CHOICE question
-                      $sql = "SELECT count(*) as total from tbquestion where clExID = ". $row['clExID'] ." and clQsType = 1;";
+                      $sql = "SELECT count(*) as total from tbQuestion where clExID = ". $row['clExID'] ." and clQsType = 1;";
                       $rs = $connectdb->query($sql);
                       $Multiple_Q = $rs->fetch_assoc();
 

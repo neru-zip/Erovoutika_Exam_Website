@@ -255,6 +255,7 @@ header .btn{
   }
   header .btn{
     display: block; 
+    padding: 0 !important;
   }
 
   header .menu.active a{
@@ -263,7 +264,7 @@ header .btn{
 
   header .menu a:hover{
     color: #170a7d;
-    background: #ffffff;
+    /* background: #ffffff; */
   }
   
 
@@ -273,7 +274,7 @@ header .btn{
 
   header .menu .userNav {
     /* margin-left: auto; */
-    margin: 0 0 0 10px;
+    margin: 0 0 0 0;
   }
   
 
@@ -304,7 +305,7 @@ header .btn{
     display: block;
     font-size: 16px;
     margin: 20px;
-    padding: 0 px;
+    padding: 0;
   }
   #menu-icon{
     margin-right: -250px;
@@ -319,6 +320,7 @@ header .btn{
     width: fit-content;
     height: 35px;
     padding: 0 10px;
+    margin: 0 0 0 10px;
     /* position: absolute; */
   }
 
@@ -363,4 +365,5 @@ header .btn{
 
     /* transition: background 150ms; */
   }
+
 }

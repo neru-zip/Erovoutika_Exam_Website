@@ -24,14 +24,14 @@
             else {
                 // If request "exam_id" has value, Edit Existing Exam... (e.g. ?exam_id=1)
                 // (tbExam)Fetch Exams ID======================================================================(START)
-                $sql_query = "SELECT `clExID`,`clExName`,`clExDescription`,`clExInstructions` FROM `tbExam` WHERE `clExID` = '$examID' AND `clExPublish` = 1;";
+                $sql_query = "SELECT `clExID`,`clExName`,`clExDescription`,`clExInstructions` FROM `tbexam` WHERE `clExID` = '$examID' AND `clExPublish` = 1;";
                 $fetch_sql_query = mysqli_query($connectdb, $sql_query);
                 if($fetch_sql_query){
                     if(mysqli_num_rows($fetch_sql_query) > 0) { // Exam Exists
                         $tbExam_data = mysqli_fetch_array($fetch_sql_query);
                         
                         // (tbQuestion)Fetch Questions Data======================================================================(START)
-                        $sql_query = "SELECT `clQsID`,`clExID`,`clQsBody`,`clQsType` FROM `tbQuestion` WHERE `clExID` = '$examID';";
+                        $sql_query = "SELECT `clQsID`,`clExID`,`clQsBody`,`clQsType` FROM `tbquestion` WHERE `clExID` = '$examID';";
                         $fetch_sql_query = mysqli_query($connectdb, $sql_query);
                         if($fetch_sql_query){
                             while($tbQuestion_row = mysqli_fetch_array($fetch_sql_query)){
@@ -49,7 +49,7 @@
                             for($question_count = 0; $question_count < count($tbQuestion_data); $question_count++) {
                                 $tbQuestion_clQsID = $tbQuestion_data[$question_count]['clQsID'];
                                 if($question_count == 0) {
-                                    $sql_query .= "SELECT * FROM `tbAnswer` WHERE ";
+                                    $sql_query .= "SELECT * FROM `tbanswer` WHERE ";
                                 }
                                 
                                 $sql_query .= "`clQsID` = '$tbQuestion_clQsID'";

@@ -29,7 +29,7 @@
             else {
                 // If request "exam_id" has value, Edit Existing Exam... (e.g. ?exam_id=1)
                 // (tbExam)Fetch Exams ID======================================================================(START)
-                $sql_query = "SELECT * FROM `tbExam` WHERE `clExID` = '$examID';";
+                $sql_query = "SELECT * FROM `tbexam` WHERE `clExID` = '$examID';";
                 $fetch_sql_query = mysqli_query($connectdb, $sql_query);
                 if($fetch_sql_query){
                     if(mysqli_num_rows($fetch_sql_query) > 0) { // Exam Exists
@@ -58,7 +58,7 @@
                         }
                         // (tbusers)Fetch Users Data======================================================================(END)
                         // (tbQuestion)Fetch Questions Data======================================================================(START)
-                        $sql_query = "SELECT * FROM `tbQuestion` WHERE `clExID` = '$examID';";
+                        $sql_query = "SELECT * FROM `tbquestion` WHERE `clExID` = '$examID';";
                         $fetch_sql_query = mysqli_query($connectdb, $sql_query);
                         if($fetch_sql_query){
                             while($tbQuestion_row = mysqli_fetch_array($fetch_sql_query)){
@@ -72,7 +72,7 @@
                         // (tbQuestion)Fetch Questions Data======================================================================(END)
                         if($tbQuestion_data != null) { // If $tbQuestion_data is NOT empty
                             // (tbQuestion)Fetch Questions ID======================================================================(START)
-                            $sql_query = "SELECT `clQsID` FROM `tbQuestion` ORDER BY `clQsID` DESC LIMIT 0, 1;";
+                            $sql_query = "SELECT `clQsID` FROM `tbquestion` ORDER BY `clQsID` DESC LIMIT 0, 1;";
                             $fetch_sql_query = mysqli_query($connectdb, $sql_query);
                             if($fetch_sql_query){
                                 if(mysqli_num_rows($fetch_sql_query) > 0) { // Exam Exists
@@ -88,7 +88,7 @@
                             for($question_count = 0; $question_count < count($tbQuestion_data); $question_count++) {
                                 $tbQuestion_clQsID = $tbQuestion_data[$question_count]['clQsID'];
                                 if($question_count == 0) {
-                                    $sql_query .= "SELECT * FROM `tbAnswer` WHERE ";
+                                    $sql_query .= "SELECT * FROM `tbanswer` WHERE ";
                                 }
                                 
                                 $sql_query .= "`clQsID` = '$tbQuestion_clQsID'";
@@ -132,7 +132,7 @@
             // If there is no request, Add New Exam here...
             $examID = 0;
             // (tbQuestion)Fetch Exams ID======================================================================(START)
-            $sql_query = "SELECT `clExID` FROM `tbExam` ORDER BY `clExID` DESC LIMIT 0, 1;";
+            $sql_query = "SELECT `clExID` FROM `tbexam` ORDER BY `clExID` DESC LIMIT 0, 1;";
             $fetch_sql_query = mysqli_query($connectdb, $sql_query);
             if($fetch_sql_query){
                 if(mysqli_num_rows($fetch_sql_query) > 0) { // Exam Exists
@@ -144,7 +144,7 @@
             }
             // (tbQuestion)Fetch Exams ID======================================================================(END)
             // (tbQuestion)Fetch Questions ID======================================================================(START)
-            $sql_query = "SELECT `clQsID` FROM `tbQuestion` ORDER BY `clQsID` DESC LIMIT 0, 1;";
+            $sql_query = "SELECT `clQsID` FROM `tbquestion` ORDER BY `clQsID` DESC LIMIT 0, 1;";
             $fetch_sql_query = mysqli_query($connectdb, $sql_query);
             if($fetch_sql_query){
                 if(mysqli_num_rows($fetch_sql_query) > 0) { // Exam Exists

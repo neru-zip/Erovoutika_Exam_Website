@@ -114,7 +114,7 @@ $searchInput;
         $betStart = 0;
         $betEnd = 6;
         $examCount = 0;
-        $total = $connectdb->query("SELECT COUNT(*) FROM tbExam");
+        $total = $connectdb->query("SELECT COUNT(*) FROM tbexam");
         $row = $total->fetch_array(MYSQLI_NUM);
         $pages = ceil($row[0]/6);
         for($i=0;$i<$pages;$i++){
@@ -125,16 +125,16 @@ $searchInput;
             echo '<div class="exam_container">';
             echo '<div class="row">';
             if(empty($searchInput) || $searchInput == null || $searchInput == ""){
-                // $res = $connectdb->query("SELECT * FROM tbExam WHERE clExID BETWEEN ".$betStart." AND ".$betEnd."");
-                $res = $connectdb->query("SELECT * FROM tbExam WHERE clExPublishedBy IS NOT NULL LIMIT $betStart,  6");
+                // $res = $connectdb->query("SELECT * FROM `tbexam` WHERE clExID BETWEEN ".$betStart." AND ".$betEnd."");
+                $res = $connectdb->query("SELECT * FROM `tbexam` WHERE clExPublishedBy IS NOT NULL LIMIT $betStart,  6");
 
             }
             else{
                 if($stepNum == 1){
-                    $res = $connectdb->query("SELECT * FROM tbExam WHERE clExName LIKE '%".$searchInput."%' LIMIT 6");
+                    $res = $connectdb->query("SELECT * FROM `tbexam` WHERE clExName LIKE '%".$searchInput."%' LIMIT 6");
                 }
                 else{
-                    $res = $connectdb->query("SELECT * FROM tbExam WHERE clExName LIKE '%".$searchInput."%' LIMIT 6,6");
+                    $res = $connectdb->query("SELECT * FROM `tbexam` WHERE clExName LIKE '%".$searchInput."%' LIMIT 6,6");
                 }
             }
             while($row3 = $res->fetch_array(MYSQLI_NUM)){

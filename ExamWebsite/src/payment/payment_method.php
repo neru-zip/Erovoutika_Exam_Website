@@ -7,7 +7,7 @@ require (__DIR__.'/../includes/connectdb.php');
 $method = $_POST['pmethod'];
 $plan = $_POST['plan'];
 $pid = $_POST['pid'];
-$on_process = "on_process";
+$ON_PROCESS = "on_process";
 
 
 $paymentMethod = $client->paymentMethods->create([
@@ -19,7 +19,7 @@ $qry = "UPDATE `tbtransaction`
         WHERE transactionID = ?";
 
 $exec = $connectdb->prepare($qry);
-$exec->bind_param("sss", $method, $on_process, $pid);
+$exec->bind_param("sss", $method, $ON_PROCESS, $pid);
 $exec->execute();
 $exec->close();
 

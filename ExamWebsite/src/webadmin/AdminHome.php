@@ -83,7 +83,7 @@ if($_SESSION['admin_sid']==session_id())
                 -->
                 <?php
 
-                    $sql = "SELECT * FROM tbexam order by clExLastEditDate desc";
+                    $sql = "SELECT * FROM `tbexam` order by clExLastEditDate desc";
                     $result = $connectdb->query($sql);
                     
 

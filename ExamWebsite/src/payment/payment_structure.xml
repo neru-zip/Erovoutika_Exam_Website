@@ -16,6 +16,9 @@ $payload["data"]["attributes"]["type"];
     => REFERENCE_NUMBER
     $payload["data"]["attributes"]["data"]["attributes"]["external_reference_number"];
 
+    => PAYMENT ID 
+    $payload["data"]["attributes"]["data"]["attributes"]["payment_intent_id"];
+
 ==> IF link.payment.paid
 
     => AMOUNT
@@ -26,6 +29,13 @@ $payload["data"]["attributes"]["type"];
 
     => METHOD
     $payload["data"]["attributes"]["data"]["attributes"]["payments"]["data"]["attributes"]["source"]["type"];
+
+
+
+==> IF FROM SDK 
+
+    => AMOUNT 
+    $payload->resource['']
 
 SAMPLE DATA 
 

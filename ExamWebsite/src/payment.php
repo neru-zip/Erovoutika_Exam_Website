@@ -15,7 +15,7 @@ $check = $result->fetch_row()[0] ?? false;
 
 if(!$check) header('location:includes/error.php');
 
-$res = $connectdb->query("SELECT * FROM tbExam WHERE clExID = ".$_GET['eid']);
+$res = $connectdb->query("SELECT * FROM `tbexam` WHERE clExID = ".$_GET['eid']);
 $row = $res->fetch_array(MYSQLI_NUM);
 
 

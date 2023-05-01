@@ -11,5 +11,7 @@
     <body>
         <h1>Error 404</h1>
         <h2>Resource Not Found</h2>
+
+        <?php echo $_GET['error_message'] ?? null;?>
     </body>
 </html>

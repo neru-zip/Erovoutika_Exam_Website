@@ -3,7 +3,7 @@
     include '../includes/connectdb.php';
 	if($_SESSION['admin_sid']==session_id()) {
 	    	// (tbExam)Fetch Exams Data======================================================================(START)
-            $sql_query = "SELECT `clExID`,`clExName`,`clExDescription`,`clExPublish`,`clExLastEditedBy`,`clExPublishedBy` FROM `tbExam`;";
+            $sql_query = "SELECT `clExID`,`clExName`,`clExDescription`,`clExPublish`,`clExLastEditedBy`,`clExPublishedBy` FROM `tbexam`;";
             $fetch_sql_query = mysqli_query($connectdb, $sql_query);
             if($fetch_sql_query){
                 $tbExam_data = null; // Without this, it will likely cause an Error if the table data is empty, which means that it will not go through the loop below, which means that this variable is never declared.
