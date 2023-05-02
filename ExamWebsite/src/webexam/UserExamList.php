@@ -6,7 +6,8 @@ if($_SESSION['client_sid']==session_id()){
 	if(!isset($_SESSION["client_sid"]) || $_SESSION["client_sid"] !== session_id()){
         header("location: ../login_template.php");
         exit;
-    }		
+    }	
+$clUrID = $_SESSION['clUrID'];	
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,6 +56,7 @@ if($_SESSION['client_sid']==session_id()){
                               </button>
                               <ul class="dropdown-menu dropdown-menu-end">
                                 <li><a class="dropdown-item" href="../webclient/UserProfile.php"><i class="bi bi-person-circle me-2"></i>Profile</a></li>
+                                <li><a class="dropdown-item" href="../webclient/UserTransaction.php"><span class="bi-credit-card me-2"></span>Transactions</a></li>
                                 <li>
                                   <?php echo
                                     '<a class="dropdown-item" href="../webclient/Settings.php">'
@@ -86,7 +88,7 @@ if($_SESSION['client_sid']==session_id()){
             <!-------------------------- EXAM CONTENT ---------------------------->
             <?php
 
-              $sql = "SELECT * FROM tbexam WHERE clExPublish = 1";
+              $sql = "SELECT p.*, e.*, u.* FROM tbuserpaidexam AS p INNER JOIN tbexam AS e INNER JOIN tbusers AS u ON p.clUrID = u.clUrID AND p.clExID = e.clExID WHERE e.clExPublish = 1 AND p.clUrID = ".$clUrID."";
               $result = $connectdb->query($sql);
 
               if ($result->num_rows > 0) {

@@ -67,6 +67,7 @@ if($_SESSION['client_sid']==session_id())
                           </button>
                           <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="UserProfile.php"><i class="bi bi-person-circle me-2"></i>Profile</a></li>
+                            <li><a class="dropdown-item" href="../webclient/UserTransaction.php"><span class="bi-credit-card me-2"></span>Transactions</a></li>
                             <li>
                               <?php echo
                                 '<a class="dropdown-item" href="Settings.php?clUrID='.$clUrID.'">'
