@@ -7,13 +7,13 @@
         <hr>
 <div class="footer-row">
     <div class="footer-col">
-        <h5 style="color:#2600ff;">Erovoutika Robotics & Automation Solutions</h5>
+        <h5 style="color: #0F3695; font-size: 25px">Erovoutika Robotics & Automation Solutions</h5>
         <!-- <img src="images/logo.png" alt="" class="footer-logo"> -->
         <p class="company">Our company is envisioned to empower and strengthen the technical skills of industry practitioners, engineers, teachers, and students. Erovoutika is a pundit in the field of electronics, robotics, automation, PLC, Internet-of-Things, Image Processing, and IT including software development, web development, network architecture, cybersecurity, and the like. It is a supplier and distributor of electronics products such as sensors, motors, modules, robots, and other training kits. </p>
         <br><br>
     </div>
     <div class="col">
-        <h3 class="details1">Office <div class="underline"><span></span></div></h3>
+        <h3 class="details1" style="color: #0F3695">Office <div class="underline"><span></span></div></h3>
         <p>PARC HOUSE II, Unit 703, Epifanio de los</p>
         <p>Santos Ave</p>
         <p>Makati, 1212 Metro Manila</p>
@@ -21,7 +21,7 @@
 
     </div>
     <div class="col">
-        <h3>Links <div class="underline"><span></span></div></h3>
+        <h3 style="color: #0F3695">Links <div class="underline"><span></span></div></h3>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about-section">About Us</a></li>
@@ -30,10 +30,10 @@
         </ul>
     </div>
     <div class="col">
-        <h3>Newsletter <div class="underline"><span></span></div></h3>
-        <form action="" class="form">
-        <i class="fa-regular fa-envelope"></i>
-            <input type="email" placeholder="  Enter your email" required>
+        <h3 style="color: #0F3695">Newsletter <div class="underline"><span></span></div></h3>
+        <form action="" class="form1">
+        <i class="fi fi-rr-envelope"></i>
+            <input class="input1" type="email" placeholder="  Enter your email" required style="color: white; padding-left: 10px">
             <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
         </form>
         <div class="social-icons">
