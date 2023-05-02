@@ -138,13 +138,15 @@ unset($clQsID_value);
             $clExName_value = $curr_tbExam_data['clExName'];
             $clExDescription_value = $curr_tbExam_data['clExDescription'];
             $clExInstructions_value = $curr_tbExam_data['clExInstructions'];
+            $clExPrice_value = $curr_tbExam_data['clExPrice'];
             $clExLastEditedBy_value = $curr_tbExam_data['clExLastEditedBy'];
             
             if($examInfo_modifyType == "1") { // Update Current Exam Information
                 $sql_query .= "UPDATE `tbExam`
                     SET `clExName` = '$clExName_value', 
                         `clExDescription` = '$clExDescription_value', 
-                        `clExInstructions` = '$clExInstructions_value', 
+                        `clExInstructions` = '$clExInstructions_value',
+                        `clExPrice` = '$clExPrice_value',
                         `clExLastEditedBy` = '$clExLastEditedBy_value',
                         `clExLastEditDate` = date_format(now(), '%Y-%m-%d %H:%i:%s')
                     WHERE `clExID` = '$clExID_value';
@@ -155,7 +157,8 @@ unset($clQsID_value);
                         `clExID`, 
                         `clExName`, 
                         `clExDescription`, 
-                        `clExInstructions`, 
+                        `clExInstructions`,
+                        `clExPrice`,
                         `clExPublish`, 
                         `clExLastEditedBy`, 
                         `clExPublishedBy`
@@ -164,7 +167,8 @@ unset($clQsID_value);
                         '$clExID_value', 
                         '$clExName_value', 
                         '$clExDescription_value', 
-                        '$clExInstructions_value', 
+                        '$clExInstructions_value',
+                        '$clExPrice_value',
                         0, 
                         '$clExLastEditedBy_value', 
                         null
@@ -176,6 +180,7 @@ unset($clQsID_value);
             unset($clExName_value);
             unset($clExDescription_value);
             unset($clExInstructions_value);
+            unset($clExPrice_value);
             unset($clExLastEditedBy_value);
         }
 
@@ -193,13 +198,15 @@ unset($clQsID_value);
         $clExName_value = $curr_tbExam_data['clExName'];
         $clExDescription_value = $curr_tbExam_data['clExDescription'];
         $clExInstructions_value = $curr_tbExam_data['clExInstructions'];
+        $clExPrice_value = $curr_tbExam_data['clExPrice'];
         $clExLastEditedBy_value = $curr_tbExam_data['clExLastEditedBy'];
 
         $sql_query .= "INSERT INTO `tbExam` (
                 `clExID`, 
                 `clExName`, 
                 `clExDescription`, 
-                `clExInstructions`, 
+                `clExInstructions`,
+                `clExPrice`, 
                 `clExPublish`, 
                 `clExLastEditedBy`, 
                 `clExPublishedBy`
@@ -208,7 +215,8 @@ unset($clQsID_value);
                 '$clExID_value', 
                 '$clExName_value', 
                 '$clExDescription_value', 
-                '$clExInstructions_value', 
+                '$clExInstructions_value',
+                '$clExPrice_value', 
                 0, 
                 '$clExLastEditedBy_value', 
                 null
@@ -272,6 +280,7 @@ unset($clQsID_value);
         unset($clExName_value);
         unset($clExDescription_value);
         unset($clExInstructions_value);
+        unset($clExPrice_value);
         unset($clExLastEditedBy_value);
     }
     else if($updateType == 2) { // Publish Existing Exam
