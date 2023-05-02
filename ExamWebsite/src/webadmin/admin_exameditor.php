@@ -402,7 +402,7 @@
                                                             <label for="i-input--exameditor-examPrice" class="card-title text-primary text-uppercase fs-3 fw-bold form-label">
                                                                     Exam Price
                                                                 </label>
-                                                                <textarea name="clExPrice_value" class="form-control card-text text-dark fs-6" id="i-input--exameditor-examPrice"  cols="30" rows="5" required></textarea>
+                                                                <input type = "number" name="clExPrice_value" class="form-control card-text text-dark fs-6" id="i-input--exameditor-examPrice"  cols="30" rows="5" required>
                                                             </div>
                                                         </div>
                                                     </div>

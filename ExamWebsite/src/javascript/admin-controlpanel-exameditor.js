@@ -206,7 +206,7 @@ function displayExamInfo(in_displayContainerID) {
     examName_element.innerHTML = curr_tbExam_data.clExName;
     examDesc_element.innerHTML = curr_tbExam_data.clExDescription;
     examInst_element.innerHTML = curr_tbExam_data.clExInstructions;
-    examPrice_element.innerHTML = curr_tbExam_data.clExPrice;
+    examPrice_element.value = curr_tbExam_data.clExPrice;
 }
 
 function baseQuestion(in_displayContainerID, in_questionCount) {
