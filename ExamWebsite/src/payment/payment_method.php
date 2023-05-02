@@ -14,6 +14,33 @@ $paymentMethod = $client->paymentMethods->create([
     'type' => $method
 ]);
 
+if(1 == 2){
+$paymentMethod = $client->paymentMethods->create([
+    'details' => [
+        'card_number' => "",
+        'exp_month' => "",
+        'exp_year' => "",
+        'cvc' => "",
+        'bank_code' => ""
+    ],
+    'billing' => [
+        'name' => "",
+        'email' => "",
+        'phone' => ""
+    ],
+    'payment_method_option' => [
+        'card' => [
+            'installments' => [
+                'plan' => [
+                    'issuer_id' => "",
+                    'tenure' => ""
+                ]
+            ]
+        ]
+    ],
+    'type' => $method
+]);
+}
 $qry = "UPDATE `tbtransaction` 
         SET transactionMthd = ?, transactionStat = ? 
         WHERE transactionID = ?";

@@ -12,8 +12,8 @@ $pid = mysqli_real_escape_string($connectdb, $_GET['pid']);
 $result = $connectdb->query("SELECT `transactionID`, `ExID` FROM `tbtransaction`
 							 WHERE (transactionID = '$pid' AND ExID = $eid)");
 $check = $result->fetch_row()[0] ?? false;
-
-if(!$check) header('location:includes/error.php');
+$error = "We can't find the payment link you're looking for";
+if(!$check) header('location:includes/error.php?error_message='.$error.'');
 
 $res = $connectdb->query("SELECT * FROM `tbexam` WHERE clExID = ".$_GET['eid']);
 $row = $res->fetch_array(MYSQLI_NUM);
@@ -100,18 +100,35 @@ try {
 					<option value="install"> Installment </option>
 				</select>
 
+				<span><label for="plan">Billing: </label></span>
+				
+				<label for="name" class="mt-2">
+					Full Name:
+				</label>
+				<input class="form-control " type="text" name="" id="name">
+
+				<label for="email" class="mt-2">
+					Email:
+				</label>
+				<input class="form-control " type="email" name="" id="email">
+				<label for="number" class="mt-2">
+					Contact Number:
+				</label>
+				<input class="form-control " type="tel" name="" id="number">
+
 				<input type="hidden" name="price" value="<?php echo $row[9];?>">
 				<input type="hidden" name="pid" value="<?php echo $pid;?>">
 				<input type="hidden" name="eid" value="<?php echo $eid;?>">
 
-				<button id="toReg" class="btn btn-danger">
-					Cancel 
-				</button>
-			
-				<button class="btn btn-success" type="submit">
-					Proceed
-				</button>
+				<div class="mt-3">
+					<button id="toReg" class="btn btn-danger">
+						Cancel 
+					</button>
 				
+					<button class="btn btn-success" type="submit">
+						Proceed
+					</button>
+				</div>
 			
 			</form>
 		</section>

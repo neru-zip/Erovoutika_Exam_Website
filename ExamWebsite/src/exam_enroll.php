@@ -31,10 +31,11 @@ $searchInput;
 
                     <p>You are about to be redirected to the Payment Portal. Are you sure that you want to apply for: </p>
 
-                    <legend id="fieldLegend">Test</legend>
+                    <legend id="fieldLegend" class="fw-bold">Test</legend>
 
                     <p>For an amount of:</p>
-                    <span id="fieldAmount">00</span>
+
+                    <span id="fieldAmount" class="fs-4 mt-0">00</span>
 
                     <!-- <label for="payMethod"> Please Select your payment plans: </label>
                     <select id = "payMethod" class="form-select">
@@ -46,14 +47,16 @@ $searchInput;
 
                     </br>
 
-                    <label for="payPlan">  Please select payment type:  </label>
+                    <!-- <label for="payPlan">  Please select payment type:  </label>
                     <select id = "payPlan" class="form-select">
                         <option value="1">6 monthly payments</option>
                         <option value="2">One-time payment</option>
-                    </select>
-
-                    <button id = "payBtn" class="btn btn-secondary">Apply Now</button>
-                    <button id = "closePayBtn" class="btn btn-danger">Close</button>
+                    </select> -->
+                    
+                    <div class="mt-2">
+                        <button id = "payBtn" class="btn btn-secondary">Apply Now</button>
+                        <button id = "closePayBtn" class="btn btn-danger">Close</button>
+                    </div>
                 </fieldset> 
             </div>
         </section>
@@ -318,7 +321,7 @@ $searchInput;
                             type: "create",
                             exam_id: id,
                             price: paymentPopup.innerHTML
-                             <?php if(!(empty($_SESSION["admin_sid"]) && empty($_SESSION["client_sid"]))) echo ',user_id: '.$_SESSION['clUrID'] ?? null.'' ?>
+                             <?php if(!(empty($_SESSION["admin_sid"]) && empty($_SESSION["client_sid"]))) echo ',user_id: '.$_SESSION['clUrID'] ?? null.''?>
                         },
                         dataType: "json",
                         cache: false,
