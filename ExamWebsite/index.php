@@ -455,6 +455,8 @@ include_once 'src/includes/header.php';
 			
 		</div>
 
+    <br><br><br>
+
     <div class="wrapper">
   
 	<div class="slider">
