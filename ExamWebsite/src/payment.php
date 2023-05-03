@@ -9,10 +9,19 @@ $uid = mysqli_real_escape_string($connectdb, $_GET['uid']);
 $eid = mysqli_real_escape_string($connectdb, $_GET['eid']);
 $pid = mysqli_real_escape_string($connectdb, $_GET['pid']);
 
+if(empty($uid)||empty($eid)||empty($pid)) 
+{
+	$error = "Can't process your request";
+	header('location:includes/error.php?error_message='.$error.'');
+};
+
 $result = $connectdb->query("SELECT `transactionID`, `ExID` FROM `tbtransaction`
 							 WHERE (transactionID = '$pid' AND ExID = $eid)");
+
 $check = $result->fetch_row()[0] ?? false;
+
 $error = "We can't find the payment link you're looking for";
+
 if(!$check) header('location:includes/error.php?error_message='.$error.'');
 
 $res = $connectdb->query("SELECT * FROM `tbexam` WHERE clExID = ".$_GET['eid']);
@@ -50,8 +59,9 @@ try {
 </head>
 
 <body>
-	<main class="container d-flex flex-column col-12 col-sm-10 col-md-8 col-lg-6 mx-md-auto mw-50 border" style="height: 100vh">
-		<section class="position-relative py-sm-3 px-lg-3 flex-fill lh-sm flex-justify-center">
+	<main class="container d-flex flex-column col-12 col-sm-10 col-md-8 col-lg-3 mx-md-auto mw-50 border" style="height: fit-content;">
+		<section class="position-relative py-sm-3 px-lg-3 flex-fill lh-sm flex-justify-center" style="min-height: 250px">
+			<img src="/src/images/Logo2.png" alt="erovoutika_logo">
 			<span class="position-absolute bottom-0">
 				You have chosen
 			<h1>
@@ -76,50 +86,74 @@ try {
 				<span>Payment Method: </span>
 
 				<label for="gcash">
-				<input type="radio" id="gcash" name="pmethod" value="gcash">
+				<input type="radio" id="gcash" name="pmethod" value="gcash" onclick="check()">
 				<img src="/src/images/gcash.webp" alt="paymaya-logo">
 				</label>
 
 				<label for="gpay">
-				<input type="radio" id="gpay" name="pmethod" value="grab_pay"> 
+				<input type="radio" id="gpay" name="pmethod" value="grab_pay" onclick="check()"> 
 				<img src="/src/images/grabpay.jpg" alt="paymaya-logo">
 				</label>
 
 				<label for="maya"> 
-				<input type="radio" id="maya" name="pmethod" value="paymaya"> 
+				<input type="radio" id="maya" name="pmethod" value="paymaya" onclick="check()"> 
 				<img src="/src/images/maya.jpg" alt="paymaya-logo">
+				</label> 
+
+				<label for="card"> 
+				<input type="radio" id="card" name="pmethod" value="card" onclick="check()"> 
+				<img src="/src/images/card.png" alt="paymaya-logo">
 				</label> 
 				
 				
 				
-				 <br>
+				<br>
 
 				<span><label for="plan">Plan: </label></span>
 				<select class="form-select mb-5" name="plan" id="plan">
 					<option value="onetime"> One-time Payment </option>
 					<option value="install"> Installment </option>
 				</select>
-
-				<span><label for="plan">Billing: </label></span>
 				
-				<label for="name" class="mt-2">
-					Full Name:
-				</label>
-				<input class="form-control " type="text" name="" id="name">
+				<div class="" id="card_option" style="display: none">
+					<span><label for="plan">Billing: </label></span>
+					
+					<label for="name" class="mt-2">
+						Full Name:
+					</label>
+					<input class="form-control " type="text" name="" id="name" placeholder="Input your Fullname">
 
-				<label for="email" class="mt-2">
-					Email:
-				</label>
-				<input class="form-control " type="email" name="" id="email">
-				<label for="number" class="mt-2">
-					Contact Number:
-				</label>
-				<input class="form-control " type="tel" name="" id="number">
+					<label for="email" class="mt-2">
+						Email:
+					</label>
+					<input class="form-control " type="email" name="" id="email" placeholder="Input your Email">
+					<label for="number" class="mt-2">
+						Contact Number:
+					</label>
+					<input class="form-control " type="tel" name="" id="number" placeholder="Input your Contact Number">
+
+					<span><label for="plan">Card Details: </label></span>
+					
+					<label for="name" class="mt-2">
+						Card Number:
+					</label>
+					<input class="form-control " type="text" name="" id="name" placeholder="Input your Card Number">
+					
+					<label for="email" class="mt-2">
+						Exp Month:
+					</label>
+					<input class="form-control " type="number" name="" id="email" placeholder="Expiration Month">
+					<label for="number" class="mt-2">
+						Exp Year:
+					</label>
+					<input class="form-control " type="number" name="" id="number" placeholder="Expiration Year">
+				</div>
+				
 
 				<input type="hidden" name="price" value="<?php echo $row[9];?>">
 				<input type="hidden" name="pid" value="<?php echo $pid;?>">
 				<input type="hidden" name="eid" value="<?php echo $eid;?>">
-
+				
 				<div class="mt-3">
 					<button id="toReg" class="btn btn-danger">
 						Cancel 
@@ -130,22 +164,36 @@ try {
 					</button>
 				</div>
 			
+
 			</form>
 		</section>
 	</main>
+
+	<script>
+		const cardOption = document.getElementById("card")
+		const cardAddon = document.getElementById("card_option")
+		function check() {
+			if (cardOption.checked) {
+				cardAddon.classList.add("show")
+			} else {
+				cardAddon.classList.remove("show")
+			}
+		}
+	</script>
 </body>
 </html>
+
 <script>
 	var toReg = document.getElementById("toReg");
 	var sessionId;
-	sessionId = '<?php echo (isset($_SESSION['client_sid']))?$_SESSION['client_sid']:''; ?>';
+	// sessionId = '<?php echo (isset($_SESSION['client_sid']))?$_SESSION['client_sid']:''; ?>';
 	function proceed(){
 		
 		if (sessionId != ''){
-			window.location.href="examportal_template.php?clExID=<?php echo $_GET['id']; ?>";
+			// window.location.href="examportal_template.php?clExID=<?php echo $_GET['id']; ?>";
 		}
 		else if(sessionId == ''){
-			window.location.href="login.php";
+			// window.location.href="login.php";
 		}
 	}
 	toReg.addEventListener("click",proceed);

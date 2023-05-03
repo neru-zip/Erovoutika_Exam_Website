@@ -41,6 +41,7 @@ $paymentMethod = $client->paymentMethods->create([
     'type' => $method
 ]);
 }
+
 $qry = "UPDATE `tbtransaction` 
         SET transactionMthd = ?, transactionStat = ? 
         WHERE transactionID = ?";
