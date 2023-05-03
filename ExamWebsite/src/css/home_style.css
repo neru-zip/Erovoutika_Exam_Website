@@ -421,7 +421,8 @@ header .btn{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 20vh;
+	height: 30vh;
+  
   background-color: #e1e1e1;
 
 }
@@ -431,7 +432,7 @@ header .btn{
 	overflow: hidden;
 	position: relative;
   margin: auto;
-	width: 100%;
+	width: 90%;
 }
 
 .slider .slide-track {
@@ -442,7 +443,8 @@ header .btn{
 }
 
 .slider .slide {
-	height: 100px;
+	height: 120px;
+  padding-top: 10px;
   margin-right: -0.7%;
 	width: 5%;
 }
@@ -481,6 +483,12 @@ header .btn{
 
 .slide #pic4{
   width: 130px; 
+  height:80px; 
+  transform: translate(0%, 10%);
+}
+
+.slide #pic4{
+  width: 100px; 
   height:80px; 
   transform: translate(0%, 10%);
 }
@@ -1110,7 +1118,7 @@ textarea {
 */
 
 .contact-wrap {
-	width: 100%;
+	width: 90%;
 	height: auto;
 	margin: auto;
 	display: flex;
@@ -1208,8 +1216,7 @@ textarea {
 	width: 100%;
 	height: 40px;
 	margin-bottom: 20px;
-	border: 2.5px solid #0F3695;
-  border-radius: 10px;
+	border: 1px solid #323232;
 	outline: none;
   background: white;
 	padding-left: 5px;
@@ -1224,8 +1231,7 @@ textarea {
 	width: 100%;
 	height: 140px;
 	margin-bottom: 20px;
-	border: 2.5px solid #0F3695;
-  border-radius: 10px;
+	border: 1px solid #323232;
 	outline: none;
 	padding-top: 5px;
 	padding-left: 5px;
@@ -1238,14 +1244,15 @@ textarea {
 
 .contact-in-btn {
 	width: 100%;
-	height: 40px;
-	border-radius: 10px;
 	outline: none;
-	background: #0F3695;;
-	color: #fff;
-	font-size: 12px;
+	background: #323232;
+	font-size: 15px;
 	font-weight: 300;
-	font-family: 'Poppins', sans-serif;
+  padding: 10px 30px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
 	cursor: pointer;
 }
 

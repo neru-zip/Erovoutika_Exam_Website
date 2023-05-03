@@ -412,6 +412,15 @@ include_once 'src/includes/header.php';
             </div>
         </div>
     </section>-->
+    <br><br>
+    <div class="row">
+          <div class="col-md-12">
+              <div class="site-heading text-center">
+                  <h2><span>Contact Us</span></h2>
+                  <h4>-October-</h4>
+              </div>
+          </div>
+      </div>
     <div class="contact-wrap">
 
     <div class="contact-in">
@@ -445,8 +454,6 @@ include_once 'src/includes/header.php';
 			</div>
 			
 		</div>
-
-    <br>
 
     <div class="wrapper">
   
