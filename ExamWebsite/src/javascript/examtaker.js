@@ -134,9 +134,11 @@ function ans_unans_show(QuestionCount) {
     mainContainer_AnsAnuns.appendChild(divContainer)
     
     for (var i=0; i < QuestionCount; i++){
-        var buttonContainer = document.createElement("button")
+        var buttonContainer = document.createElement("button");
+
         buttonContainer.setAttribute("class", "col-sm cardbtn btn-danger border border-2")
         buttonContainer.setAttribute("type", "button")
+        buttonContainer.setAttribute("id", 'btn'+(i+1)+'')
 
         var testText = document.createTextNode(i+1)
 
@@ -429,6 +431,10 @@ function setAnsweredCountDisplay() {
     var answeredcount_element = null;
     
     for(var question_count = 0; question_count < tbQuestion_data_length; question_count++) {
+        console.log(questionAnsweredCount);
+        button_recolor = document.getElementById("btn"+((questionAnsweredCount).toString()));
+        button_recolor.removeAttribute("class");
+        button_recolor.setAttribute("class", "col-sm cardbtn btn-primary border border-2")
         answeredcount_element = document.getElementById("i-h--examtaker-answeredcount-" + (question_count+1).toString());
         answeredcount_element.innerHTML = "Questions Answered: " + (questionAnsweredCount).toString() + "/" + (tbQuestion_data_length).toString();
     }
