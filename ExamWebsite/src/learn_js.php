@@ -94,7 +94,11 @@ function Top(){
 						<li>JavaScript is the programming language of the Web. </li>
 						<li>JavaScript is easy to learn. </li>
 					</ul></blockquote>
-					<a class="button is-link read-more">View Example</a>
+
+					<form method = "get" action = "code_editor.php">
+						<input type = "hidden" name = "learn_js" value = "0">
+						<button class="button is-link read-more">View Example</button>
+					</form>
 				</article>
 			</div>
 		</div>
@@ -107,9 +111,12 @@ function Top(){
 					<p class="description">An example of this working is:
 					<blockquote><p class="notes">
 					<p><strong>document.getElementById(“erovoutika”).innerHTML = “Hello Erovoutika!” </strong></P>
-					<p>The example above selects the element with the id of <strong>“erovoutika”</strong> and changes the content of it to <strong>“Hello Erovoutika!”</strong>. </strong>.  </p>
+					<p>The example above selects the element with the id of <strong>“erovoutika”</strong> and changes the content of it to <strong>“Hello Erovoutika!”</strong>.</p>
 					</p></blockquote> 
-					<a class="button is-link read-more">View Example</a>
+					<form method = "get" action = "code_editor.php">
+						<input type = "hidden" name = "learn_js" value = "1">
+						<button class="button is-link read-more">View Example</button>
+					</form>
 			</div>
 			<div class="tile is-parent">
 			<article class="tile is-child content task">
@@ -121,7 +128,11 @@ function Top(){
 					<p><strong>document.getElementById(“erovoutika”).style.fontSize = “35px”; </strong></P>
 					<p>The example above changes the style attribute, specifically, the font size of the element to 35px making the element font larger.</p>
 					</p></blockquote> 
-					<a class="button is-link read-more">View Example</a>
+
+					<form method = "get" action = "code_editor.php">
+						<input type = "hidden" name = "learn_js" value = "2">
+						<button class="button is-link read-more">View Example</button>
+					</form>
 					</article>     
 			</div>
 		</div>
@@ -141,7 +152,11 @@ function Top(){
 							<p class = "description"><strong>document.getElementById (“erovoutika”).style.display = “block”; </strong></p>
 							</blockquote>
 							</p>
-						<a class="button is-link read-more">View Example</a>
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_js" value = "3">
+							<button class="button is-link read-more">View Example</button>
+						</form>
+						
 				</article>
 			</div>
 		</div>
@@ -158,16 +173,19 @@ function Top(){
 						&lt;head&gt;<br>	
 						&lt;script&gt;<br>
 						function erovoutikaFunc(){ <br>
-						document.getElementById(“erovoutika”).innerHTML =  “Hello Erovoutika”;<br>
+						document.getElementById(“Erovoutika”).innerHTML =  “Hello Erovoutika”;<br>
 						}<br>
 						&lt;/script&gt;<br>
 						&lt;/head&gt;<br>
 						&lt;body&gt;<br>
 						&lt;p id="Erovoutika"&gt;Hello World!&lt;/p&gt; <br>
-						&lt;button type="button" onclick="erovoutikaFunc()"&gt;&lt;/button&gt;<br>
+						&lt;button type="button" onclick="erovoutikaFunc()"&gt;Click&lt;/button&gt;<br>
 						&lt;/body&gt;<br>
 						&lt;/html&gt;<br>
-					<a class="button is-link read-more">View Example</a>
+					<form method = "get" action = "code_editor.php">
+						<input type = "hidden" name = "learn_js" value = "4"> 
+						<button class="button is-link read-more">View Example</button>
+					</form>
 		</article>
 
 		</div>
@@ -193,7 +211,11 @@ function Top(){
 						</blockquote>
 						<p class="description">The result of this code will be, upon clicking the button, the Hello There! Should be replaced with General Erovoutika. 
 						<br>You can also use the src attribute to reference JavaScript files from the web! As long as you entered the correct web address.  
-						<a class="button is-link read-more">View Example</a>
+						
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_js" value = "5">
+							<button class="button is-link read-more">View Example</button>
+						</form>
 					</article>
 			</div>
 		</div>
@@ -211,7 +233,10 @@ function Top(){
 					</ul>
 						</blockquote>
 						<p class="description">With each of them having their advantages, like the <strong>console.log()</strong> is super helpful for debugging codes   </P>	
-						<a class="button is-link read-more">View Example</a>
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_js" value = "6">
+							<button class="button is-link read-more">View Example</button>
+						</form>
 				</article>
 				</div>
 			</div>
@@ -232,7 +257,10 @@ function Top(){
 							<p class="description">var y = 11;</P>
 							</blockquote>
 							<p class="description">To explain the code above, the we declared that x should have a value of 10 and that y with a value of 11. </P>
-						<a class="button is-link read-more">View Example</a>
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_js" value = "7">
+							<button class="button is-link read-more">View Example</button>
+						</form>
 				</article>
 				</div>
 		</div>
@@ -246,13 +274,15 @@ function Top(){
 						// console.log(“I’ll not be printed”) <br>console.log(“I’ll be printed”) 
 						</blockquote>
 						<p class="description">To explain the code above, the first console.log will not be printed since we put a double slash at the beginning of the line. You can also use a slash asterisk (/*) and asterisk slash (*/) to comment out multi-line block of code. </P>
-						<a class="button is-link read-more">View Example</a>
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_js" value = "8">
+							<button class="button is-link read-more">View Example</button>
+						</form>
 				</article>
 				<article class="tile is-child content task">
 						<p><a href="" class="tag is-dark">2 min read</a></p>
 							<h2 class="title" id="js_text_case">JavaScript Text Cases</h2>
 							<p class="description">JavaScript is a case-sensitive language meaning that firstName and firstname is not considered as a same variable.  </P>
-						<a class="button is-link read-more">View Example</a>
 				</article>
 		</div>
 		<div class="tile   is-6 is-parent is-vertical">
@@ -261,7 +291,10 @@ function Top(){
 							<h2 class="title" id="js_functions_and_events">JavaScript Functions and Events</h2>
 							<p class="description">A function is a block of JavaScript code that is executed when it is called.<br>
 For example, a function can be called when an event occurs, an event is when a user clicks a button somewhere on the website page. </P>
-						<a class="button is-link read-more">View Example</a>
+							<form method = "get" action = "code_editor.php">
+								<input type = "hidden" name = "learn_js" value = "9">
+								<button class="button is-link read-more">View Example</button>
+							</form>
 				</article>
 				<article class="tile is-child content task">
 						<p><a href="" class="tag is-dark">2 min read</a></p>
@@ -272,7 +305,10 @@ For example, a function can be called when an event occurs, an event is when a u
 							<p class="description">(1 + 1) * 2 </P>
 							<p class="description">In an earlier example, you’ll see that we used = to declare the value of x, this is called assignment operator </P>
 							</blockquote>
-						<a class="button is-link read-more">View Example</a>
+							<form method = "get" action = "code_editor.php">
+								<input type = "hidden" name = "learn_js" value = "10">
+								<button class="button is-link read-more">View Example</button>
+							</form>
 				</article>
 				</div>
 						</div>
@@ -289,7 +325,10 @@ For example, a function can be called when an event occurs, an event is when a u
 									<li>An underscore (_)</li>
 								</ul>
 								</blockquote>
-							<a class="button is-link read-more">View Example</a>
+							<form method = "get" action = "code_editor.php">
+								<input type = "hidden" name = "learn_js" value = "11">
+								<button class="button is-link read-more">View Example</button>
+							</form>
 					</article>
 			</div>
 			<div class="tile is-parent ">
@@ -304,7 +343,10 @@ For example, a function can be called when an event occurs, an event is when a u
 								console.log(erovoutikaFunction(1, 2)) // 3 <br>
 								</blockquote>
 								To explain the code above, the function erovoutikaFunction returns the sum of the two variables that the user have inputted within the function’s parameter. </P> 
-							<a class="button is-link read-more">View Example</a>
+							<form method = "get" action = "code_editor.php">
+								<input type = "hidden" name = "learn_js" value = "12">
+								<button class="button is-link read-more">View Example</button>
+							</form>
 					</article>
 			</div>
 		</div>
@@ -320,7 +362,10 @@ For example, a function can be called when an event occurs, an event is when a u
 								objectName[“propertyName”] </strong>
 								</p>
 								</blockquote>
-							<a class="button is-link read-more">View Example</a>
+							<form method = "get" action = "code_editor.php">
+								<input type = "hidden" name = "learn_js" value = "13">
+								<button class="button is-link read-more">View Example</button>
+							</form>
 					</article>
 					<article class="tile is-child content task">
 							<p><a href="" class="tag is-dark">2 min read</a></p>
@@ -332,7 +377,10 @@ For example, a function can be called when an event occurs, an event is when a u
 								</blockquote>
 								<p class="description">To explain the code above, the fullName method takes the firstName and lastName property of the erovoutikaIntern object. <br><br>
 								<strong>Note:</strong> if you call the function without the parenthesis, it will show the method definition instead.</p>
-								<a class="button is-link read-more">View Example</a>
+							<form method = "get" action = "code_editor.php">
+								<input type = "hidden" name = "learn_js" value = "15">
+								<button class="button is-link read-more">View Example</button>
+							</form>
 					</article>
 			</div>
 			<div class="tile is-parent is-vertical">
@@ -346,7 +394,10 @@ For example, a function can be called when an event occurs, an event is when a u
 			      				lastName: “Doe”, <br>
       							contactNumber: “09952112978” }; <br></p>
 								</blockquote>
-							<a class="button is-link read-more">View Example</a>
+							<form method = "get" action = "code_editor.php">
+								<input type = "hidden" name = "learn_js" value = "14">
+								<button class="button is-link read-more">View Example</button>
+							</form>
 					</article>
 					<article class="tile is-child content task">
 							<p><a href="" class="tag is-dark">2 min read</a></p>
@@ -359,7 +410,10 @@ For example, a function can be called when an event occurs, an event is when a u
      							fullName:  function() {return this.firstName + “ “ + this.lastName};<br>
 								</p>
 								</blockquote>
-							<a class="button is-link read-more">View Example</a>
+							<form method = "get" action = "code_editor.php">
+								<input type = "hidden" name = "learn_js" value = "16">
+								<button class="button is-link read-more">View Example</button>
+							</form>
 					</article>
 			</div>
 		</div>
@@ -371,13 +425,16 @@ For example, a function can be called when an event occurs, an event is when a u
 									<p class="description">Conditional statements are used to perform different actions to a set of different conditions. In JavaScript we have these following conditional statements: </P>
 									<blockquote>
 									<ulL>
-										<li><strong>If</strong> – is executed when the specified condition is TRUE </li>
-										<li><strong>Else</strong> –  is executed when the specified condition is FALSE  </li>
-										<li><strong>Else if</strong> – is executed when the new specified condition is TRUE  </li>
-										<li><strong>Switch</strong> – is executed when one of the many alternative blocks of code is true.  </li>
+										<li><strong>if</strong> – is executed when the specified condition is TRUE </li>
+										<li><strong>else</strong> –  is executed when the specified condition is FALSE  </li>
+										<li><strong>else if</strong> – is executed when the new specified condition is TRUE  </li>
+										<li><strong>switch</strong> – is executed when one of the many alternative blocks of code is true.  </li>
 									</ul>
 									</blockquote>
-								<a class="button is-link read-more">View Example</a>
+								<form method = "get" action = "code_editor.php">
+									<input type = "hidden" name = "learn_js" value = "17">
+									<button class="button is-link read-more">View Example</button>
+							 	</form>
 				</article>
 			</div>					
 		</div>
@@ -389,13 +446,16 @@ For example, a function can be called when an event occurs, an event is when a u
 									<p class="description">is executed when the specified condition is TRUE.<br><br>To demonstrate: </P>
 									<blockquote>
 									<p class="description">
-									var isDayTime = True <br>
-									if (isDayTime == True) { <br>
+									var isDayTime = true <br>
+									if (isDayTime == true) { <br>
 									console.log(“Its daytime!”); <br>
 									} </p>
 									</blockquote>
 									<p class="description">To explain the code above, the if condition checks if the variable isDayTime is true, which it is, so it will pass through this condition and outputs Its daytime! </p>
-								<a class="button is-link read-more">View Example</a>
+								<form method = "get" action = "code_editor.php">
+									<input type = "hidden" name = "learn_js" value = "18">
+									<button class="button is-link read-more">View Example</button>
+							 	</form>
 				</article>
 			</div>
 			<div class="tile is-parent">
@@ -404,8 +464,8 @@ For example, a function can be called when an event occurs, an event is when a u
 									<h2 class="title" id="js_else_statement">Else Statement </h2>
 									<p class="description">is executed when the specified condition is FALSE.<br><br>To demonstrate: </P>
 									<blockquote>
-									<p class="description">var isDayTime = True <br>
-									if (isDayTime == True) { <br>
+									<p class="description">var isDayTime = true <br>
+									if (isDayTime == true) { <br>
 									console.log(“Its daytime!”); <br>
 									} else { <br>
 									console.log(“Its nighttime!”); <br>
@@ -413,7 +473,10 @@ For example, a function can be called when an event occurs, an event is when a u
 									</blockquote>
 									<p class="description">To explain the code above, the if condition checks if the variable isDayTime is true, which is not true! So it moves to the else block where it outputs Its nighttime!. </p>
 									
-								<a class="button is-link read-more">View Example</a>
+								<form method = "get" action = "code_editor.php">
+									<input type = "hidden" name = "learn_js" value = "19">
+									<button class="button is-link read-more">View Example</button>
+							 	</form>
 				</article>
 			</div>					
 		</div>
@@ -426,15 +489,18 @@ For example, a function can be called when an event occurs, an event is when a u
 									<blockquote>
 									<p class="description">
 									var myNum = 5  <br>
-									If (myNum > 6) {  <br>
+									if (myNum > 6) {  <br>
 									console.log(“Im greater!”)  <br>
 									}<br>
-									Else if (myNum < 6) { <br>
+									else if (myNum < 6) { <br>
 									console.log(“Im here!”) <br> 
 									}  </p>
 									</blockquote>
 									<p class="description">To explain the code above, the if condition checks if the variable myNum is true, which is not! So it moves to the next condition in else if, upon checking, its true! So it will output Im here!.</p>
-								<a class="button is-link read-more">View Example</a>
+								<form method = "get" action = "code_editor.php">
+									<input type = "hidden" name = "learn_js" value = "20">
+									<button class="button is-link read-more">View Example</button>
+							 	</form>
 				</article>
 			</div>				
 		</div>

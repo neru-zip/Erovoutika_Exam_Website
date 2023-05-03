@@ -92,7 +92,10 @@ function Top(){
 						<li>CSS sketches how HTML elements should be displayed.</li>
 						<li>This tutorial will teach you to understand CSS from basic to advanced.</li>
 					</ul></blockquote>
-					<a class="button is-link read-more">View Example</a>
+					<form method = "get" action = "code_editor.php">
+						<input type = "hidden" name = "learn_css" value = "0">
+						<button class="button is-link read-more">View Example</button>
+					</form>
 				</article>
 			</div>
 			<div class="tile is-6 is-parent ">
@@ -105,7 +108,11 @@ function Top(){
 						<li>CSS saves a lot of work. It can control the layout of multiple web pages all at once</li>
 						<li>External stylesheets are stored in CSS files</li>
 					</ul></blockquote>
-					<a class="button is-link read-more">View Example</a>
+
+					<form method = "get" action = "code_editor.php">
+						<input type = "hidden" name = "learn_css" value = "1">
+						<button class="button is-link read-more">View Example</button>
+					</form>
 			</article>
 			</div>
 		</div>
@@ -136,7 +143,10 @@ function Top(){
 						<li>color is a property, and red is the property value</li>
 						<li>text-align is a property, and center is the property value</li>
 					</ul>
-					<a class="button is-link read-more">View Example</a>
+
+					<form method = "get" action = "code_editor.php">
+						<input type = "hidden" name = "learn_css" value = "2">
+						<button class="button is-link read-more">View Example</button>
 					</article>     
 			</div>
 		</div>
@@ -156,8 +166,11 @@ function Top(){
 								<li>Attribute selectors (select elements based on an attribute or attribute value)</li>
 							</ul>
 							</blockquote>
-							
-						<a class="button is-link read-more">View Example</a>
+						
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_css" value = "3">
+							<button class="button is-link read-more">View Example</button>
+						</form>
 				</article>
 			</div>
 		</div>
@@ -190,8 +203,10 @@ function Top(){
 							&lt;/body&gt;<br>
 							&lt;/html&gt;</p>
 							</blockquote>
-							
-						<a class="button is-link read-more">View Example</a>
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_css" value = "4">
+							<button class="button is-link read-more">View Example</button>
+						</form>
 				</article>
 			</div>
 		</div>
@@ -220,7 +235,10 @@ function Top(){
 						&lt;p class="center"&gt;Red and center-aligned paragraph.&lt;/p&gt;<br>
 						&lt;/body&gt;<br>
 						&lt;/html&gt;<br>
-					<a class="button is-link read-more">View Example</a>
+					<form method = "get" action = "code_editor.php">
+						<input type = "hidden" name = "learn_css" value = "5">
+						<button class="button is-link read-more">View Example</button>
+					</form>
 		</article>
 
 		</div>
@@ -252,7 +270,11 @@ function Top(){
 							&lt;/body&gt;<br>
 							&lt;/html&gt;<br>
 						</p>	</blockquote>
-						<a class="button is-link read-more">View Example</a>
+
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_css" value = "6">
+							<button class="button is-link read-more">View Example</button>
+						</form>
 					</article>
 			</div>
 		</div>
@@ -283,7 +305,11 @@ function Top(){
 							&lt;/body&gt;<br>
 							&lt;/html&gt;<br>
 						</blockquote></p>	
-						<a class="button is-link read-more">View Example</a>
+
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_css" value = "7">
+							<button class="button is-link read-more">View Example</button>
+						</form>
 				</article>
 				</div>
 			</div>
@@ -306,8 +332,10 @@ function Top(){
 							&lt;/body&gt;<br>
 							&lt;/html&gt;<br>
 							</p></blockquote>
-							
-						<a class="button is-link read-more">View Example</a>
+						<form method = "get" action = "code_editor.php">	
+							<input type = "hidden" name = "learn_css" value = "8">
+							<button class="button is-link read-more">View Example</button>
+						</form>
 				</article>
 				</div>
 		</div>
@@ -321,9 +349,10 @@ function Top(){
 						&lt;!DOCTYPE html &gt;<br>
 							&lt;html&gt;<br>
 							&lt;head&gt;<br>
-							&lt;style"&gt;<br>
-							&lt;body {&gt;<br>
+							&lt;style&gt;<br>
+							    body {<br>
 								background-color: lightblue;<br>
+								}<br>
 							&lt;/style&gt;<br>
 							&lt;/head&gt;<br> 
 							&lt;body&gt;<br>
@@ -332,7 +361,10 @@ function Top(){
 							&lt;/body&gt;<br>
 							&lt;/html&gt;</p>
 						</blockquote>
-						<a class="button is-link read-more">View Example</a>
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_css" value = "9">
+							<button class="button is-link read-more">View Example</button>
+						</form>
 				</article>
 				</div>
 				<div class="tile  is-parent">
@@ -346,9 +378,10 @@ function Top(){
 							&lt;!DOCTYPE html &gt;<br>
 							&lt;html&gt;<br>
 							&lt;head&gt;<br>
-							&lt;style"&gt;<br>
-							&lt;body {&gt;<br>
+							&lt;style&gt;<br>
+							    body {<br>
 								background-image: url("bgdesert.jpg");<br>
+								}<br>
 							&lt;/style&gt;<br>
 							&lt;/head&gt;<br> 
 							&lt;body&gt;<br>
@@ -357,7 +390,10 @@ function Top(){
 							&lt;/body&gt;<br>
 							&lt;/html&gt; </p>
 						</blockquote>
-						<a class="button is-link read-more">View Example</a>
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_css" value = "10">
+							<button class="button is-link read-more">View Example</button>
+						</form>
 				</article>
 							</div>	
 							</div>	
@@ -372,7 +408,7 @@ function Top(){
 							&lt;!DOCTYPE html &gt;<br>
 							&lt;html&gt;<br>
 							&lt;head&gt;<br>
-							&lt;style"&gt;<br>
+							&lt;style&gt;<br>
 							p.dotted {border-style: dotted;}<br>
 							p.dashed {border-style: dashed;}<br>
 							p.solid {border-style: solid;}<br>
@@ -403,7 +439,10 @@ function Top(){
 							&lt;/body&gt;<br>
 							&lt;/html&gt;</p>
 						</blockquote>
-						<a class="button is-link read-more">View Example</a>
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_css" value = "11">
+							<button class="button is-link read-more">View Example</button>
+						</form>
 				</article>
 		</div>
 		</div>
@@ -420,7 +459,7 @@ With CSS, you have full control over the margins. There are properties for setti
 							&lt;!DOCTYPE html &gt;<br>
 							&lt;html&gt;<br>
 							&lt;head&gt;<br>
-							&lt;style"&gt;<br>
+							&lt;style&gt;<br>
 							div { <br>
 							border: 1px solid black;<br>
 							margin-top: 100px;<br>
@@ -437,7 +476,10 @@ With CSS, you have full control over the margins. There are properties for setti
 							&lt;/body&gt;<br>
 							&lt;/html&gt;</p>
 						</blockquote>
-						<a class="button is-link read-more">View Example</a>
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_css" value = "12">
+							<button class="button is-link read-more">View Example</button>
+						</form>
 				</article>
 		</div>
 		</div>		
@@ -453,7 +495,7 @@ With CSS, you have full control over the margins. There are properties for setti
 							&lt;!DOCTYPE html &gt;<br>
 							&lt;html&gt;<br>
 							&lt;head&gt;<br>
-							&lt;style"&gt;<br>
+							&lt;style&gt;<br>
 							div { <br>
 							border: 1px solid black;<br>
 							background-color: lightblue;<br>
@@ -470,7 +512,11 @@ With CSS, you have full control over the margins. There are properties for setti
 							&lt;/body&gt;<br>
 							&lt;/html&gt;</p>
 						</blockquote>
-						<a class="button is-link read-more">View Example</a>
+
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_css" value = "13">
+							<button class="button is-link read-more">View Example</button>
+						</form>
 				</article>
 		</div>
 		</div>
@@ -483,7 +529,10 @@ With CSS, you have full control over the margins. There are properties for setti
 The CSS max-width property is used to set the maximum width of an element.<br> The height and width properties are used to set the height and width of an element.<br>
 The height and width properties do not include padding, borders, or margins.<br> It sets the height/width of the area inside the padding, border, and margin of the element.
 						</P></blockqoute>
-						<a class="button is-link read-more">View Example</a>
+						<form method = "get" action ="code_editor.php">
+							<input type = "hidden" name = "learn_css" value = "14">
+							<button class="button is-link read-more">View Example</button>
+						</form>
 				</article>
 		</div>
 		</div>
@@ -509,7 +558,7 @@ The height and width properties do not include padding, borders, or margins.<br>
 							&lt;!DOCTYPE html &gt;<br>
 							&lt;html&gt;<br>
 							&lt;head&gt;<br>
-							&lt;style"&gt;<br>
+							&lt;style&gt;<br>
 							div { <br>
 								height: 200px;<br>
 								width: 50%;<br>
@@ -523,7 +572,10 @@ The height and width properties do not include padding, borders, or margins.<br>
 							&lt;/body&gt;<br>
 							&lt;/html&gt;</p>
 							</blockquote>
-						<a class="button is-link read-more">View Example</a>
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_css" value = "15">
+							<button class="button is-link read-more">View Example</button>
+						</form>
 				</article>
 		</div>
 		</div>	
@@ -546,7 +598,7 @@ The height and width properties do not include padding, borders, or margins.<br>
 							&lt;!DOCTYPE html &gt;<br>
 							&lt;html&gt;<br>
 							&lt;head&gt;<br>
-							&lt;style"&gt;<br>
+							&lt;style&gt;<br>
 							div { <br>
 								background-color: lightgrey;<br>
 								width: 300px;<br>
@@ -564,7 +616,11 @@ The height and width properties do not include padding, borders, or margins.<br>
 							&lt;/body&gt;<br>
 							&lt;/html&gt;</p>
 							</blockquote>
-						<a class="button is-link read-more">View Example</a>
+						
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_css" value = "16">
+							<button class="button is-link read-more">View Example</button>
+						</form>
 				</article>
 		</div>
 		</div>
@@ -603,7 +659,11 @@ The height and width properties do not include padding, borders, or margins.<br>
 							&lt;/html&gt;<br>
 							</p>
 							</blockquote>
-							<a class="button is-link read-more">View Example</a>
+
+							<form method = "get" name = "learn_css" action = "code_editor.php">
+								<input type = "hidden" name = "learn_css" value = "17">
+								<button class="button is-link read-more">View Example</button>
+							</form>
 				</article>
 		</div>
 		</div>
@@ -639,7 +699,11 @@ The height and width properties do not include padding, borders, or margins.<br>
 
 							</p>
 							</blockquote>
-							<a class="button is-link read-more">View Example</a>
+
+							<form method = "get" action = "code_editor.php">
+								<input type = "hidden" name = "learn_css" value = "18">
+								<button class="button is-link read-more">View Example</button>
+							</form>
 				</article>
 		</div>
 		</div>
@@ -676,7 +740,11 @@ The internal style is defined inside the <strong>&lt;style&gt;</strong> element,
 							<br>
 							</p>
 							</blockquote>
-							<a class="button is-link read-more">View Example</a>
+
+							<form method = "get" action = "code_editor.php">
+								<input type = "hidden" name = "learn_css" value = "19">
+								<button class="button is-link read-more">View Example</button>
+							</form>
 				</article>
 		</div>
 		</div>									
