@@ -8,6 +8,11 @@
     width: 0;
 }
 
+section img {
+    display: block;
+    margin-inline: auto;
+}
+
 span:not(:first-child), div>span {
     display: block;
     font-weight: 500;
@@ -29,12 +34,12 @@ input[type=radio] + img{
 
     display: inline;
 
-    min-width: 11.5rem;
+    min-width: 10.5rem;
     min-height: 3.5rem;
-    max-width: 11.5rem;
-    max-height: 6.5rem;
+    max-width: 10.5rem;
+    max-height: 5.5rem;
     
-    margin: 5px 0 0 5px;
+    /* margin: 5px 0 0 5px; */
     
     border-radius: 5px;
     filter: grayscale(10);
@@ -75,4 +80,8 @@ form>label, input {
 
 .rem-s {
     font-size: .55rem !important;
+}
+
+.f-gap {
+    gap: .20rem;
 }

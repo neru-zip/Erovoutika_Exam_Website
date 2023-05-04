@@ -16,7 +16,7 @@ if(empty($uid)||empty($eid)||empty($pid))
 };
 
 $result = $connectdb->query("SELECT `transactionID`, `ExID` FROM `tbtransaction`
-							 WHERE (transactionID = '$pid' AND ExID = $eid)");
+							 WHERE (transactionID = '$pid' AND ExID = $eid) AND (transactionStat <> 'on_process' AND transactionStat <> 'paid');");
 
 $check = $result->fetch_row()[0] ?? false;
 
@@ -59,7 +59,7 @@ try {
 </head>
 
 <body>
-	<main class="container d-flex flex-column col-12 col-sm-10 col-md-8 col-lg-3 mx-md-auto mw-50 border" style="height: fit-content;">
+	<main class="container d-flex flex-column col-12 col-sm-10 col-md-6  col-xl-5 mx-md-auto mw-50 border" style="height: fit-content;">
 		<section class="position-relative py-sm-3 px-lg-3 flex-fill lh-sm flex-justify-center" style="min-height: 250px">
 			<img src="/src/images/Logo2.png" alt="erovoutika_logo">
 			<span class="position-absolute bottom-0">
@@ -70,7 +70,7 @@ try {
 			</span>
 			
 		</section>
-		<section class="position-relative flex-fill p-3 col-fluid text-white ml-md-3 rounded-top shadow" style="background: #29469d;">
+			<section class="position-relative flex-fill p-3 col-fluid text-white ml-md-3 rounded-top shadow" style="background: #29469d;">
 			<span class="position-absolute c-top c-end rem-s">
 				Payment ID: <?php echo $pid; ?>
 			</span>
@@ -79,32 +79,32 @@ try {
 				<?php echo $row[9];?>
 				</p>
 
-			<form action="/src/payment/payment_method.php" method="POST">
+			<form action="/src/payment/payment_method.php" method="POST" id="paymentForm">
 
 				<legend> PAYMENT </legend>
 				
 				<span>Payment Method: </span>
+				<div class="d-flex flex-wrap f-gap align-content-center justify-content-center">
+					<label for="gcash">
+					<input type="radio" id="gcash" name="pmethod" value="gcash" onclick="check()">
+					<img src="/src/images/gcash.webp" alt="paymaya-logo">
+					</label>
 
-				<label for="gcash">
-				<input type="radio" id="gcash" name="pmethod" value="gcash" onclick="check()">
-				<img src="/src/images/gcash.webp" alt="paymaya-logo">
-				</label>
+					<label for="gpay">
+					<input type="radio" id="gpay" name="pmethod" value="grab_pay" onclick="check()"> 
+					<img src="/src/images/grabpay.jpg" alt="paymaya-logo">
+					</label>
 
-				<label for="gpay">
-				<input type="radio" id="gpay" name="pmethod" value="grab_pay" onclick="check()"> 
-				<img src="/src/images/grabpay.jpg" alt="paymaya-logo">
-				</label>
+					<label for="maya"> 
+					<input type="radio" id="maya" name="pmethod" value="paymaya" onclick="check()"> 
+					<img src="/src/images/maya.jpg" alt="paymaya-logo">
+					</label> 
 
-				<label for="maya"> 
-				<input type="radio" id="maya" name="pmethod" value="paymaya" onclick="check()"> 
-				<img src="/src/images/maya.jpg" alt="paymaya-logo">
-				</label> 
-
-				<label for="card"> 
-				<input type="radio" id="card" name="pmethod" value="card" onclick="check()"> 
-				<img src="/src/images/card.png" alt="paymaya-logo">
-				</label> 
-				
+					<label for="card"> 
+					<input type="radio" id="card" name="pmethod" value="card" onclick="check()"> 
+					<img src="/src/images/card.png" alt="paymaya-logo">
+					</label> 
+				</div>
 				
 				
 				<br>
@@ -134,19 +134,19 @@ try {
 
 					<span><label for="plan">Card Details: </label></span>
 					
-					<label for="name" class="mt-2">
+					<label for="cardNumber" class="mt-2">
 						Card Number:
 					</label>
-					<input class="form-control " type="text" name="" id="name" placeholder="Input your Card Number">
+					<input class="form-control " type="text" name="cardNumber" id="cardNumber" placeholder="Input your Card Number" onkeyup="cardnumber(this)">
 					
-					<label for="email" class="mt-2">
+					<label for="expMonth" class="mt-2">
 						Exp Month:
 					</label>
-					<input class="form-control " type="number" name="" id="email" placeholder="Expiration Month">
-					<label for="number" class="mt-2">
+					<input class="form-control " type="number" name="" id="expMonth" placeholder="Expiration Month">
+					<label for="expYear" class="mt-2">
 						Exp Year:
 					</label>
-					<input class="form-control " type="number" name="" id="number" placeholder="Expiration Year">
+					<input class="form-control " type="number" name="" id="expYear" placeholder="Expiration Year">
 				</div>
 				
 
@@ -172,6 +172,7 @@ try {
 	<script>
 		const cardOption = document.getElementById("card")
 		const cardAddon = document.getElementById("card_option")
+		const cardInput = document.getElementById("cardNumber")
 		function check() {
 			if (cardOption.checked) {
 				cardAddon.classList.add("show")
@@ -179,6 +180,7 @@ try {
 				cardAddon.classList.remove("show")
 			}
 		}
+
 	</script>
 </body>
 </html>
