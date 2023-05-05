@@ -141,7 +141,7 @@
               
                       </div>
                       <div class="card-footer" style="background: inherit; border-color: inherit;">
-                        <a href="#" class="btn btn-primary">Continue</a>
+                        <a href="learnphp.php" class="btn btn-primary">Continue</a>
                         <a href="#" class="btn btn-outline-primary">8 Lectures</a>
                       </div>
                     </div>

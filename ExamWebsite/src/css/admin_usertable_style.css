@@ -154,22 +154,57 @@ a.btn.ms-3.mb-3 {
 
 /* Table Userlist */
 table{
+    
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
+    border: 1px solid;
 }
 
 .table{
-    border-color: #141619;
+    
+    border-color: #f1000000;
     border-spacing: 1rem;
     border-collapse: collapse;
-    border: solid
+    text-align:center;
+    margin-top:30px;
+    position:relative;
+    
 }
 
 thead{
+    
     background-color: #2055B5;
     color: white;
-    border: solid black;
+    
+    
+}
+
+
+tr {
+    border-bottom: 1pt solid rgb(175, 175, 175);
+  }
+
+tr:nth-child(even) {
+    background-color: #bbd1ea;
+  }
+  
+tr:hover td{
+    background-color: #2055B5; 
+    color: white!important;
+    font-weight: bold;
+}
+
+tr:hover th{
+    background-color: #2055B5; 
+    color: white!important;
+    font-weight: bold;
+}
+
+.display-6{
+    font-weight:bold;
+    position:absolute;
+    margin-top: -25px;
     
 }
 

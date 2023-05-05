@@ -51,6 +51,7 @@ if($_SESSION['client_sid']==session_id())
         <!-------------------------- HEADER ---------------------------->
        <?php include(__DIR__.'/userNav.php')?>
 
+
         <!-------------------------- DELETE ACC MODAL ---------------------------->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
              <div class="modal-dialog">
