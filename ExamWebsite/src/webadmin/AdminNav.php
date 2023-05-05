@@ -63,6 +63,10 @@
                             <i class='bx bx-message-square-detail nav_icon'></i> 
                             <span class="nav_name">Exam List</span> 
                         </a>
+                        <a href="AdminTransaction.php" class="nav_link <?php if(strpos($_SERVER["REQUEST_URI"], "AdminExamList"))  echo "active" ?>"> 
+                            <i class='bx bx-bar-chart-alt-2 nav_icon'></i> 
+                            <span class="nav_name">Transaction List</span> 
+                        </a>
                     </div>
                 </div> 
                     <a href="adminsignup_template.php"  class="btn btn-primary ms-3 mb-3">

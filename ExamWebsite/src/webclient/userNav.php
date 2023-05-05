@@ -25,9 +25,11 @@ $clUrID = $_SESSION['clUrID'];
                         <?php if(in_array($_SERVER['REQUEST_URI'], $index)):?>
                         <li><a class="dropdown-item" href="UserProfile.php"><i class="bi bi-person-circle me-2"></i>Profile</a></li>
                         <li><a class="dropdown-item" href="Settings.php?"><i class="bi bi-gear-fill me-2"></i>Settings</li>
+                        <li><a class="dropdown-item" href="UserTransaction.php"><span class="bi-credit-card me-2"></span>Transactions</a></li>
                         <?php else:  ?>
                         <li><a class="dropdown-item" href="../webclient/UserProfile.php"><i class="bi bi-person-circle me-2"></i>Profile</a></li>
                         <li><a class="dropdown-item" href="../webclient/Settings.php?"><i class="bi bi-gear-fill me-2"></i>Settings</li>
+                        <li><a class="dropdown-item" href="../webclient/UserTransaction.php"><span class="bi-credit-card me-2"></span>Transactions</a></li>
                         <?php endif;?>
                         <li><a class="dropdown-item" href="../includes/logout.php"><span class="glyphicon me-2">&#xe017;</span>Logout</a></li>
                     </ul>
