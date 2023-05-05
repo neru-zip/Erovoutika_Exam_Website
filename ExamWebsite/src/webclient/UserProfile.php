@@ -49,6 +49,7 @@ if($_SESSION['client_sid']==session_id())
 </head>
 
 <body>
+
   <?php include(__DIR__.'/userNav.php');?>
 
         <div class="container-fluid bg-light">

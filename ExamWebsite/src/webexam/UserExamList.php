@@ -6,7 +6,8 @@ if($_SESSION['client_sid']==session_id()){
 	if(!isset($_SESSION["client_sid"]) || $_SESSION["client_sid"] !== session_id()){
         header("location: ../login_template.php");
         exit;
-    }		
+    }	
+$clUrID = $_SESSION['clUrID'];	
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,8 +36,8 @@ if($_SESSION['client_sid']==session_id()){
 
 <body>
     <!-------------------------- HEADER ---------------------------->   
+    
    <?php include(__DIR__.'/../webclient/userNav.php'); ?>
-
 
 	<div class="container-fluid bg-light">
         <div class="main-body">
@@ -49,7 +50,7 @@ if($_SESSION['client_sid']==session_id()){
             <!-------------------------- EXAM CONTENT ---------------------------->
             <?php
 
-              $sql = "SELECT * FROM `tbexam` WHERE clExPublish = 1";
+              $sql = "SELECT p.*, e.*, u.* FROM tbuserpaidexam AS p INNER JOIN tbexam AS e INNER JOIN tbusers AS u ON p.clUrID = u.clUrID AND p.clExID = e.clExID WHERE e.clExPublish = 1 AND p.clUrID = ".$clUrID."";
               $result = $connectdb->query($sql);
 
               if ($result->num_rows > 0) {

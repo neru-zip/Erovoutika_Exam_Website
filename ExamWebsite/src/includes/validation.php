@@ -2,16 +2,17 @@
 include '../includes/connectdb.php';
 $success=false;
 
-$username = $_POST['username'];
-$password = $_POST['password'];
+$username = $connectdb -> real_escape_string($_POST['username']);
+$password = $connectdb -> real_escape_string($_POST['password']);
 
 /**
  * Simplify the fetched information by storing the data then passing it.
  * 
  */
 
-$result = mysqli_query($connectdb, "SELECT * FROM tbusers WHERE clUrUsername='$username' AND clUrPassword='$password' AND clUrLevel='0';");
-while($row = mysqli_fetch_array($result)){
+$result = $connectdb->execute_query('SELECT * FROM tbusers WHERE clUrUsername= ? AND  clUrPassword= ? AND clUrLevel="0"', [$username,$password]);
+//$result = mysqli_query($connectdb, "SELECT * FROM tbusers WHERE clUrUsername='$username' AND clUrPassword='$password' AND clUrLevel='0';");
+while($row = $result->fetch_assoc()){
 	$success = true;
 	$clUrID = $row['clUrID'];
     $clUrUsername = $row['clUrUsername'];

@@ -161,13 +161,16 @@ height: 40px;
 						<li>We can create a static website by HTML only.</li>
 						<li>Technically, HTML is Markup language rather than a programming language.</li>
 					</ul></p></blockquote>
-					<a class="button is-link read-more">View Example</a>
+					<form method = "get" action = "code_editor.php">
+						<input type = "hidden" name = "learn_html" value = "8"> <!--This holds the sample's id value -->
+						<button class="button is-link read-more">View Example</a>
+					</form>
 				</article>
 			</div>
 		</div>
 		<div class ="tile is-ancestor">
 			<div class="tile is-6 is-parent ">
-			<article class="tile is-child content task">
+				<article class="tile is-child content task">
 					<p><a href="" class="tag is-dark">2 min read</a>
 					<a href="#contents" class="tag is-link is-pulled-right">Return to Top</a></p>
 					<h2 class="title" id="definition">What is HTML</h2>
@@ -177,7 +180,11 @@ height: 40px;
 					<strong>Hyper Text:</strong> Hypertext simply means "Text within Text." A text has a link within it, is a hypertext. Whenever you click on a link which brings you to a new webpage, you have clicked on a hypertext. Hypertext is a way to link two or more web pages (HTML documents) with each other. <br><br>
 					<strong>Markup language:</strong> A markup language is a computer language that is used to apply layout and formatting that is used to apply layout and formatting conventions to a text document. Markup language makes text more interactive and dynamic. It can turn to text into images, tables, links, etc. <br><br>
 					<strong>Web Page:</strong> A web page is a document which is commonly written in HTML and translated by a web browser. A web page can be identified by entering URL. A web page can be static or dynamic type. <strong>With the help of HTML only, we can create static web pages.</strong>	</blockquote>
-					<a class="button is-link read-more">View Example</a>
+					
+					<form method = "get" action = "code_editor.php">
+						<input type = "hidden" name = "learn_html" value = "9">
+						<button class="button is-link read-more">View Example</button>
+					</form>
 			</div>
 			<div class="tile is-parent">
 			<article class="tile is-child content task">
@@ -194,7 +201,11 @@ height: 40px;
 					</p></blockquote>
 					<br><br>
 					<p class="notes"><strong>Notes:</strong><br> Notepad is a simple text editor and suitable for beginners to learn HTML. It is available in all versions of Windows, from where you easily access it.</p>
-					<a class="button is-link read-more">View Example</a>
+					
+					<form method = "get" action = "code_editor.php">
+						<input type = "hidden" name = "learn_html" value = "10">
+						<button class="button is-link read-more">View Example</button>
+					</form>
 					</article>     
 			</div>
 		</div>
@@ -302,7 +313,11 @@ height: 40px;
 								<li>The inline elements are ,mostly used with other elements.</li>
 							</ul>
 						</blockquote>
-						<a class="button is-link read-more">View Example</a>
+
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_html" value = "11">
+							<button class="button is-link read-more">View Example</button>
+						</form>
 					</article>
 			</div>
 			<div class="tile is-6 is-parent is-vertical">
@@ -428,12 +443,7 @@ height: 40px;
 						<h2 class="title" id="list">Lists</h2>
 						<p class="description"><strong>Description:</strong> A list of photos opens on arrow button click. A nice background is made with <a href="https://cssgradient.io/">css gradient generator</a>.</p>
 						<p class="notes"><strong>Notes:</strong> Vue provides a variety of ways to apply transition effects when items are inserted, updated, or removed from the DOM. A <code>transition</code> wrapper component allows you to add entering/leaving transitions for any element or component.</p>
-						
-						<!-- CSS SAMPLE -->
-						<form method = "get" action = "code_editor.php">
-							<input type= "hidden" name = "learn_css" value = "0">
-							<button class="button is-link read-more">View Code</button>
-						</form>
+						<button class="button is-link read-more">View Code</button>
 		
 			</div>
 		</div>

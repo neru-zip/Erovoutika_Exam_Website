@@ -38,6 +38,7 @@ if($_SESSION['admin_sid']==session_id())
     </head>
 
     <body id="body-pd">
+
         <?php include __DIR__."/AdminNav.php"; ?>
 
         <!--Container Main start-->
@@ -56,16 +57,16 @@ if($_SESSION['admin_sid']==session_id())
                         ?>
                     </div>
                     <div class="col-8">
-                        <h1 class="text-light mt-2" id="i--banner--title">Welcome, <?php echo $clUrUsername ?></h1>
-                        <p class="text-light" id="i--banner--subtitle">You can manage the exam website here</p>
+                        <h1 class="text-light mt-2-title" id="i--banner--title">Welcome, <?php echo $clUrUsername ?></h1>
+                        <p class="text-light mt-2-desc" id="i--banner--subtitle">You can manage the exam website here</p>
                     </div>
                     <div class="col-2">
-                        <a href = "AdminProfile.php" role="button" class="btn btn-light my-3" id="i--button--editProfile">Edit Profile</a>
+                        <a href = "AdminProfile.php" role="button" class="btn btn-light my-3-edit" id="i--button--editProfile">Edit Profile</a>
                     </div>
                 </div>
                 <!-- Edit History -->
                 <div class="row mt-5">
-                    <div class="col display-6">
+                    <div class="col display-6-recent">
                         RECENT EDITED EXAM
                     </div>
                 </div>
@@ -99,17 +100,17 @@ if($_SESSION['admin_sid']==session_id())
                         echo '<div class="card" id="i--card--edit">
                                 <div class="card-body">
                                     <div class="container">';
-                                echo ' <div class="row fs-5">
+                                echo ' <div class="row fs-5-title">
                                         '.$row["clExName"].'
                                         </div>
                                         <div class="row" id="i--line--card"></div>
-                                        <div class="row mt-4 fs-5">
-                                            EXAM DESCRIPTION: '.$row["clExDescription"].'
+                                        <div class="row mt-4 fs-5-desc">
+                                            '.$row["clExDescription"].'
                                         </div>
-                                        <div class="row my-2 fs-5">
+                                        <div class="row my-2 fs-5-lastedit">
                                         EDIT DATE: '.$row["clExLastEditDate"].'
                                         </div>
-                                        <div class="row my-2 fs-5">
+                                        <div class="row my-2 fs-5-edited">
                                         EDITED BY: '.$rw["clUrUsername"].'
                                         </div>';
                         echo '      </div>
