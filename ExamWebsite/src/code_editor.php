@@ -167,7 +167,7 @@
         }
 
 
-        html-code{
+        .html-code{
             margin-top:-50px;
         }
 
@@ -182,6 +182,7 @@
     }
 
     .js-code{
+        position: relative;
         margin-top: -35px;
     }
 
@@ -197,15 +198,28 @@
         color: white;
         font-weight: bold;
         font-size: 1rem;
-        margin-top:-50px;
-        margin-left:480px;
         padding: 0 10px 0 0;
         margin: 0 auto;
-    position: absolute;
-        left:480px;
+        position: absolute;
+        right:0;
+        top:0;
     }
 
     .button {
+    /* border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    font-family:  sans-serif;
+    transition-duration: 0.4s;
+    cursor: pointer;
+     */
+    }
+
+    .button1 {
+    
     border: none;
     color: white;
     padding: 5px 20px;
@@ -215,17 +229,14 @@
     font-family:  sans-serif;
     transition-duration: 0.4s;
     cursor: pointer;
-    
-    }
 
-    .button1 {
     background-color: white; 
     color: #003a8c; 
     border: 2px solid white;
     position: absolute;
-    margin: 0 auto;
-    bottom: 0px;
-    left:1010px;
+
+    bottom: -30px;
+    right:0;
     
 
     }
@@ -254,11 +265,7 @@
     }
 
 
-    .button1{
-    margin-left: -910px;
-    margin-bottom: 45px;
-    position: absolute;
-    }
+    
 
     .html-code{
             margin-top: -30px;
@@ -272,11 +279,7 @@
         position: relative;
     }
 
-    .button1{
-    margin-left: -905px;
-    margin-bottom: 215px;
-    position: absolute;
-    }
+   
     
         
     }
@@ -294,18 +297,11 @@
     }
     
     
-    .button1{
-        margin-left: -895px;
-    margin-bottom: 110px;
-    }
+   
     }
 
     @media only screen and (min-width: 1920px) and (max-height: 1080px) {
-        .button1{
-        margin-left:-160px;
-        margin-top: 10px;
-        position: relative;
-    }
+    
 
     #bck{
         margin-left:320px;
@@ -331,9 +327,10 @@
     <!-- Code Editor -->
     <div class="code-editor">
         <div class="code">
-		<a href="learn.php"><img id="img1" src="images/Blue BG Logo.png" alt=""></a>
-		
-		<h1 id="bck"><a href="learn.php">◄ Back to Tutorial</a></h1>
+        <div class="header" style="position:relative;">
+		    <a href="learn.php"><img id="img1" src="images/Blue BG Logo.png" alt=""></a>
+            <h1 id="bck"><a href="learn.php">◄ Back to Tutorial</a></h1>
+		</div>
             <div class="html-code">
                 <h1><img src="images/html_logo.png" alt="">HTML</h1>
                 <textarea><?php

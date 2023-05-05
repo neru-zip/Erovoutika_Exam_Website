@@ -321,7 +321,7 @@ $searchInput;
                             type: "create",
                             exam_id: id,
                             price: paymentPopup.innerHTML
-                             <?php if(!(empty($_SESSION["admin_sid"]) && empty($_SESSION["client_sid"]))) echo ',user_id: '.$_SESSION['clUrID'] ?? null.''?>
+                             <?php if(!(empty($_SESSION["admin_sid"]) && empty($_SESSION["client_sid"]))) echo ',user_id: '.$_SESSION['clUrID'] ?? null.'';?>
                         },
                         dataType: "json",
                         cache: false,
