@@ -148,36 +148,7 @@
     </head>
 
     <body>
-        <header class="bg-white border-5 border-bottom border-primary">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light ms-5 me-5">
-                <!-- Logo -->
-                <a class="navbar-brand" href="#"><img src="../images/Logo2.png" style="height: 60px;"></a>
-
-                <!-- NavList-->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse position-absolute end-0" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-item nav-link  mt-4" href="#">Home</a>
-                        <a class="nav-item nav-link  mt-4" href="#">About</a>
-                        <a class="nav-item nav-link  mt-4" href="#">Contact</a>
-
-                        <!-- Profile Dropdown -->
-                        <div class="btn-group">
-                          <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-person-fill"></i>
-                          </button>
-                          <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#"><i class="bi bi-person-circle me-2"></i>Profile</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill me-2"></i>Settings</a></li>
-                            <li><a class="dropdown-item" href="#"><span class="glyphicon me-2">&#xe017;</span>Logout</a></li>
-                          </ul>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
+        <?php include(__DIR__."/../webclient/userNav.php")?>
 
         <main class="container mt-3 mb-3 bg-light">
             <!-- Upper Panel -->

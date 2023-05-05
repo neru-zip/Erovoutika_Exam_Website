@@ -24,18 +24,10 @@ $clUrID = $_SESSION['clUrID'];
 
                         <?php if(in_array($_SERVER['REQUEST_URI'], $index)):?>
                         <li><a class="dropdown-item" href="UserProfile.php"><i class="bi bi-person-circle me-2"></i>Profile</a></li>
-                        <li>
-                          <?php echo
-                            '<a class="dropdown-item" href="Settings.php?clUrID='.$clUrID.'">'
-                            ?>
-                          <i class="bi bi-gear-fill me-2"></i>Settings</li>
+                        <li><a class="dropdown-item" href="Settings.php?"><i class="bi bi-gear-fill me-2"></i>Settings</li>
                         <?php else:  ?>
                         <li><a class="dropdown-item" href="../webclient/UserProfile.php"><i class="bi bi-person-circle me-2"></i>Profile</a></li>
-                        <li>
-                          <?php echo
-                            '<a class="dropdown-item" href="../webclient/Settings.php?clUrID='.$clUrID.'">'
-                            ?>
-                          <i class="bi bi-gear-fill me-2"></i>Settings</li>
+                        <li><a class="dropdown-item" href="../webclient/Settings.php?"><i class="bi bi-gear-fill me-2"></i>Settings</li>
                         <?php endif;?>
                         <li><a class="dropdown-item" href="../includes/logout.php"><span class="glyphicon me-2">&#xe017;</span>Logout</a></li>
                     </ul>
