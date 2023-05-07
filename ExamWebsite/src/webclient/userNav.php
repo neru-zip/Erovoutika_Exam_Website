@@ -1,6 +1,4 @@
 <?php 
-$index = array("/src/webclient/UserProfile.php", "/src/webclient/Settings.php");
-$clUrID = $_SESSION['clUrID'];
 ?>
 
 
@@ -14,24 +12,17 @@ $clUrID = $_SESSION['clUrID'];
             <div class="collapse navbar-collapse ml-7" id="navbarTogglerDemo03">
                 <div class="navbar-nav float-end text-end pr-3">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-item nav-link text-dark mt-3" href="../webexam/UserExamList.php">Exam List</a></li>
+                        <li class="nav-item"><a class="nav-item nav-link text-dark mt-3" href="/src/webexam/UserExamList.php">Exam List</a></li>
                         <li class="nav-item">
                     <div class="btn-group">
                       <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-person-fill"></i>
                       </button>
                       <ul class="dropdown-menu dropdown-menu-end">
-
-                        <?php if(in_array($_SERVER['REQUEST_URI'], $index)):?>
-                        <li><a class="dropdown-item" href="UserProfile.php"><i class="bi bi-person-circle me-2"></i>Profile</a></li>
-                        <li><a class="dropdown-item" href="Settings.php?"><i class="bi bi-gear-fill me-2"></i>Settings</li>
-                        <li><a class="dropdown-item" href="UserTransaction.php"><span class="bi-credit-card me-2"></span>Transactions</a></li>
-                        <?php else:  ?>
-                        <li><a class="dropdown-item" href="../webclient/UserProfile.php"><i class="bi bi-person-circle me-2"></i>Profile</a></li>
-                        <li><a class="dropdown-item" href="../webclient/Settings.php?"><i class="bi bi-gear-fill me-2"></i>Settings</li>
-                        <li><a class="dropdown-item" href="../webclient/UserTransaction.php"><span class="bi-credit-card me-2"></span>Transactions</a></li>
-                        <?php endif;?>
-                        <li><a class="dropdown-item" href="../includes/logout.php"><span class="glyphicon me-2">&#xe017;</span>Logout</a></li>
+                        <li><a class="dropdown-item" href="/src/webclient/UserProfile.php"><i class="bi bi-person-circle me-2"></i>Profile</a></li>
+                        <li><a class="dropdown-item" href="/src/webclient/Settings.php"><i class="bi bi-gear-fill me-2"></i>Settings</a></li>
+                        <li><a class="dropdown-item" href="/src/webclient/UserTransaction.php"><i class="bi-credit-card me-2"></i>Transactions</a></li>
+                        <li><a class="dropdown-item" href="/src/includes/logout.php"><i class="glyphicon me-2">&#xe017;</i>Logout</a></li>
                     </ul>
                     </div>
                         </li>
