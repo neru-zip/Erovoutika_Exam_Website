@@ -40,7 +40,7 @@ function baseExamList(in_displayContainerID, in_itemCount) {
         container_row_main.appendChild(container_row_sub1);
             // Create Image (IMAGE)
             var container_row_image = document.createElement("img");
-            container_row_image.setAttribute("class", "rounded-circle ms-1 mt-2 mb-2");
+            container_row_image.setAttribute("class", "rounded-circle ms-1 mt-2 mb-2-logo");
             container_row_image.setAttribute("alt", "Admin");
             container_row_image.setAttribute("width", "150");
             container_row_image.setAttribute("src", "../images/Small Logo.png");
@@ -67,7 +67,7 @@ function baseExamList(in_displayContainerID, in_itemCount) {
                         var insert_detail_text = document.createElement("h5");
                         insert_detail_text.setAttribute("id", "i-h--examlist-clExID-" + (in_itemCount).toString());
                         insert_detail_text.setAttribute("name", "clExID_value");
-                        insert_detail_text.setAttribute("class", "card-title text-primary text-uppercase fs-4");
+                        insert_detail_text.setAttribute("class", "card-title text-primary text-uppercase fs-4-examid");
                         // Set (ROW)
                         container_row_info.appendChild(insert_detail_text);
                         // For Return
@@ -138,7 +138,7 @@ function baseExamList(in_displayContainerID, in_itemCount) {
                             // Create 'EDIT' Cell Content
                             var insert_modify_editbutton = document.createElement("a");
                             insert_modify_editbutton.setAttribute("id", "i-a--examlist-edit-" + (in_itemCount).toString());
-                            insert_modify_editbutton.setAttribute("class", "btn btn-primary c-a--examlist");
+                            insert_modify_editbutton.setAttribute("class", "btn btn-primary c-a--examlist-edit");
                             insert_modify_editbutton.setAttribute("name", "modify_edit_button");
                             insert_modify_editbutton.innerHTML = "Edit Exam";
                             // Set (ROW)

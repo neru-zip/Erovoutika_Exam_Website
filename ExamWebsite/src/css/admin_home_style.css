@@ -62,11 +62,11 @@ a{text-decoration: none}
     display: inline-flex;
     justify-content: flex-end;
 }
-
+/* 
 button.btn.ms-4.mt-2 {
     border-color: black;
     border-width: 0.2rem;
-}
+} */
 
 #i--button--logout {
     color: black;
@@ -155,12 +155,13 @@ a.btn.ms-3.mb-3 {
 /* Profile Banner */
 #i--row--banner{
     background: #0C2A73;
+    height: 130px;
+    padding: 10px;
+    padding-bottom: 10px;
+    border-radius: 25px;
 }
 
-#i--banner--dp{
-    height: auto;
-    width: 7.5rem
-}
+
 
 #i--line--blue{
     background: #2055B5;
@@ -180,6 +181,66 @@ a.btn.ms-3.mb-3 {
     height: .3rem;
     width: 8.5rem
 }
+
+
+
+.mt-2-title{
+    margin-top: 20px;
+    margin-left:-50px;
+    font-weight: bold;
+
+}
+
+.mt-2-desc{
+    margin-top: -10px;
+    margin-left: -45px;
+}
+
+
+.my-3-edit{
+    width:150px;
+    height:50px;
+    font-size: 20px;
+    padding: 8px 10px 10px 10px;
+    margin-top: 25px;
+    margin-left: 30px;
+}
+
+
+.display-6-recent{
+    margin-top: 10px;
+    font-size: 35px;
+    
+}
+
+.fs-5-title{
+    font-size:32px;
+    font-weight: bold;
+    
+}
+
+.fs-5-desc{
+    font-size: 23px;
+    padding-bottom: 15px;
+}
+
+
+.fs-5-lastedit{
+    font-size: 20px;
+    font-family: Century Gothic;
+    font-weight: bold;
+    color:#0d6efd;
+}
+
+.fs-5-edited{
+    font-size: 20px;
+    font-family: Century Gothic;
+    font-weight: bold;
+    color:#0d6efd;
+}
+
+
+
 
 .show{left: 0}
 
@@ -211,11 +272,22 @@ a.btn.ms-3.mb-3 {
     
     .header_img{
         width: 50px;
-        height: 50px
+        height: 50px;
     }
     
-    .header_img img{width: 45px}
+    .header_img img{
+        width: 45px;
+    }
     
+
+    .m-3-logo{
+        width: 7.5rem;
+        padding:15px;
+        margin-top: -5px;
+        margin-left: 20px;
+    }
+
+
     .l-navbar{
         left: 0;
         padding: 1rem 1rem 0 0;
@@ -225,4 +297,158 @@ a.btn.ms-3.mb-3 {
     .show{width: calc(var(--nav-width) + 156px)}
     
     .body-pd{padding-left: calc(var(--nav-width) + 188px)}
+
 }
+
+
+@media only screen and (max-width: 375px) {
+    .m-3-logo{
+        width:42px !important;
+        margin-top: 15px;
+        position: absolute;
+    }
+   
+    .mt-2-title{
+        margin-top: 15px;
+        margin-left:10px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .mt-2-desc{
+        margin-top: 10px;
+        margin-left: -40px;
+        font-size: 13px;   
+        width:250px; 
+        word-wrap: break-word;
+    }
+
+    .my-3-edit{
+        width:100px;
+        height:40px;
+        font-size: 15px;
+        padding: 8px 10px 10px 10px;
+        margin-top: 20px;
+        margin-left: -70px;
+    }
+
+    .display-6-recent{
+        margin-top: 0px;
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .fs-5-title{
+        font-size:25px;
+        font-weight: bold;
+        word-wrap: break-word;
+    }
+    
+    .fs-5-desc{
+        font-size: 23px;
+        padding-bottom: 15px;
+        text-align: justify;
+        text-justify: inter-word;
+    }
+    
+    
+    .fs-5-lastedit{
+        font-size: 18px;
+        font-family: Century Gothic;
+        font-weight: bold;
+        color:#0d6efd;
+    }
+    
+    .fs-5-edited{
+        font-size: 18px;
+        font-family: Century Gothic;
+        font-weight: bold;
+        color:#0d6efd;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 384px) and (max-height: 854px)   {
+    .m-3-logo{
+        width:42px !important;
+        margin-top: 15px;
+        position: absolute;
+    }
+   
+    .mt-2-title{
+        margin-top: 15px;
+        margin-left:10px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .mt-2-desc{
+        margin-top: 10px;
+        margin-left: -40px;
+        font-size: 13px;   
+        width:250px; 
+        word-wrap: break-word;
+    }
+
+    .my-3-edit{
+        width:100px;
+        height:40px;
+        font-size: 15px;
+        padding: 8px 10px 10px 10px;
+        margin-top: 20px;
+        margin-left: -70px;
+    }
+
+    .display-6-recent{
+        margin-top: 0px;
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .fs-5-title{
+        font-size:25px;
+        font-weight: bold;
+        word-wrap: break-word;
+    }
+    
+    .fs-5-desc{
+        font-size: 23px;
+        padding-bottom: 15px;
+        text-align: justify;
+        text-justify: inter-word;
+    }
+    
+    
+    .fs-5-lastedit{
+        font-size: 18px;
+        font-family: Century Gothic;
+        font-weight: bold;
+        color:#0d6efd;
+    }
+    
+    .fs-5-edited{
+        font-size: 18px;
+        font-family: Century Gothic;
+        font-weight: bold;
+        color:#0d6efd;
+    }
+
+
+
+
+
+
+}
+
