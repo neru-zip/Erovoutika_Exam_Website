@@ -111,7 +111,7 @@ try {
 
 				<span><label for="plan">Plan: </label></span>
 				<select class="form-select mb-5" name="plan" id="plan">
-					<option value="onetime"> One-time Payment </option>
+					<option value="onetime" selected> One-time Payment </option>
 					<option value="install"> Installment </option>
 				</select>
 				
@@ -121,16 +121,18 @@ try {
 					<label for="name" class="mt-2">
 						Full Name:
 					</label>
-					<input class="form-control " type="text" name="" id="name" placeholder="Input your Fullname">
+					<input class="form-control " type="text" name="fullName" id="name" placeholder="Input your Fullname">
 
 					<label for="email" class="mt-2">
 						Email:
 					</label>
-					<input class="form-control " type="email" name="" id="email" placeholder="Input your Email">
+					<input class="form-control " type="email" name="email" id="email" placeholder="Input your Email">
+
 					<label for="number" class="mt-2">
 						Contact Number:
 					</label>
-					<input class="form-control " type="tel" name="" id="number" placeholder="Input your Contact Number">
+					<input class="form-control " type="tel" name="contact" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" maxlength="10" id="contact" placeholder="XXX XXX XXXX">
+					
 
 					<span><label for="plan">Card Details: </label></span>
 					
@@ -142,11 +144,15 @@ try {
 					<label for="expMonth" class="mt-2">
 						Exp Month:
 					</label>
-					<input class="form-control " type="number" name="" id="expMonth" placeholder="Expiration Month">
+					<input class="form-control " type="number" name="expMonth" id="expMonth" placeholder="Expiration Month">
 					<label for="expYear" class="mt-2">
 						Exp Year:
 					</label>
-					<input class="form-control " type="number" name="" id="expYear" placeholder="Expiration Year">
+					<input class="form-control " type="number" name="expYear" id="expYear" placeholder="Expiration Year">
+					<label for="expYear" class="mt-2">
+						CVC:
+					</label>
+					<input class="form-control " type="number" name="cvc" id="cvc" placeholder="CVC">
 				</div>
 				
 
@@ -169,19 +175,8 @@ try {
 		</section>
 	</main>
 
-	<script>
-		const cardOption = document.getElementById("card")
-		const cardAddon = document.getElementById("card_option")
-		const cardInput = document.getElementById("cardNumber")
-		function check() {
-			if (cardOption.checked) {
-				cardAddon.classList.add("show")
-			} else {
-				cardAddon.classList.remove("show")
-			}
-		}
+	<script src="/src/javascript/payment.js"></script>
 
-	</script>
 </body>
 </html>
 

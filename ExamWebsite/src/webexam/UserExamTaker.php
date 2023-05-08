@@ -141,6 +141,7 @@
 
         <!-- Custom CSS -->
         <link rel="stylesheet" href="../css/QuestionPageStyle.css">
+        <link rel="stylesheet" href="../css/UserProfileStyle.css">
 
         <!-- Scripts -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
