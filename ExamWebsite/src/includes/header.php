@@ -56,11 +56,13 @@ if (!in_array($_SERVER['REQUEST_URI'], $index)) {
                 <?php if(!empty($_SESSION["client_sid"])): ?>
                 <li><a href="/src/webclient/UserProfile.php">My Profile</a></li>
                 <li><a href="/src/webexam/UserExamList.php">My Exams</a></li>
+                <li><a href="/src/webexam/UserTransaction.php">Tranactions</a></li>
                 <li><a href="/src/includes/logout.php">Logout</a></li>
                 <?php else: ?>
                 <li><a href="/src/webadmin/AdminHome.php">Dashboard</a></li>
                 <li><a href="/src/webadmin/admin_usertable.php">User List</a></li>
                 <li><a href="/src/webadmin/AdminExamList.php">Exam List</a></li>
+                <li><a href="/src/webadmin/AdminTransaction.php">Transactions</a></li>
                 <li><a href="/src/includes/logout.php">Logout</a></li>
                 <?php endif; ?>
               </ul>

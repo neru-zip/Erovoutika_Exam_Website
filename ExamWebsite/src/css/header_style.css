@@ -157,7 +157,7 @@ header.sticky .menu .userNav a:hover:not(:last-child){
   border-radius: 10px;
 
   box-shadow: 0px 0px 41px -16px rgba(0,0,0,0.62);
-  transition: max-height 500ms, padding 500ms; 
+  transition: max-height 500ms cubic-bezier(0.74,-0.36, 0.95, 1.35), padding 500ms; 
   
   overflow: hidden;
 }
@@ -179,7 +179,7 @@ header.sticky .menu .userNav .userOptions a:hover{
 
 .userOptions.show-option{
   /* display: block; */
-  max-height: 150px;
+  max-height: 194px;
 
   padding: 10px 0 0 0;
 }
