@@ -23,46 +23,35 @@ include_once 'src/includes/header.php';
           <img src="src/images/test.png" id="logo2" alt="">
         </div>
         <div class="content">
-              <h3><span style="font-size: 2.8rem; color: #0F3695">One</span>-Stop-Shop Innovative <span style="font-size: 2.8rem; color: #0F3695">Solutions</span></h3><br>
+        <h3 data-text1="One" data-text2="Solution">-Stop-Shop Innovative</h3><br>
               <span>We are team of Engineers and IT making Solutions for Robotics, Automation, Electronics and ICT.</span>
 
       </div>
     </section>
 
     <!-- About Us -->
-    <section class="about-section" id="about-section">
-    	<div class="container">
-        <div class="row clearfix">
-          <!--Content Column-->
-              <div class="content-column col-md-6 col-sm-12 col-xs-12">
-                <div class="inner-column">
-                  <div class="sec-title">
-                    <div class="title">About Us</div>
-                    <h2>Erouvoutika</h2>
-                    <div class="text">A respected and experienced Automation and Robotics Company. Our highly professional teams, with in-depth knowledge of each jurisdiction, has been successfully deliver customer needs</div>
-                  </div>
-                  
-                  <h5>Our Aim</h5>
-                  <div class="text">is to assist our clients in getting their needs and requirements in the easiest and fastest possible time in a most professional manner. We provide the highest quality service at the most reasonable cost.</div>
-                    <a href="#" class="theme-btn btn-style-three">Read More</a>
-                </div>
-              </div>
-                
-          <!--Image Column-->
-              <div class="image-column col-md-6 col-sm-12 col-xs-12">
-                <div class="inner-column " data-wow-delay="0ms" data-wow-duration="1500ms">
-                  <div class="image">
-                    <img src="src/images/" id="about-img" alt="">
-                      <div class="overlay-box">
-                        <div class="year-box"><span class="number">3</span>Years <br> Experience <br> Working</div>
-                      </div>
-                  </div>
-                </div>
-              </div>   
-        </div>
-      </div>
-    </section>
-
+    <section class="about section" style="background-color: white; padding-top: 30px; padding-bottom: 50px">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7">
+				<div class="block">
+					<div class="section-title">
+          <h2>About Us</h2>
+          <h5>Erouvoutika</h2>
+						<p>A respected and experienced Automation and Robotics Company. Our highly professional teams, with in-depth knowledge of each jurisdiction, has been successfully deliver customer needs</p>
+					</div>
+          <h5>Our Aim</h5>
+					<p>is to assist our clients in getting their needs and requirements in the easiest and fastest possible time in a most professional manner. We provide the highest quality service at the most reasonable cost.</p>
+				</div>
+			</div>
+			<div class="col-md-5">
+				<div class="block">
+					<img src="src/images/login.png" alt="Img">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
   
     <!-- Partnership -->
   <!--
