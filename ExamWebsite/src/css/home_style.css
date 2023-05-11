@@ -479,8 +479,7 @@ header .btn{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 30vh;
-  
+	height: 25vh;
   background-color: #e1e1e1;
 
 }
@@ -778,7 +777,7 @@ header .btn{
     color: #fff
   }
   
-  .box1:hover {
+.box1:hover {
     box-shadow: 0 0 25px 0 rgba(20,27,201,.05);
     cursor: pointer;
     background-image: linear-gradient(-45deg, #34b5bf 0%, #210c59 100%)

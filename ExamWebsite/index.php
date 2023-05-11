@@ -406,7 +406,7 @@ include_once 'src/includes/header.php';
           <div class="col-md-12">
               <div class="site-heading text-center">
                   <h2><span>Contact Us</span></h2>
-                  <h4>-October-</h4>
+                  <h4>Get In Touch</h4>
               </div>
           </div>
       </div>
@@ -432,7 +432,7 @@ include_once 'src/includes/header.php';
 				</ul>
 			</div>
 			<div class="contact-in">
-				<h1 style="color: #0F3695">Get In Touch</h1>
+				<h1 style="color: #0F3695">Drop us a note</h1>
 				<form action="https://formsubmit.co/421a8ad6d7eed491cf8bf4e8c5cfe624" method="POST">
 					<input type="text" placeholder="Full Name" class="contact-in-input">
 					<input type="text" placeholder="Email" class="contact-in-input">

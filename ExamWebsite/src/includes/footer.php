@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="src/css/footer.css">
+
 <footer class="section " id="footer">
    <div class="overlay footer-overlay"></div>
    <!--Content -->
