@@ -6,7 +6,8 @@ if($_SESSION['client_sid']==session_id()){
 	if(!isset($_SESSION["client_sid"]) || $_SESSION["client_sid"] !== session_id()){
         header("location: ../login_template.php");
         exit;
-    }		
+    }	
+$clUrID = $_SESSION['clUrID'];	
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,40 +36,8 @@ if($_SESSION['client_sid']==session_id()){
 
 <body>
     <!-------------------------- HEADER ---------------------------->   
-    <header class="bg-white border-5 border-bottom border-primary">
-        <nav class="navbar navbar-expand-lg navbar-light ms-4 me-4">
-            <a class="navbar-brand mr-07" href="#"><img src="../images/Logo2.png" style="height: 60px;"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse ml-7" id="navbarTogglerDemo03">
-                <div class="navbar-nav float-end text-end pr-3">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-item nav-link text-dark mt-3" href="../webexam/UserExamList.php">Exam List</a>
-                        </li>
-                        <li class="nav-item">
-                            <div class="btn-group">
-                              <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-person-fill"></i>
-                              </button>
-                              <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="../webclient/UserProfile.php"><i class="bi bi-person-circle me-2"></i>Profile</a></li>
-                                <li>
-                                  <?php echo
-                                    '<a class="dropdown-item" href="Settings.php">'
-                                    ?>
-                                  <i class="bi bi-gear-fill me-2"></i>Settings</li>
-                                <li><a class="dropdown-item" href="../includes/logout.php"><span class="glyphicon me-2">&#xe017;</span>Logout</a></li>
-                              </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-	</header>
+    
+   <?php include(__DIR__.'/../webclient/userNav.php'); ?>
 
 	<div class="container-fluid bg-light">
         <div class="main-body">
@@ -76,65 +45,96 @@ if($_SESSION['client_sid']==session_id()){
                 <h1>MY EXAMS</h1>
              </div>
 
-            <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Exam Title</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                        Do you want to take "Exam Title" examination?
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-primary">Take Exam</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            <!-- Modal -->
-
             <!-------------------------- EXAM CONTAINER ---------------------------->
             <div class="exam_container">
             <!-------------------------- EXAM CONTENT ---------------------------->
             <?php
 
-              $sql = "SELECT * FROM tbexam";
+              $sql = "SELECT p.*, e.*, u.* FROM tbuserpaidexam AS p INNER JOIN tbexam AS e INNER JOIN tbusers AS u ON p.clUrID = u.clUrID AND p.clExID = e.clExID WHERE e.clExPublish = 1 AND p.clUrID = ".$clUrID."";
               $result = $connectdb->query($sql);
 
               if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
 
-                echo '<div class="card bg-light border border-2 border-primary rounded mt-3 mb-3">';
-                  echo  '<div class="card-header bg-light">
-                          <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Take Exam
-                          </button>
-                        </div>';
-                  echo  '<div class="card-body">';
-                    echo  '<h4 class="card-title mb-4">Exam Title</h4>
-                          <div class="hstack gap-3">';
-                      echo  '<div class="bg-light border-bottom border-top border-primary p-2">
-                              11/04/2022
-                            </div>
+                  $replacedSpace = str_replace(" ", "_", $row['clExName']);
 
-                            <div class="vr"></div>
+                
+                  //  <!-- Modal -->
+                echo'  <div class="modal fade" id="'. $replacedSpace .'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">'. $row['clExName'] .'</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      Do you want to take "'. $row['clExName'] .'" examination?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <a href = "UserExamTaker.php?exam_id='. $row['clExID'] .'"><button type="submit" class="btn btn-primary">Take Exam</button></a>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>';
+          //<!-- Modal -->
+          
+                  //To count items in each question
+                  $sql = "SELECT count(*) as total from tbQuestion where clExID = ". $row['clExID'] .";";
+                  $rs = $connectdb->query($sql);
+                  $data = $rs->fetch_assoc();
 
-                            <div class="bg-light border-bottom border-top border-primary p-2">
-                              50 Items
-                            </div>
+                  //To check the exam's question type
+                    // Check if there's IDENTIFICATION question
+                      $sql = "SELECT count(*) as total from tbQuestion where clExID = ". $row['clExID'] ." and clQsType = 0;";
+                      $rs = $connectdb->query($sql);
+                      $Identification_Q = $rs->fetch_assoc();
 
-                            <div class="vr"></div>
+                    // Check if there's MULTIPLE CHOICE question
+                      $sql = "SELECT count(*) as total from tbQuestion where clExID = ". $row['clExID'] ." and clQsType = 1;";
+                      $rs = $connectdb->query($sql);
+                      $Multiple_Q = $rs->fetch_assoc();
 
-                            <div class="bg-light border-bottom border-top border-primary p-2">
-                              Multiple Choice
-                            </div>';
+                    //Display question type condition
+                      if (($Identification_Q['total']> 0) && ($Multiple_Q['total'] < 1)){
+                        $QuestionsType = "Identification";
+                      }
+
+                      else if (($Multiple_Q['total'] > 0) && ($Identification_Q['total'] < 1)){
+                        $QuestionsType = "Multiple Choice";
+                      }
+
+                      else if (($Identification_Q['total'] > 0) && ($Multiple_Q['total'] > 0)){
+                        $QuestionsType = "Identification, Multiple Choice";
+                      }
+
+
+                  echo '<div class="card bg-light border border-2 border-primary rounded mt-3 mb-3">';
+                    echo  '<div class="card-header bg-light">
+                              <button type="submit" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#'. $replacedSpace .'" name = "TakeExam" value = "'. $row['clExID'] .'">
+                                Take Exam
+                                </button>
+                          </div>';
+                    echo  '<div class="card-body">';
+                      echo  '<h4 class="card-title mb-4">'. $row['clExName'].'</h4>
+                            <div class="hstack gap-3">';
+                        echo  '<div class="bg-light border-bottom border-top border-primary p-2">
+                                '. $row['clExPublishedDate'] .'
+                              </div>
+                              <div class="vr"></div>
+                              <div class="bg-light border-bottom border-top border-primary p-2">
+                                '. $data['total'] .' Items
+                              </div>
+                              <div class="vr"></div>
+                              <div class="bg-light border-bottom border-top border-primary p-2">
+                                '. $QuestionsType .'
+                              </div>';
+                        echo  '</div>';
+                        echo  '<p class="card-text mt-4">'. $row['clExDescription'] .'</p>';
                       echo  '</div>';
-                      echo  '<p class="card-text mt-4">Short Description of the Exam (Topic/Coverage)</p>';
                     echo  '</div>';
-                  echo  '</div>';
+
                 }
               }
                 ?>

@@ -46,28 +46,21 @@ CREATE TABLE `tbExam` (
 	`clExLastEditedBy` int(9) UNSIGNED NOT NULL, 
 	`clExPublishedBy` int(9) UNSIGNED DEFAULT NULL, 
 	`clExLastEditDate` datetime not null default now(),
+	`clExPublishedDate` datetime,
+	`clExPrice` float(9,2) NOT NULL,
     PRIMARY KEY (`clExID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-LOCK TABLES `tbExam` WRITE;
-INSERT INTO `tbExam` (`clExID`,`clExName`,`clExDescription`,`clExInstructions`,`clExPublish`,`clExLastEditedBy`,`clExPublishedBy`,`clExLastEditDate`) 
-	VALUES (1,'Data Structures','A basic exam about Data Structures and its concepts','Answer the questions.',0,1,null,'2023-03-14 14:21:11');
-UNLOCK TABLES;
 -- ==================================================================tbQuestion
 DROP TABLE IF EXISTS `tbQuestion`;
 CREATE TABLE `tbQuestion` (
 	`clQsID` int(9) UNSIGNED NOT NULL, -- PK
-	`clExID` int(9) UNSIGNED NOT NULL, -- FK to `tbExam` PK; PK
+	`clExID` int(9) UNSIGNED NOT NULL, -- FK to `tbExam` PK;
 	`clQsBody` varchar(3000) NOT NULL, 
 	`clQsType` int(1) UNSIGNED NOT NULL, -- 0 = Fill in the Blanks; 1 = Hybrid Multiple Choice
 	`clQsCorrectAnswer` varchar(7000) NOT NULL, 
     PRIMARY KEY (`clQsID`,`clExID`), 
     CONSTRAINT `fkQs_clExID` FOREIGN KEY (`clExID`) REFERENCES `tbExam` (`clExID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-LOCK TABLES `tbQuestion` WRITE;
-INSERT INTO `tbQuestion` (`clQsID`,`clExID`,`clQsBody`,`clQsType`,`clQsCorrectAnswer`) 
-	VALUES (1,1,'The terms "bitmap," "b-tree," and "hash" refer to which type of database structure?',1,'3,4'), 
-		(2,1,'TEST ______?',0,'6');
-UNLOCK TABLES;
 -- ==================================================================tbAnswer
 DROP TABLE IF EXISTS `tbAnswer`;
 CREATE TABLE `tbAnswer` (
@@ -77,15 +70,6 @@ CREATE TABLE `tbAnswer` (
     PRIMARY KEY (`clAsID`,`clQsID`), 
     CONSTRAINT `fkAs_clQsID` FOREIGN KEY (`clQsID`) REFERENCES `tbQuestion` (`clQsID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-LOCK TABLES `tbAnswer` WRITE;
-INSERT INTO `tbAnswer` (`clAsID`,`clQsID`,`clAsBody`) 
-	VALUES (1,1,'View'), 
-		(2,1,'Function'), 
-		(3,1,'Index'), 
-		(4,1,'Stored procedure'), 
-		(5,1,'Trigger'), 
-		(6,2,'TESTANSWERHERE');
-UNLOCK TABLES;
 -- ==================================================================tbuserexam
 DROP TABLE IF EXISTS `tbuserexam`;
 CREATE TABLE `tbuserexam` (
@@ -96,10 +80,6 @@ CREATE TABLE `tbuserexam` (
     CONSTRAINT `fkUe_clUrID` FOREIGN KEY (`clUrID`) REFERENCES `tbusers` (`clUrID`), 
     CONSTRAINT `fkUe_clExID` FOREIGN KEY (`clExID`) REFERENCES `tbExam` (`clExID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-LOCK TABLES `tbuserexam` WRITE;
-INSERT INTO `tbuserexam` (`clUeID`,`clUrID`,`clExID`) 
-	VALUES (1,3,1);
-UNLOCK TABLES;
 -- ==================================================================tbuseranswer
 DROP TABLE IF EXISTS `tbuseranswer`;
 CREATE TABLE `tbuseranswer` (
@@ -109,9 +89,42 @@ CREATE TABLE `tbuseranswer` (
     PRIMARY KEY (`clUeID`,`clUaQuestionID`), 
     CONSTRAINT `fkUa_clUeID` FOREIGN KEY (`clUeID`) REFERENCES `tbuserexam` (`clUeID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-LOCK TABLES `tbuseranswer` WRITE;
-INSERT INTO `tbuseranswer` (`clUeID`,`clUaQuestionID`,`clUaAnswer`) 
-	VALUES (1,1,'3,4'), 
-		(1,2,'ThisIsMyAnswer');
-UNLOCK TABLES;
--- ==================================================================
+-- ==================================================================tbuserexamresult
+DROP TABLE IF EXISTS `tbuserexamresult`;
+CREATE TABLE `tbuserexamresult` (
+	`clExID` int(9) UNSIGNED NOT NULL, -- FK to `tbexam` PK;
+	`clUrID` int(9) UNSIGNED NOT NULL, -- FK to `tbusers` PK;
+	`clUrScore` int,
+	`clUrExTakenDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP, 
+    CONSTRAINT `fkUa_clExID` FOREIGN KEY (`clExID`) REFERENCES `tbExam` (`clExID`),
+	CONSTRAINT `fkUa_clUrID` FOREIGN KEY (`clUrID`) REFERENCES `tbusers` (`clUrID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- ==================================================================tbuserpaidexam
+DROP TABLE IF EXISTS `tbuserpaidexam`;
+CREATE TABLE `tbuserpaidexam` (
+	`ID` int(9) UNSIGNED NOT NULL AUTO_INCREMENT, -- PK
+	`clUrID` int(9) UNSIGNED NOT NULL, -- FK to `tbusers` PK;
+	`clExID` int(9) UNSIGNED NOT NULL, -- FK to `tbexam` PK;
+	`clPurchasedDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`ID`),
+	CONSTRAINT `fkQs_clUrID` FOREIGN KEY (`clUrID`) REFERENCES `tbusers` (`clUrID`),
+	FOREIGN KEY (`clExID`) REFERENCES `tbexam` (`clExID`)
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- ==================================================================tbtransaction
+DROP TABLE IF EXISTS `tbtransaction`;
+CREATE TABLE `tbtransaction` (
+	`ID` int(9) UNSIGNED NOT NULL AUTO_INCREMENT, -- PK
+	`transactionID` varchar(99) NOT NULL,
+	`ExID` int(9) UNSIGNED NOT NULL, -- FK to `tbexam`
+	`transactionUserID` int(9) UNSIGNED NOT NULL, -- FK to `tbusers`
+	`transactionMthd` varchar(99) NOT NULL,
+	`transactionAmt` float(9,2) NOT NULL,
+	`transactionDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	`transactionStat` varchar(99) NOT NULL,
+    PRIMARY KEY (`ID`),
+	FOREIGN KEY (`ExID`) REFERENCES `tbExam` (`clExID`),
+	CONSTRAINT `fkUa_transactionUserID` FOREIGN KEY (`transactionUserID`) REFERENCES `tbusers` (`clUrID`)
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- =======================================================a===========

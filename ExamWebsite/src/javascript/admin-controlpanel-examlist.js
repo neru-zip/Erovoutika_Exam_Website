@@ -40,7 +40,7 @@ function baseExamList(in_displayContainerID, in_itemCount) {
         container_row_main.appendChild(container_row_sub1);
             // Create Image (IMAGE)
             var container_row_image = document.createElement("img");
-            container_row_image.setAttribute("class", "rounded-circle ms-1 mt-2 mb-2");
+            container_row_image.setAttribute("class", "rounded-circle ms-1 mt-2 mb-2-logo");
             container_row_image.setAttribute("alt", "Admin");
             container_row_image.setAttribute("width", "150");
             container_row_image.setAttribute("src", "../images/Small Logo.png");
@@ -67,51 +67,18 @@ function baseExamList(in_displayContainerID, in_itemCount) {
                         var insert_detail_text = document.createElement("h5");
                         insert_detail_text.setAttribute("id", "i-h--examlist-clExID-" + (in_itemCount).toString());
                         insert_detail_text.setAttribute("name", "clExID_value");
-                        insert_detail_text.setAttribute("class", "card-title text-primary text-uppercase fs-4");
+                        insert_detail_text.setAttribute("class", "card-title text-primary text-uppercase fs-4-examid");
                         // Set (ROW)
                         container_row_info.appendChild(insert_detail_text);
                         // For Return
                         inputElements_obj['examList_clExID'] = insert_detail_text;
 
-                        // Insert Row for EXAMS PUBLISH STATUS==============================
-                        // Create & Set (CELL CONTENT)
-                        var insert_detail_text = document.createElement("h5");
-                        insert_detail_text.setAttribute("id", "i-h--examlist-clExPublish-" + (in_itemCount).toString());
-                        insert_detail_text.setAttribute("name", "clExPublish_value");
-                        insert_detail_text.setAttribute("class", "card-title text-primary text-uppercase fs-5");
-                        // Set (ROW)
-                        container_row_info.appendChild(insert_detail_text);
-                        // For Return
-                        inputElements_obj['examList_clExPublish'] = insert_detail_text;
-
-                        // Insert Row for EXAMS LAST EDITOR==============================
-                        // Create & Set (CELL CONTENT)
-                        var insert_detail_text = document.createElement("h5");
-                        insert_detail_text.setAttribute("id", "i-h--examlist-clExLastEditedBy-" + (in_itemCount).toString());
-                        insert_detail_text.setAttribute("name", "clExLastEditedBy_value");
-                        insert_detail_text.setAttribute("class", "card-title text-primary text-uppercase fs-5");
-                        // Set (ROW)
-                        container_row_info.appendChild(insert_detail_text);
-                        // For Return
-                        inputElements_obj['examList_clExLastEditedBy'] = insert_detail_text;
-
-                        // Insert Row for EXAMS PUBLISHER==============================
-                        // Create & Set (CELL CONTENT)
-                        var insert_detail_text = document.createElement("h5");
-                        insert_detail_text.setAttribute("id", "i-h--examlist-clExPublishedBy-" + (in_itemCount).toString());
-                        insert_detail_text.setAttribute("name", "clExPublishedBy_value");
-                        insert_detail_text.setAttribute("class", "card-title text-primary text-uppercase fs-5");
-                        // Set (ROW)
-                        container_row_info.appendChild(insert_detail_text);
-                        // For Return
-                        inputElements_obj['examList_clExPublishedBy'] = insert_detail_text;
-
-                        // Insert Row for EXAMS TITLE==============================
+                           // Insert Row for EXAMS TITLE==============================
                         // Create & Set (CELL CONTENT)
                         var insert_detail_text = document.createElement("h5");
                         insert_detail_text.setAttribute("id", "i-h--examlist-clExName-" + (in_itemCount).toString());
                         insert_detail_text.setAttribute("name", "clExName_value");
-                        insert_detail_text.setAttribute("class", "card-title text-primary text-uppercase fs-1 fw-bold");
+                        insert_detail_text.setAttribute("class", "card-title text-primary text-uppercase fs-1 fw-bold-title");
                         // Set (ROW)
                         container_row_info.appendChild(insert_detail_text);
                         // For Return
@@ -122,11 +89,46 @@ function baseExamList(in_displayContainerID, in_itemCount) {
                         var insert_detail_text = document.createElement("p");
                         insert_detail_text.setAttribute("id", "i-p--examlist-clExDescription-" + (in_itemCount).toString());
                         insert_detail_text.setAttribute("name", "clExDescription_value");
-                        insert_detail_text.setAttribute("class", "card-text text-primary fs-5");
+                        insert_detail_text.setAttribute("class", "card-text text-primary fs-5-desc");
                         // Set (ROW)
                         container_row_info.appendChild(insert_detail_text);
                         // For Return
                         inputElements_obj['examList_clExDescription'] = insert_detail_text;
+
+                        // Insert Row for EXAMS PUBLISH STATUS==============================
+                        // Create & Set (CELL CONTENT)
+                        var insert_detail_text = document.createElement("h5");
+                        insert_detail_text.setAttribute("id", "i-h--examlist-clExPublish-" + (in_itemCount).toString());
+                        insert_detail_text.setAttribute("name", "clExPublish_value");
+                        insert_detail_text.setAttribute("class", "card-title text-primary text-uppercase fs-5-pubstat");
+                        // Set (ROW)
+                        container_row_info.appendChild(insert_detail_text);
+                        // For Return
+                        inputElements_obj['examList_clExPublish'] = insert_detail_text;
+
+                        // Insert Row for EXAMS LAST EDITOR==============================
+                        // Create & Set (CELL CONTENT)
+                        var insert_detail_text = document.createElement("h5");
+                        insert_detail_text.setAttribute("id", "i-h--examlist-clExLastEditedBy-" + (in_itemCount).toString());
+                        insert_detail_text.setAttribute("name", "clExLastEditedBy_value");
+                        insert_detail_text.setAttribute("class", "card-title text-primary text-uppercase fs-5-lastedit");
+                        // Set (ROW)
+                        container_row_info.appendChild(insert_detail_text);
+                        // For Return
+                        inputElements_obj['examList_clExLastEditedBy'] = insert_detail_text;
+
+                        // Insert Row for EXAMS PUBLISHER==============================
+                        // Create & Set (CELL CONTENT)
+                        var insert_detail_text = document.createElement("h5");
+                        insert_detail_text.setAttribute("id", "i-h--examlist-clExPublishedBy-" + (in_itemCount).toString());
+                        insert_detail_text.setAttribute("name", "clExPublishedBy_value");
+                        insert_detail_text.setAttribute("class", "card-title text-primary text-uppercase fs-5-publisher");
+                        // Set (ROW)
+                        container_row_info.appendChild(insert_detail_text);
+                        // For Return
+                        inputElements_obj['examList_clExPublishedBy'] = insert_detail_text;
+
+                     
                     // Create Buttons (CONTAINER)
                     var container_row_buttons = document.createElement("div");
                     container_row_buttons.setAttribute("class", "col-sm-3 col-md-3 col-lg-2");
@@ -136,7 +138,7 @@ function baseExamList(in_displayContainerID, in_itemCount) {
                             // Create 'EDIT' Cell Content
                             var insert_modify_editbutton = document.createElement("a");
                             insert_modify_editbutton.setAttribute("id", "i-a--examlist-edit-" + (in_itemCount).toString());
-                            insert_modify_editbutton.setAttribute("class", "btn btn-primary c-a--examlist");
+                            insert_modify_editbutton.setAttribute("class", "btn btn-primary c-a--examlist-edit");
                             insert_modify_editbutton.setAttribute("name", "modify_edit_button");
                             insert_modify_editbutton.innerHTML = "Edit Exam";
                             // Set (ROW)
@@ -147,9 +149,9 @@ function baseExamList(in_displayContainerID, in_itemCount) {
                             // Create 'DELETE' Cell Content
                             var insert_modify_deletebutton = document.createElement("a");
                             insert_modify_deletebutton.setAttribute("id", "i-a--examlist-delete-" + (in_itemCount).toString());
-                            insert_modify_deletebutton.setAttribute("class", "btn btn-primary mt-2 c-a--examlist");
+                            insert_modify_deletebutton.setAttribute("class", "btn btn-primary mt-2 c-a--examlist-delete");
                             insert_modify_deletebutton.setAttribute("name", "modify_delete_button");
-                            insert_modify_deletebutton.innerHTML = "Delete Exam";
+                            insert_modify_deletebutton.innerHTML = "Delete";
                             // Set (ROW)
                             container_row_buttons.appendChild(insert_modify_deletebutton);
                             // For Return
@@ -158,7 +160,7 @@ function baseExamList(in_displayContainerID, in_itemCount) {
                             // Create 'PUBLISH' Cell Content
                             var insert_modify_publishbutton = document.createElement("a");
                             insert_modify_publishbutton.setAttribute("id", "i-a--examlist-publish-" + (in_itemCount).toString());
-                            insert_modify_publishbutton.setAttribute("class", "btn btn-primary mt-2 c-a--examlist");
+                            insert_modify_publishbutton.setAttribute("class", "btn btn-primary mt-2 c-a--examlist-publish");
                             insert_modify_publishbutton.setAttribute("name", "modify_publish_button");
                             // Set (ROW)
                             container_row_buttons.appendChild(insert_modify_publishbutton);
@@ -214,11 +216,12 @@ function displayExamList(in_displayContainerID, in_itemCount) {
         }
 
         inputElements_obj['examList_clExID'].innerHTML = "Exam ID #" + tbExam_data[examsList_count]['clExID'];
+        inputElements_obj['examList_clExName'].innerHTML = tbExam_data[examsList_count]['clExName'];
+        inputElements_obj['examList_clExDescription'].innerHTML = tbExam_data[examsList_count]['clExDescription'];
+    
         inputElements_obj['examList_clExPublish'].innerHTML = clExPublish_text_value;
         inputElements_obj['examList_clExLastEditedBy'].innerHTML = "Last Edited By: " + clExLastEditedBy_username_value;
         inputElements_obj['examList_clExPublishedBy'].innerHTML = "Published By: " + clExPublishedBy_username_value;
-        inputElements_obj['examList_clExName'].innerHTML = tbExam_data[examsList_count]['clExName'];
-        inputElements_obj['examList_clExDescription'].innerHTML = tbExam_data[examsList_count]['clExDescription'];
         inputElements_obj['examList_editbutton'].setAttribute("onclick", "modifyExamList(this.name," + tbExam_data[examsList_count]['clExID'] + "," + null + ")");
         inputElements_obj['examList_deletebutton'].setAttribute("onclick", "modifyExamList(this.name," + null + "," + JSON.stringify(inputElements_obj['examList_row'].id) + ")");
         inputElements_obj['examList_publishbutton'].innerHTML = publishButton_text_value;

@@ -23,6 +23,7 @@ Data for this webpage:
         clExName
         clExDescription
         clExInstructions
+        clExPrice
         clExPublish
         clExLastEditedBy
         clExPublishedBy
@@ -48,12 +49,12 @@ Legend:
 */
 
 
-var tbQuestion_data_length = 0; // Question Length? - angge
-var curr_tbAnswer_data_length = []; //Answer of the said ^ data length - angge
-var curr_tbAnswer_data_topID = []; // First choice? - angge
-var isAddNewQuestionActive = false; // Add new question - angge
-var isAddNewFillBlanksActive = false; // Add fill in the blanks - angge
-var isAddNewHybridMultipleActive = false; // Add new multiple choice - angge
+var tbQuestion_data_length = 0;
+var curr_tbAnswer_data_length = [];
+var curr_tbAnswer_data_topID = [];
+var isAddNewQuestionActive = false;
+var isAddNewFillBlanksActive = false;
+var isAddNewHybridMultipleActive = false;
 
 if(examID == 0) {
     var totalQuestionCount = 0;
@@ -63,6 +64,7 @@ if(examID == 0) {
         clExName: "", 
         clExDescription: "", 
         clExInstructions: "", 
+        clExPrice: "",
         clExPublish: 0, 
         clExLastEditedBy: null, 
         clExPublishedBy: null
@@ -88,6 +90,7 @@ else {
         clExName: tbExam_data.clExName, 
         clExDescription: tbExam_data.clExDescription, 
         clExInstructions: tbExam_data.clExInstructions, 
+        clExPrice: tbExam_data.clExPrice,
         clExPublish: parseInt(tbExam_data.clExPublish), 
         clExLastEditedBy: parseInt(tbExam_data.clExLastEditedBy), 
         clExPublishedBy: clExPublishedBy_id_value
@@ -156,6 +159,7 @@ function displayExamInfo(in_displayContainerID) {
     var examName_element = document.getElementById("i-input--exameditor-examName");
     var examDesc_element = document.getElementById("i-input--exameditor-examDesc");
     var examInst_element = document.getElementById("i-input--exameditor-examInst");
+    var examPrice_element = document.getElementById("i-input--exameditor-examPrice");
     
     if(curr_tbExam_data.clExPublish == 0) { // If the Exam is NOT yet Published
         clExPublish_text_value = "Editable";
@@ -166,6 +170,7 @@ function displayExamInfo(in_displayContainerID) {
         examName_element.disabled = false;
         examDesc_element.disabled = false;
         examInst_element.disabled = false;
+        examPrice_element.disabled = false;
     }
     else if(curr_tbExam_data.clExPublish == 1) { // If the Exam is Published
         clExPublish_text_value = "Published";
@@ -176,6 +181,7 @@ function displayExamInfo(in_displayContainerID) {
         examName_element.disabled = true;
         examDesc_element.disabled = true;
         examInst_element.disabled = true;
+        examPrice_element.disabled = true;
     }
 
     if(curr_tbExam_data.clExLastEditedBy == null) {
@@ -200,6 +206,7 @@ function displayExamInfo(in_displayContainerID) {
     examName_element.innerHTML = curr_tbExam_data.clExName;
     examDesc_element.innerHTML = curr_tbExam_data.clExDescription;
     examInst_element.innerHTML = curr_tbExam_data.clExInstructions;
+    examPrice_element.value = curr_tbExam_data.clExPrice;
 }
 
 function baseQuestion(in_displayContainerID, in_questionCount) {
@@ -1052,6 +1059,39 @@ function transferExamData(in_resetModifyTypeValue,in_updateType) {
     });
 }
 
+// This function is copied from transferExamData()
+function tempDeleteQuestion(in_resetModifyTypeValue,in_updateType) {
+    // Pass to '../crud/admin_exameditor_update.php' for Database Insertion
+    $(document).ready(function(){
+        $.ajax({
+            url: "../crud/admin_exameditor_update.php", 
+            type: "POST", 
+            data: {
+                curr_tbExam_data_ajax: curr_tbExam_data, 
+                curr_QA_data_ajax: curr_QA_data, 
+                updateType_ajax: in_updateType
+            }, 
+            // contentType: false, 
+            // processData: false, 
+            // async: false, 
+            cache: false, 
+            success: function(data) {
+                // alert(data);
+                
+            if(in_resetModifyTypeValue == false) {
+                    alert('Question deleted successfully.');
+                    Object.keys(curr_tbExam_data).forEach(function(in_index) { delete curr_tbExam_data[in_index] })
+                    curr_QA_data = [];
+                }
+            }, 
+            error: function(data) {
+                // alert(data);
+                alert('ERROR: An error occured while saving the Exam.');
+            }
+        });
+    });
+}
+
 function modifyExam(in_buttonName, in_elementID) {
     // =====Add=====
     if((in_buttonName.localeCompare("inputbutton_qa_add")) == 0) { // Add Question and Answers
@@ -1154,8 +1194,11 @@ function modifyExam(in_buttonName, in_elementID) {
         totalQuestionCount--;
         toggleEmptyText(totalQuestionCount, "i-div--qa-empty", "i-div--qa-display");
         
+        tempDeleteQuestion(false,0); // <--Temporary delete question, came from delete function exam
+        
         // Delete in_element
         $(qa_elementRow).remove();
+        
     }
     else if((in_buttonName.localeCompare("inputbutton_answerhybridmultiple_delete")) == 0) { // Delete Hybrid Multiple Choice Answer
         var answerHybridMultiple_elementRow = document.getElementById(in_elementID);
@@ -1175,6 +1218,7 @@ function modifyExam(in_buttonName, in_elementID) {
 
         // Delete in_element
         $(answerHybridMultiple_elementRow).remove();
+        
     }
     // =====Update=====
     else if((in_buttonName.localeCompare("form_exam")) == 0) { // Update Exam (Form name = "form_exam"; Button name = "inputsubmit_exam_update")
@@ -1201,7 +1245,8 @@ function modifyExam(in_buttonName, in_elementID) {
         
         
         if((curr_tbExam_data.modifyType==1)||(curr_tbExam_data.modifyType==2)||(curr_tbExam_data.modifyType==3)) { toModifyCount++; }
-
+        console.log(curr_tbExam_data.clExPrice)
+        console.log(curr_tbExam_data.modifyType)
         for(var question_count = 0; question_count < curr_QA_data.length; question_count++) {
             if((curr_QA_data[question_count].modifyType==1)||(curr_QA_data[question_count].modifyType==2)||(curr_QA_data[question_count].modifyType==3)) { toModifyCount++; }
             
@@ -1250,7 +1295,7 @@ displayExamButtons("i-div--exambuttons-display");
 
 // ============================Textarea Enter Key Avoider============================
 $(
-    '[name="clExID_value"],[name="clExName_value"],[name="clExDescription_value"],[name="clExInstructions_value"]'
+    '[name="clExID_value"],[name="clExName_value"],[name="clExDescription_value"],[name="clExInstructions_value"], [name="clExPrice_value"]'
 ).bind('keypress', function(e) {
     if ((e.keyCode || e.which) == 13) {
         $(this).parents('form').submit();
@@ -1259,10 +1304,12 @@ $(
 });
 
 // ============================Save Content of Field(Filled/Empty) for Exam Information(Body)============================
-$('#i-div--examinfo-display').on('blur', '[name="clExName_value"],[name="clExDescription_value"],[name="clExInstructions_value"]', function() {
+$('#i-div--examinfo-display').on('blur', '[name="clExName_value"],[name="clExDescription_value"],[name="clExInstructions_value"], [name="clExPrice_value"]', function() {
     
     var fieldName = $(this).attr('name');
     var examInfoName = (fieldName).substring(0,(fieldName).indexOf('_'));
+
+    
 
     if(((curr_tbExam_data[examInfoName]).localeCompare($(this).val())) != 0) { // If Field Content is not the same from the saved array, save it
         curr_tbExam_data[examInfoName] = $(this).val();

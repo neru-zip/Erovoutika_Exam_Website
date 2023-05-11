@@ -14,14 +14,15 @@
 </head>
 <body>
 <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#0F3695">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#0F3695">
         <div class="container-fluid">
             <a href="#" class="brand"><img src="images/ero-logo-white.png"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
         </div>
-    </nav>
+    </nav> -->
+    <?php include __DIR__."\includes\header.php"?>
 
     <div class="banner" style="background-image: url(images/web_banner.png); background-repeat: no-repeat;">
       <div class="banner-text">
@@ -32,7 +33,7 @@
 
             <div class="card-container">
               <div class="row pt-5 ml-5 mr-5">
-                <div class="col-md-2 col-lg-4 pb-5">
+                <div class="col-md-6 col-lg-4 pb-5">
 
                   <div class="card card-custom bg-white border-white border-0">
                     <div class="card-custom-img" style="background-image: url(images/tutorial_bg.png);"></div>
@@ -140,7 +141,7 @@
               
                       </div>
                       <div class="card-footer" style="background: inherit; border-color: inherit;">
-                        <a href="#" class="btn btn-primary">Continue</a>
+                        <a href="learnphp.php" class="btn btn-primary">Continue</a>
                         <a href="#" class="btn btn-outline-primary">8 Lectures</a>
                       </div>
                     </div>

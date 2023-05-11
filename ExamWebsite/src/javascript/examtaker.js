@@ -124,6 +124,29 @@ function displayExamInfo() {
     examInst_element.innerHTML = curr_tbExam_data.clExInstructions;
 }
 
+function ans_unans_show(QuestionCount) {
+    var mainContainer_AnsAnuns = document.getElementById("ans_unans_progress");
+
+    var divContainer = document.createElement("div")
+    divContainer.setAttribute("class", "row mt-2")
+    divContainer.setAttribute("id", "button-container")
+
+    mainContainer_AnsAnuns.appendChild(divContainer)
+    
+    for (var i=0; i < QuestionCount; i++){
+        var buttonContainer = document.createElement("button");
+
+        buttonContainer.setAttribute("class", "col-sm cardbtn btn-danger border border-2")
+        buttonContainer.setAttribute("type", "button")
+        buttonContainer.setAttribute("id", 'btn'+(i+1)+'')
+
+        var testText = document.createTextNode(i+1)
+
+        divContainer.appendChild(buttonContainer);
+        buttonContainer.appendChild(testText);
+    }
+}
+
 function displayExamButtons() {
     var takeExam_button = document.getElementById("i-button--examtaker-takeExam");
     
@@ -160,14 +183,16 @@ function baseQuestion(in_displayContainerID, in_questionCount) {
                 var container_questioncontent_sub1_question = document.createElement("div");
                 container_questioncontent_sub1_question.setAttribute("class", "row ms-5 me-5 mt-4 mb-3");
                 // Insert (CONTAINER)
-                container_questioncontent_sub1.appendChild(container_questioncontent_sub1_question);
+                container_questioncontent_sub1.appendChild(container_questioncontent_sub1_question); //num 1 with the question
                     // Create ol (CONTAINER)
                     var container_questioncontent_sub1_question_ol = document.createElement("ol");
                     // Insert (CONTAINER)
                     container_questioncontent_sub1_question.appendChild(container_questioncontent_sub1_question_ol);
                         // Create li (CONTAINER)
-                        var container_questioncontent_sub1_question_ol_li = document.createElement("li");
-                        container_questioncontent_sub1_question_ol_li.innerHTML = "";
+                        var container_questioncontent_sub1_question_ol_li = document.createElement("li"); //Numbering
+                        //container_questioncontent_sub1_question_ol_li.innerHTML = ""; // former question numbering
+                        container_questioncontent_sub1_question_ol_li.value = in_questionCount; //Question numbering
+
                         // Insert (CONTAINER)
                         container_questioncontent_sub1_question_ol.appendChild(container_questioncontent_sub1_question_ol_li);
                         // For Return
@@ -331,6 +356,7 @@ function baseAnswerHybridMultiple(in_displayContainerID, in_questionCount, in_an
                     // Create div (CONTAINER)
                     var container_answercontent_label_div_div = document.createElement("div");
                     container_answercontent_label_div_div.setAttribute("class", "card-body");
+                    //var container_answercontent_label_div_div = document.createElement("li");
                     // Insert (CONTAINER)
                     container_answercontent_label_div.appendChild(container_answercontent_label_div_div);
                         // Create label (CONTAINER)
@@ -345,7 +371,7 @@ function baseAnswerHybridMultiple(in_displayContainerID, in_questionCount, in_an
     return inputElements_obj;
 }
 
-function displayQA(in_displayContainerID, in_itemCount) {
+function displayQA(in_displayContainerID, in_itemCount) { //Question content
     var container_element = document.getElementById(in_displayContainerID);
 
     // Check if the container exists and is defined, if not, exit
@@ -353,12 +379,13 @@ function displayQA(in_displayContainerID, in_itemCount) {
     
     // Check if there are any rows in the fetched database table, if none, exit
     if(in_itemCount <= 0) { return; }
-    
+
     // Insert Row for EXAM QUESTION==============================
     for(var question_count = 0; question_count < in_itemCount; question_count++) {
         var inputElementsQuestion_obj = baseQuestion(container_element.id, question_count+1);
         
-        inputElementsQuestion_obj['question_clQsBody'].innerHTML = curr_QA_data[question_count].clQsBody;
+        //var container_answercontent_label_div_div = document.createElement("li");
+        inputElementsQuestion_obj['question_clQsBody'].innerHTML = curr_QA_data[question_count].clQsBody; //Question itself
         inputElementsQuestion_obj['questioncontrol_answeredcount'].innerHTML = "Questions Answered: " + (questionAnsweredCount).toString() + "/" + (in_itemCount).toString();
         inputElementsQuestion_obj['questioncontrol_questioncount'].innerHTML = "Question " + (question_count+1).toString() + " of " + (in_itemCount).toString();
         
@@ -430,7 +457,8 @@ function submitExamData() {
             type: "POST", 
             data: {
                 UserExam_data_ajax: new_UserExam_data, 
-                UserAnswer_data_ajax: new_UserAnswer_data
+                UserAnswer_data_ajax: new_UserAnswer_data,
+                ExamQA_data_ajax: curr_QA_data
             }, 
             // contentType: false, 
             // processData: false, 
@@ -454,6 +482,7 @@ function submitExamData() {
 // ============================CALLS============================
 displayExamInfo();
 displayExamButtons();
+ans_unans_show(totalQuestionCount);
 displayQA("i-div--examtaker-questions-display", tbQuestion_data_length);
 
 // ============================Save Content of Field(Filled/Empty(Answer)) for Fill in the Blanks(Answer Body)============================
@@ -465,11 +494,17 @@ $('#i-div--examtaker-questions-display').on('blur', 'textarea.c-textarea--examta
         if(((new_UserAnswer_data[qa_saveArrayIndex].clUaAnswer).length == 0) && (($(this).val()).length != 0)) { // If Save Array is Empty and Field Content is NOT empty
             new_UserAnswer_data[qa_saveArrayIndex].answerCount++;
             questionAnsweredCount++;
+            button_recolor = document.getElementById("btn"+((qa_saveArrayIndex+1).toString()));
+            button_recolor.removeAttribute("class");
+            button_recolor.setAttribute("class", "col-sm cardbtn btn-primary border border-2")
             setAnsweredCountDisplay();
         }
         else if(((new_UserAnswer_data[qa_saveArrayIndex].clUaAnswer).length != 0) && (($(this).val()).length == 0)) { // If Save Array is NOT Empty and Field Content is empty
             new_UserAnswer_data[qa_saveArrayIndex].answerCount--;
             questionAnsweredCount--;
+            button_recolor = document.getElementById("btn"+((qa_saveArrayIndex+1).toString()));
+            button_recolor.removeAttribute("class");
+            button_recolor.setAttribute("class", "col-sm cardbtn btn-danger border border-2")
             setAnsweredCountDisplay();
         }
         
@@ -502,10 +537,16 @@ $('#i-div--examtaker-questions-display').on('change', 'input.c-inputcheckbox--ex
 
     if((prev_answerCount == 0) && (new_UserAnswer_data[qa_saveArrayIndex].answerCount == 1)) { // If there are Checkboxes checked
         questionAnsweredCount++;
+        button_recolor = document.getElementById("btn"+((qa_saveArrayIndex+1).toString()));
+        button_recolor.removeAttribute("class");
+        button_recolor.setAttribute("class", "col-sm cardbtn btn-primary border border-2")
         setAnsweredCountDisplay();
     }
     else if((prev_answerCount == 1) && (new_UserAnswer_data[qa_saveArrayIndex].answerCount == 0)) { // If there are no Checkboxes checked
         questionAnsweredCount--;
+        button_recolor = document.getElementById("btn"+((qa_saveArrayIndex+1).toString()));
+        button_recolor.removeAttribute("class");
+        button_recolor.setAttribute("class", "col-sm cardbtn btn-danger border border-2")
         setAnsweredCountDisplay();
     }
-});
+}); 

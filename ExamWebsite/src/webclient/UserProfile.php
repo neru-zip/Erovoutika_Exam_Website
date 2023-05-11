@@ -49,38 +49,8 @@ if($_SESSION['client_sid']==session_id())
 </head>
 
 <body>
-	<header class="bg-white border-5 border-bottom border-primary">
-        <nav class="navbar navbar-expand-lg navbar-light ms-4 me-4">
-            <a class="navbar-brand mr-07" href="#"><img src="../images/Logo2.png" style="height: 60px;"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse ml-7" id="navbarTogglerDemo03">
-                <div class="navbar-nav float-end text-end pr-3">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-item nav-link text-dark mt-3" href="../webexam/UserExamList.php">Exam List</a></li>
-                        <li class="nav-item">
-                    <div class="btn-group">
-                      <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-person-fill"></i>
-                      </button>
-                      <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="UserProfile.php"><i class="bi bi-person-circle me-2"></i>Profile</a></li>
-                        <li>
-                          <?php echo
-                            '<a class="dropdown-item" href="Settings.php?clUrID='.$clUrID.'">'
-                            ?>
-                          <i class="bi bi-gear-fill me-2"></i>Settings</li>
-                        <li><a class="dropdown-item" href="../includes/logout.php"><span class="glyphicon me-2">&#xe017;</span>Logout</a></li>
-                      </ul>
-                    </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-	</header>
+  <?php include(__DIR__.'/userNav.php');?>
 
         <div class="container-fluid bg-light">
             <div class="main-body">
@@ -175,27 +145,56 @@ if($_SESSION['client_sid']==session_id())
 
                 <div class="exam_container">
                 <?php
+                  // Select (clExID) id of the exam taken by the user from tbexam
+                  $sql = "SELECT * FROM tbuserexamresult WHERE clUrID = $clUrID";
+                  $result_sql = $connectdb->query($sql);
 
-                  $sql = "SELECT * FROM tbexam";
-                  $result = $connectdb->query($sql);
+                  if ($result_sql->num_rows > 0) {
+                    while($row_exam = $result_sql->fetch_assoc()) {
+                      $clExID = $row_exam['clExID'];
 
-                  if ($result->num_rows > 0) {
-                    while($row = $result->fetch_assoc()) {
+                      // Select the name of the exam from tbexam
+                      $sql = "SELECT clExName FROM tbexam WHERE clExID = $clExID";
+                      $result = $connectdb->query($sql);
+                      $row = $result->fetch_assoc();
+                      $clExName = $row['clExName'];
+
+                      // Select the user's score from tbuserexamresult
+                      $sql = "SELECT clUrScore FROM tbuserexamresult WHERE clUrID = $clUrID and clExID = $clExID";
+                      $result = $connectdb->query($sql);
+                      $row = $result->fetch_assoc();
+                      $clUrScore = $row['clUrScore'];
+
+                      // Select the exam's number of items from tbquestion
+                      $sql = "SELECT * FROM tbquestion WHERE clExID = $clExID";
+                      $items = $connectdb->query($sql);
+                      $numItems = $items->num_rows;
+
+                      // Select exam taken date
+                      $sql = "SELECT clUrExTakenDate FROM tbuserexamresult WHERE clExID = $clExID and clUrID = $clUrID";
+                      $result = $connectdb->query($sql);
+                      $row = $result->fetch_assoc();
+                      $clUrExTakenDate = $row['clUrExTakenDate'];
+
+                      // Compute user's score to percentage
+                      $accuracy = ($clUrScore / $numItems) * 100;
+                      $accuracy = number_format((float)$accuracy, 2, '.', '');
+
                       echo '<div class="exam_card h-100">';
                         echo '<div class="card-body border border-2 border-primary rounded">';
                           echo '<h2 class="d-flex align-items-center border-5 border-bottom border-primary mb-4">'
-                          .$row["clExName"].'</h2>';
+                          .$clExName.'</h2>';
 
                           echo '
                           <h6>Date Taken: </h6>
-                            <p>September 22, 2022</p>
+                            <p>'. $clUrExTakenDate .'</p>
 
                           <h6>Score: </h6>
-                            <p>50/50</p>
+                            <p>'. $clUrScore .'/' . $numItems . '</p>
 
-                          <h6>Acccuracy: 80%</h6>
+                          <h6>Acccuracy: '. $accuracy .'%</h6>
                             <div class="progress mb-3" style="height: 5px">
-                                <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>';
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: '. $accuracy .'%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>';
                           echo '</div>';
                         echo '</div>';
                       echo '</div>';
