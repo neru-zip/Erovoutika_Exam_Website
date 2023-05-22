@@ -83,15 +83,15 @@
            <h3>Socials</h3>
            <!-- Links -->
            <ul class="list-unstyled footer-links">
-             <li><a href="https://www.facebook.com/themefisher"><i class="fab fa-facebook-f"></i>Facebook</a></li>
+             <li><a href="https://www.facebook.com/erovoutika"><i class="fab fa-facebook-f"></i>Facebook</a></li>
              <li>
-               <a href="https://www.twitter.com/themefisher"><i class="fab fa-twitter"></i>Twitter
+               <a href="https://twitter.com/erovoutika?lang=en"><i class="fab fa-twitter"></i>Twitter
                </a></li>
-             <li><a href="https://www.pinterest.com/themefisher/"><i class="fab fa-instagram"></i>Instagam
+             <li><a href="https://www.instagram.com/erovoutika/"><i class="fab fa-instagram"></i>Instagam
                </a></li>
-             <li><a href="https://themefisher.com/"><i class="fab fa-linkedin"></i>linkedin
+             <li><a href="https://www.linkedin.com/company/erovoutika/?originalSubdomain=ph"><i class="fab fa-linkedin"></i>linkedin
                </a></li>
-             <li><a href="https://www.youtube.com/channel/UCx9qVW8VF0LmTi4OF2F8YdA"><i class="fab fa-tiktok"></i>Tiktok
+             <li><a href="https://vt.tiktok.com/ZS8HTdoXm/"><i class="fab fa-tiktok"></i>Tiktok
                </a></li>
            </ul>
          </div>
@@ -105,7 +105,7 @@
           <p class="footer-copy">
             Copyright &copy; <script>var CurrentYear = new Date().getFullYear()
             document.write(CurrentYear)
-          </script><a class="current-year" href="https://themefisher.com/"> Erovoutika </a>- All Rights Reserved.
+          </script><a class="current-year" href="https://erovoutika.ph/"> Erovoutika </a>- All Rights Reserved.
           </p>
          </div>
        </div>
