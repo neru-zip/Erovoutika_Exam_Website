@@ -21,6 +21,8 @@ $searchInput;
   <title>Enroll</title>
 </head>
 <body>
+
+      
     <div id="paymentMessage" class="payment__container">
         <?php if (!(empty($_SESSION["admin_sid"]) && empty($_SESSION["client_sid"]))):?>
         <section class="payment_section">
@@ -180,6 +182,63 @@ $searchInput;
         ?>
 
         
+<section class="section course" id="courses" aria-label="course">
+        <div class="container">
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="course-card">
+
+                <figure class="card-banner img-holder" style="--width: 370; --height: 220;">
+                  <img src="/src/images/html.webp" width="370" height="220" loading="lazy"
+                    alt="Build Responsive Real- World Websites with HTML and CSS" class="img-cover">
+                </figure>
+
+                <div class="abs-badge">
+                  <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+
+                  <span class="span">30 Minutes</span>
+                </div>
+
+                <div class="card-content">
+
+                  <span class="badge">Beginner</span>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Basic HTML</a>
+                  </h3>
+
+                  <data class="price" value="29">₱90.00</data>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <ion-icon name="library-outline" aria-hidden="true"></ion-icon>
+
+                      <span class="span">2 Lessons</span>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <ion-icon name="checkbox-outline" aria-hidden="true"></ion-icon>
+
+                      <span class="span">30 Items</span>
+                    </li>
+
+                    <li><a href="#" class="btn has-before" style="background-color: lightblue; margin-top: 20px">
+            <span class="span">Take Exam</span>
+
+            <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+          </a></li>
+
+                  </ul>
+                </div>
+
+
+
+            
+        
+      </section>
         </div>
 
         <!-- Search Bar -->

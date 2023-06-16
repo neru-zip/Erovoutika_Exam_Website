@@ -1554,3 +1554,16 @@ textarea {
 
 
 }
+
+/* Animation */
+
+.animated-section {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: opacity 1s, transform 1s;
+}
+
+.animated-section.animated {
+  opacity: 1;
+  transform: translateY(0);
+}

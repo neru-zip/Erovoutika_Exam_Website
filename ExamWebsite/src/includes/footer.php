@@ -98,18 +98,13 @@
        </div>
      </div>
 
-     <div class="row text-right pt-5">
-       <div class="col-lg-12">
-         <div class="overflow-hidden">
-           <!-- Copyright -->
-          <p class="footer-copy">
-            Copyright &copy; <script>var CurrentYear = new Date().getFullYear()
-            document.write(CurrentYear)
-          </script><a class="current-year" href="https://themefisher.com/"> Erovoutika </a>- All Rights Reserved.
-          </p>
-         </div>
-       </div>
-     </div>
    </div>
  </footer>
+ <div class="text-center p-3" style="background-color: #2600ff;">
+ <p class="footer-copy">
+            Copyright &copy; <script>var CurrentYear = new Date().getFullYear()
+            document.write(CurrentYear)
+          </script><a class="current-year" href="https://erovoutika.ph/"> Erovoutika </a>- All Rights Reserved.
+          </p>
+ </div>
  

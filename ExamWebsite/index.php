@@ -31,6 +31,7 @@ include_once __DIR__.'/src/includes/header.php';
     </section>
 
     <!-- About Us -->
+    <div class="animated-section">
     <section class="about section" style="background-color: white; padding-top: 30px; padding-bottom: 50px">
 	<div class="container">
 		<div class="row">
@@ -53,7 +54,8 @@ include_once __DIR__.'/src/includes/header.php';
 		</div>
 	</div>
 </section>
-  
+</div>
+<br><br>
     <!-- Partnership -->
   <!--
     <div class="row" style="margin-bottom: -70px; margin-top: 5%;">
@@ -154,7 +156,7 @@ include_once __DIR__.'/src/includes/header.php';
     <section class="expertise">
       
     </section>
-
+    <div class="animated-section">
     <!-- Porfolio -->
     <section class="porfolio"id="porfolio" >
         <div class="row"  style="padding-top: 5%; margin-bottom: -5%">
@@ -198,8 +200,10 @@ include_once __DIR__.'/src/includes/header.php';
         </ul>
     <br><br><br>
     </section>
-    <br><br><br><br>
+    </div>
+    <br><br><br><br><br><br>
     
+    <div class="animated-section">
     <!-- Services -->
     <section style="background-color: white; padding-top: 5%; padding-bottom: 5%">
     <div class="row">
@@ -234,6 +238,7 @@ include_once __DIR__.'/src/includes/header.php';
     <div class="icon"> <img src="src/images/service4.png"> </div>
     <h2>Research and Development</h2>
     <p>Research and development include activities that companies undertake to innovate and introduce new products and services. It is often the first stage in the development process.</p>
+  <br>
   </div>
   <div class="box box5">
     <div class="icon"> <img src="src/images/service5.png"> </div>
@@ -247,9 +252,11 @@ include_once __DIR__.'/src/includes/header.php';
   </div>
 </div>
 </section>
+</div>
 
-    <br><br><br>
+    <br><br><br><br>
 
+    <div class="animated-section">
     <!--Pricing Table-->
     <div id="price">
     <div class="row">
@@ -354,7 +361,8 @@ include_once __DIR__.'/src/includes/header.php';
   </div>
   <!-- end of price tab-->
 </div>
-<br><br><br>
+</div>
+<br><br><br><br>
 
     <!-- Contact Us -->
     <!--<div class="row">
@@ -403,6 +411,7 @@ include_once __DIR__.'/src/includes/header.php';
         </div>
     </section>-->
     <br><br>
+    <div class="animated-section">
     <div class="row">
           <div class="col-md-12">
               <div class="site-heading text-center">
@@ -444,8 +453,8 @@ include_once __DIR__.'/src/includes/header.php';
 			</div>
 			
 		</div>
-
-    <br><br><br>
+    </div>
+    <br><br><br><br>
 
     <div class="wrapper">
   
@@ -532,4 +541,22 @@ include_once __DIR__.'/src/includes/header.php';
     include_once 'src/includes/footer.php';
     ?>
 </body>
+    <script>
+
+        function animateSectionsOnScroll() {
+          var sections = document.querySelectorAll('.animated-section');
+
+          sections.forEach(function(section) {
+            var sectionPosition = section.getBoundingClientRect().top;
+            var screenHeight = window.innerHeight;
+
+            if (sectionPosition < screenHeight) {
+              section.classList.add('animated');
+            }
+          });
+        }
+
+        window.addEventListener('scroll', animateSectionsOnScroll);
+
+    </script>
 </html>

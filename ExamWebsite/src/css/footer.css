@@ -24,7 +24,7 @@
   }
   
   .footer-widget p {
-    color: #888;
+    color: lightblue;
     margin-top: 20px;
     margin-bottom: 20px;
     line-height: 22px;
@@ -36,7 +36,7 @@
   }
   
   .footer-links a {
-    color: #888;
+    color: lightblue;
     line-height: 38px;
     font-size: 14px;
     text-transform: capitalize;
@@ -46,13 +46,13 @@
   }
   
   .footer-copy {
-    color: #888;
+    color: lightblue;
     font-size: 16px;
     position: relative;
     margin-bottom: 0;
     display: inline-block;
   }
   .current-year {
-    color: lightblue !important;
+    color: white !important;
   }
   
